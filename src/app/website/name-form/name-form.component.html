@@ -1,0 +1,13 @@
+<form [formGroup]="nameForm" (ngSubmit)="onSubmit()">
+
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="name">
+    
+    <button type="button" (click)="emitNewNameForm()">Test Emit</button>
+</form>
+
+  <div *ngIf="showInvalid">Please enter your name!</div>
+<!-- 
+<button type="button" (click)="updateName()">Update Name</button> -->
+
+<p>Value: {{ nameForm.controls.name.value }}</p>

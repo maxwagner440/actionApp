@@ -12,4 +12,15 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  addItem(newItem: string){
+    console.log(newItem)
+  }
 }
+
+
+/*
+TODO:
+1. Overall setup of app and UI
+2. Nav bar
+3. 
+*/
