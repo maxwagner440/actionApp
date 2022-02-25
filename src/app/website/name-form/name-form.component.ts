@@ -8,10 +8,18 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class NameFormComponent implements OnInit {
 
-  @Output() newNameEvent = new EventEmitter<string>();
-  
-  nameForm: FormGroup
-  showInvalid = false
+  @Output() signUpName = new EventEmitter<string>();
+  @Output() signUpEmail = new EventEmitter<string>();
+  @Output() signUpPassword = new EventEmitter<string>();
+
+  @Output() signInEmail = new EventEmitter<string>();
+  @Output() signInPassword = new EventEmitter<string>();
+
+  signUpForm: FormGroup
+  signInForm: FormGroup
+  showSignUpInvalid = false
+  showSignInInvalid = false
+  showLogin = true
 
   constructor() { }
 
@@ -19,18 +27,42 @@ export class NameFormComponent implements OnInit {
     this.defineForm()
   }
 
-  emitNewNameForm() {
-    if(this.nameForm.status.toUpperCase() == "VALID"){
-      this.newNameEvent.emit(this.nameForm.controls.name.value);
-      this.showInvalid = false
+  emitNewSignUpForm() {
+    if(this.signUpForm.status.toUpperCase() == "VALID"){
+      console.log("new sign up")
+      this.signUpName.emit(this.signUpForm.controls.name.value);
+      this.signUpEmail.emit(this.signUpForm.controls.email.value);
+      this.signUpPassword.emit(this.signUpForm.controls.password.value);
+
+      this.showSignUpInvalid = false
+      this.signUpForm.reset()
     } else {
-      this.showInvalid = true
+      this.showSignUpInvalid = true
+    }
+  }
+
+  emitNewSignInForm() {
+    if(this.signInForm.status.toUpperCase() == "VALID"){
+      console.log("new sign in")
+      this.signInEmail.emit(this.signInForm.controls.email.value);
+      this.signInPassword.emit(this.signInForm.controls.password.value);
+      this.showSignInInvalid = false
+      this.signInForm.reset()
+
+    } else {
+      this.showSignInInvalid = true
     }
   }
 
   defineForm(){
-    this.nameForm = new FormGroup({
+    this.signUpForm = new FormGroup({
       name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+    });
+    this.signInForm = new FormGroup({
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
     });
   }
 

@@ -1,13 +1,49 @@
-<form [formGroup]="nameForm" (ngSubmit)="onSubmit()">
+<div class="container" class="mt-5">
+  <!-- LOGIN -->
+  <div class="row" *ngIf="showLogin">
+    <div class="col"></div>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+            <input class="mx-4 my-2" id="email" placeholder="Email" type="email" formControlName="email">
+            <input class="mx-4 my-2" id="password" placeholder="Password" type="password" formControlName="password">
+          </form>
+          <button class="m-4"type="button" (click)="emitNewSignInForm()">Sign In</button>
 
-    <label for="first-name">First Name: </label>
-    <input id="first-name" type="text" formControlName="name">
-    
-    <button type="button" (click)="emitNewNameForm()">Test Emit</button>
-</form>
+          <div *ngIf="showSignInInvalid">Please enter your name!</div>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+  <!-- SIGN UP -->
+  <div class="row" *ngIf="!showLogin">
+    <div class="col"></div>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <input class="mx-4 my-2" id="name" placeholder="Name" type="text" formControlName="name">
+            <input class="mx-4 my-2" id="email" placeholder="Email" type="email" formControlName="email">
+            <input class="mx-4 my-2" id="password" placeholder="Password" type="password" formControlName="password">
+          </form>
+          <button class="m-4"type="button" (click)="emitNewSignUpForm()">Sign Up</button>
 
-  <div *ngIf="showInvalid">Please enter your name!</div>
-<!-- 
-<button type="button" (click)="updateName()">Update Name</button> -->
-
-<p>Value: {{ nameForm.controls.name.value }}</p>
+          <div *ngIf="showSignUpInvalid">Please enter your info!</div>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+  <div class="row" *ngIf="showLogin">
+    <div class="col"></div>
+    <div class="col-10 mx-1">Not signed up yet? <button type="button" (click)="showLogin =! showLogin">Sign Up Here</button></div>
+    <div class="col"></div>
+  </div>
+  <div class="row" *ngIf="!showLogin">
+    <div class="col"></div>
+    <div class="col-10"><button type="button" (click)="showLogin =! showLogin">Login</button></div>
+    <div class="col"></div>
+  </div>
+</div>

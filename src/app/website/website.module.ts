@@ -4,6 +4,7 @@ import { HomeComponent } from "./home/home.component";
 import { WebsiteRoutingModule } from "./website.routing.module";
 import { NameFormComponent } from './name-form/name-form.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatGridListModule } from "@angular/material";
 
 
 
@@ -13,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
       WebsiteRoutingModule,
       ReactiveFormsModule,
       FormsModule,
+      MatGridListModule,
     ],
     declarations: [
       HomeComponent,
