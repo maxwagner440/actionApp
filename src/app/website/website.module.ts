@@ -5,6 +5,8 @@ import { WebsiteRoutingModule } from "./website.routing.module";
 import { NameFormComponent } from './name-form/name-form.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatGridListModule } from "@angular/material";
+import { CookieService } from "ngx-cookie-service";
+import { LoginComponent } from "./login/login.component";
 
 
 
@@ -19,8 +21,9 @@ import { MatGridListModule } from "@angular/material";
     declarations: [
       HomeComponent,
       NameFormComponent,
+      LoginComponent,
     ],
-    providers: [  ]
+    providers: [ CookieService ]
   })
 
   export class WebsiteModule { }

@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { AuthService } from '../service/auth-service.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-vote',
+  templateUrl: './vote.component.html',
+  styleUrls: ['./vote.component.css']
 })
-export class HomeComponent implements OnInit {
+export class VoteComponent implements OnInit {
 
   constructor(private srvLogin: AuthService, private router: Router) { 
     if (!srvLogin.checkLogValues()) {  
@@ -18,7 +18,4 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  addItem(newItem: string){
-    console.log(newItem)
-  }
 }
