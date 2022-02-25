@@ -1,0 +1,29 @@
+<form [formGroup]="taskForm" >
+    <input class="mx-4 my-2" id="task" placeholder="Task" type="text" formControlName="description">
+    <input class="mx-4 my-2" id="ifFailed" placeholder="If Failed" type="text" formControlName="ifFailed">
+    <input class="mx-4 my-2" id="reward" placeholder="If Successful" type="text" formControlName="reward">
+</form>
+<button class="m-4"type="button" (click)="createTask()">Create Task</button>
+
+
+<button (click)="getTasks()">Get Tasks</button>
+
+
+
+
+<table>
+    <thead>
+        <th>Task</th>
+        <th>If Failed</th>
+        <th>Reward</th>
+        <th>Thy Maker</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of tasks">
+            <td>{{task.description}}</td>
+            <td>{{task.if_failed}}</td>
+            <td>{{task.reward}}</td>
+            <td>{{task.created_by}}</td>
+        </tr>
+    </tbody>
+</table>
