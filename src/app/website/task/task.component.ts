@@ -1,20 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { AppApiServiceService } from '../service/app-api-service.service';
 import { AuthService } from '../service/auth-service.service';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import { Task } from '../models/task.model';
 
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
-  styleUrls: ['./task.component.css']
+  styleUrls: ['./task.component.css'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class TaskComponent implements OnInit {
   taskForm: FormGroup
-
-  tasks;
-  constructor(private srvLogin: AuthService, private router: Router, private cookieService: CookieService, private apiService: AppApiServiceService) {
+  displayedColumns: string[] = ['description','created_by'];
+  expandedElement: Task | null
+  tasks = [];
+  username=this.cookieService.get('username')
+  constructor(
+    private srvLogin: AuthService, private router: Router, 
+    private cookieService: CookieService, private apiService: AppApiServiceService) {
     if (!srvLogin.checkLogValues()) {  
       router.navigate(['/login']);  
     }
@@ -28,10 +41,11 @@ export class TaskComponent implements OnInit {
   createTask() {
     this.apiService.putTask(
       this.taskForm.controls.description.value,
-      this.cookieService.get('username'),
+      this.username,
       this.taskForm.controls.reward.value,
       this.taskForm.controls.ifFailed.value).subscribe(data => {
-        console.log(data)
+        this.taskForm.reset()
+        this.getTasks()
       })
   }
 
@@ -44,11 +58,15 @@ export class TaskComponent implements OnInit {
   }
 
   deleteTask(task_id) {
-    this.apiService.deleteTask(task_id, this.cookieService.get('username')).subscribe(data => {
+    this.apiService.deleteTask(task_id, this.username).subscribe(data => {
       console.log(data)
-      console.log(data.length)
-      this.tasks=data
+      this.getTasks()
     })
+  }
+
+  deleteRowData(obj){
+    console.log(obj._id.$oid)
+    this.deleteTask(obj._id.$oid)
   }
 
   defineForm(){

@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar style=\"background-color: black;\" class=\"example-toolbar\">\r\n    <button mat-icon-button (click)=\"showNav = !showNav\"><mat-icon style=\"color:white;\">menu</mat-icon></button>\r\n</mat-toolbar>\r\n<mat-sidenav-container>\r\n    <mat-sidenav mode=\"side\" [opened]=\"!showNav\" class=\"sidenav\">\r\n        <div class=\"container\">\r\n            <div class=\"pointer text-center p-2\" [routerLink]=\"'/home'\">\r\n                <h4> Eric </h4>\r\n            </div>\r\n        </div>        \r\n        <mat-nav-list>\r\n            <a mat-list-item [routerLink]=\"'/login'\"> Login/Signup </a>\r\n            <a mat-list-item [routerLink]=\"'/task'\"> Tasks </a>\r\n            <a mat-list-item [routerLink]=\"'/vote'\"> Vote </a>\r\n      </mat-nav-list>\r\n    </mat-sidenav>\r\n    \r\n    <mat-sidenav-content>\r\n        <div style=\"min-height: 100vh;\">\r\n            <router-outlet></router-outlet>\r\n      </div>\r\n    </mat-sidenav-content>\r\n  </mat-sidenav-container>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar style=\"background-color: black;\" class=\"example-toolbar\">\r\n    <button mat-icon-button (click)=\"showNav = !showNav\"><mat-icon style=\"color:white;\">menu</mat-icon></button>\r\n    <!-- <div style=\"color:white;\" *ngIf=\"username\">Logged in as: {{username}}</div> -->\r\n    <div class=\"d-flex align-items-end\">\r\n        <button class=\"d-inline\" (click)=\"routeToLink('login')\">Login/Signup</button>\r\n    </div>\r\n</mat-toolbar>\r\n<mat-sidenav-container>\r\n    <mat-sidenav mode=\"side\" [opened]=\"!showNav\" class=\"sidenav\">\r\n        <div class=\"container\">\r\n            <div class=\"pointer text-center p-2\" (click)=\"routeToLink('home')\">\r\n                <h4> Eric </h4>\r\n            </div>\r\n        </div>        \r\n        <mat-nav-list>\r\n            <a mat-list-item (click)=\"routeToLink('task')\"> Tasks </a>\r\n            <a mat-list-item (click)=\"routeToLink('vote')\"> Vote </a>\r\n      </mat-nav-list>\r\n    </mat-sidenav>\r\n    \r\n    <mat-sidenav-content>\r\n        <div style=\"min-height: 100vh;\">\r\n            <router-outlet></router-outlet>\r\n      </div>\r\n    </mat-sidenav-content>\r\n  </mat-sidenav-container>\r\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\" class=\"mt-5\">\n    <!-- LOGIN -->\n    <div class=\"row\" *ngIf=\"showLogin\">\n      <div class=\"col\"></div>\n      <div class=\"col\">\n        <div class=\"card\" style=\"width: 18rem;\">\n          <div class=\"card-body\">\n            <form [formGroup]=\"signInForm\" >\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\n            </form>\n            <button class=\"m-4\"type=\"button\" (click)=\"loginUser()\">Sign In</button>\n  \n            <div *ngIf=\"showSignInInvalid\">Please enter your name!</div>\n          </div>\n        </div>\n      </div>\n      <div class=\"col\"></div>\n    </div>\n    <!-- SIGN UP -->\n    <div class=\"row\" *ngIf=\"!showLogin\">\n      <div class=\"col\"></div>\n      <div class=\"col\">\n        <div class=\"card\" style=\"width: 18rem;\">\n          <div class=\"card-body\">\n            <form [formGroup]=\"signUpForm\" >\n              <input class=\"mx-4 my-2\" id=\"name\" placeholder=\"Name\" type=\"text\" formControlName=\"name\">\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\n            </form>\n            <button class=\"m-4\"type=\"button\" (click)=\"create_user()\">Sign Up</button>\n  \n            <div *ngIf=\"showSignUpInvalid\">Please enter your info!</div>\n          </div>\n        </div>\n      </div>\n      <div class=\"col\"></div>\n    </div>\n    <div class=\"row\" *ngIf=\"showLogin\">\n      <div class=\"col\"></div>\n      <div class=\"col-10 mx-1\">Not signed up yet? <button type=\"button\" (click)=\"showLogin =! showLogin\">Sign Up Here</button></div>\n      <div class=\"col\"></div>\n    </div>\n    <div class=\"row\" *ngIf=\"!showLogin\">\n      <div class=\"col\"></div>\n      <div class=\"col-10\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Login</button></div>\n      <div class=\"col\"></div>\n    </div>\n  </div>\n  ");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\" class=\"mt-5\">\r\n    <!-- LOGIN -->\r\n    <div class=\"row\" *ngIf=\"showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signInForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"loginUser()\">Sign In</button>\r\n  \r\n            <div *ngIf=\"showSignInInvalid\">Please enter your name!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <!-- SIGN UP -->\r\n    <div class=\"row\" *ngIf=\"!showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signUpForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"name\" placeholder=\"Name\" type=\"text\" formControlName=\"name\">\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"create_user()\">Sign Up</button>\r\n  \r\n            <div *ngIf=\"showSignUpInvalid\">Please enter your info!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <div class=\"row\" *ngIf=\"showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col-10 mx-1\">Not signed up yet? <button type=\"button\" (click)=\"showLogin =! showLogin\">Sign Up Here</button></div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <div class=\"row\" *ngIf=\"!showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col-10\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Login</button></div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n  </div>\r\n  ");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"taskForm\" >\n    <input class=\"mx-4 my-2\" id=\"task\" placeholder=\"Task\" type=\"text\" formControlName=\"description\">\n    <input class=\"mx-4 my-2\" id=\"ifFailed\" placeholder=\"If Failed\" type=\"text\" formControlName=\"ifFailed\">\n    <input class=\"mx-4 my-2\" id=\"reward\" placeholder=\"If Successful\" type=\"text\" formControlName=\"reward\">\n</form>\n<button class=\"m-4\"type=\"button\" (click)=\"createTask()\">Create Task</button>\n\n\n<button (click)=\"getTasks()\">Get Tasks</button>\n\n\n\n\n<table>\n    <thead>\n        <th>Task</th>\n        <th>If Failed</th>\n        <th>Reward</th>\n        <th>Thy Maker</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let task of tasks\">\n            <td>{{task.description}}</td>\n            <td>{{task.if_failed}}</td>\n            <td>{{task.reward}}</td>\n            <td>{{task.created_by}}</td>\n        </tr>\n    </tbody>\n</table>");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"taskForm\" >\r\n    <textarea  class=\"mx-4 my-2\" id=\"task\" placeholder=\"Task\" type=\"text\" formControlName=\"description\"></textarea>\r\n    <input class=\"mx-4 my-2\" id=\"ifFailed\" placeholder=\"If Failed\" type=\"text\" formControlName=\"ifFailed\">\r\n    <input class=\"mx-4 my-2\" id=\"reward\" placeholder=\"If Successful\" type=\"text\" formControlName=\"reward\">\r\n</form>\r\n<button class=\"m-4\"type=\"button\" (click)=\"createTask()\">Create Task</button>\r\n\r\n\r\n<!-- \r\n\r\n<table>\r\n    <thead>\r\n        <th>Task</th>\r\n        <th>If Failed</th>\r\n        <th>Reward</th>\r\n        <th>Thy Maker</th>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let task of tasks\">\r\n            <td>{{task.description}}</td>\r\n            <td>{{task.if_failed}}</td>\r\n            <td>{{task.reward}}</td>\r\n            <td>{{task.created_by}}</td>\r\n        </tr>\r\n    </tbody>\r\n</table> -->\r\n\r\n<!-- \r\n<table mat-table [dataSource]=\"tasks\" class=\"mat-elevation-z8\">\r\n\r\n    <ng-container matColumnDef=\"description\">\r\n      <th mat-header-cell *matHeaderCellDef> Task </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.description}} </td>\r\n    </ng-container>\r\n  \r\n    <ng-container matColumnDef=\"if_failed\">\r\n      <th mat-header-cell *matHeaderCellDef> If Failed </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.if_failed}} </td>\r\n    </ng-container>\r\n  \r\n    <ng-container matColumnDef=\"reward\">\r\n      <th mat-header-cell *matHeaderCellDef> If Victorious </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.reward}} </td>\r\n    </ng-container>\r\n  \r\n    <ng-container matColumnDef=\"created_by\">\r\n      <th mat-header-cell *matHeaderCellDef> The Creator </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.created_by}} </td>\r\n    </ng-container>\r\n\r\n    <ng-container matColumnDef=\"action\">\r\n        <th mat-header-cell *matHeaderCellDef> Action </th>\r\n        <td mat-cell *matCellDef=\"let element\" class=\"action-link pointer\"> \r\n          <button [disabled]=\"username!==element.created_by\" (click)=\"deleteRowData(element)\">Delete</button>  \r\n        </td>\r\n      </ng-container>\r\n  \r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n  </table> -->\r\n\r\n\r\n  <table mat-table\r\n       [dataSource]=\"tasks\" multiTemplateDataRows\r\n       class=\"mat-elevation-z8\">\r\n  <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumns\">\r\n    <th mat-header-cell *matHeaderCellDef> {{column}} </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n  </ng-container>\r\n\r\n  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->\r\n  <ng-container matColumnDef=\"expandedDetail\">\r\n    <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\r\n      <div class=\"example-element-detail\"\r\n           [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n        <div class=\"example-element-diagram\">\r\n          <div class=\"example-element-position\"> {{element.if_failed}} </div>\r\n          <div class=\"example-element-symbol\"> {{element.reward}} </div>\r\n          <div class=\"example-element-name\"> {{element.created_by}} </div>\r\n          <!-- <div class=\"example-element-weight\"> {{element.weight}} </div> -->\r\n        </div>\r\n        <div class=\"pointer\">\r\n            <button [disabled]=\"username!==element.created_by\" (click)=\"deleteRowData(element)\">Delete</button>  \r\n        </div>\r\n        <!-- <div class=\"example-element-description\">\r\n          {{element.description}}\r\n          <span class=\"example-element-description-attribution\"> -- Wikipedia </span>\r\n        </div> -->\r\n      </div>\r\n    </td>\r\n  </ng-container>\r\n\r\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n  <tr mat-row *matRowDef=\"let element; columns: displayedColumns;\"\r\n      class=\"example-element-row\"\r\n      [class.example-expanded-row]=\"expandedElement === element\"\r\n      (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n  </tr>\r\n  <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n</table>\r\n  \r\n  ");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>vote works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>vote works!</p>\r\n");
 
 /***/ }),
 
@@ -410,14 +410,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/index.js");
+
+
 
 
 let AppComponent = class AppComponent {
-    constructor() {
+    constructor(router, cookieService) {
+        this.router = router;
+        this.cookieService = cookieService;
         this.title = 'actionApp';
         this.showNav = true;
     }
+    ngOnInit() {
+        var cookieUser = this.cookieService.get("username");
+        console.log(cookieUser);
+        if (cookieUser) {
+            this.username = cookieUser;
+            console.log(this.username);
+        }
+    }
+    routeToLink(link) {
+        this.showNav = !this.showNav;
+        this.router.navigate(["/" + link]);
+    }
 };
+AppComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
@@ -491,6 +513,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"],
             _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_10__["MatGridListModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatTableModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDialogModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
         ],
         providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_11__["CookieService"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -904,7 +929,7 @@ class User {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3dlYnNpdGUvdGFzay90YXNrLmNvbXBvbmVudC5jc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".pointer {\r\n    cursor: pointer;\r\n}\r\ntable {\r\n  width: 100%;\r\n}\r\ntr.example-detail-row {\r\n  height: 0;\r\n}\r\ntr.example-element-row:not(.example-expanded-row):hover {\r\n  background: whitesmoke;\r\n}\r\ntr.example-element-row:not(.example-expanded-row):active {\r\n  background: #efefef;\r\n}\r\n.example-element-row td {\r\n  border-bottom-width: 0;\r\n}\r\n.example-element-detail {\r\n  overflow: hidden;\r\n  display: flex;\r\n}\r\n.example-element-diagram {\r\n  min-width: 80px;\r\n  border: 2px solid black;\r\n  padding: 8px;\r\n  font-weight: lighter;\r\n  margin: 8px 0;\r\n  height: 104px;\r\n}\r\n.example-element-symbol {\r\n  font-weight: bold;\r\n  font-size: 40px;\r\n  line-height: normal;\r\n}\r\n.example-element-description {\r\n  padding: 16px;\r\n}\r\n.example-element-description-attribution {\r\n  opacity: 0.5;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2Vic2l0ZS90YXNrL3Rhc2suY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGVBQWU7QUFDbkI7QUFDQTtFQUNFLFdBQVc7QUFDYjtBQUVBO0VBQ0UsU0FBUztBQUNYO0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7QUFFQTtFQUNFLG1CQUFtQjtBQUNyQjtBQUVBO0VBQ0Usc0JBQXNCO0FBQ3hCO0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsYUFBYTtBQUNmO0FBRUE7RUFDRSxlQUFlO0VBQ2YsdUJBQXVCO0VBQ3ZCLFlBQVk7RUFDWixvQkFBb0I7RUFDcEIsYUFBYTtFQUNiLGFBQWE7QUFDZjtBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZixtQkFBbUI7QUFDckI7QUFFQTtFQUNFLGFBQWE7QUFDZjtBQUVBO0VBQ0UsWUFBWTtBQUNkIiwiZmlsZSI6InNyYy9hcHAvd2Vic2l0ZS90YXNrL3Rhc2suY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wb2ludGVyIHtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG50YWJsZSB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbnRyLmV4YW1wbGUtZGV0YWlsLXJvdyB7XHJcbiAgaGVpZ2h0OiAwO1xyXG59XHJcblxyXG50ci5leGFtcGxlLWVsZW1lbnQtcm93Om5vdCguZXhhbXBsZS1leHBhbmRlZC1yb3cpOmhvdmVyIHtcclxuICBiYWNrZ3JvdW5kOiB3aGl0ZXNtb2tlO1xyXG59XHJcblxyXG50ci5leGFtcGxlLWVsZW1lbnQtcm93Om5vdCguZXhhbXBsZS1leHBhbmRlZC1yb3cpOmFjdGl2ZSB7XHJcbiAgYmFja2dyb3VuZDogI2VmZWZlZjtcclxufVxyXG5cclxuLmV4YW1wbGUtZWxlbWVudC1yb3cgdGQge1xyXG4gIGJvcmRlci1ib3R0b20td2lkdGg6IDA7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtZGV0YWlsIHtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtZGlhZ3JhbSB7XHJcbiAgbWluLXdpZHRoOiA4MHB4O1xyXG4gIGJvcmRlcjogMnB4IHNvbGlkIGJsYWNrO1xyXG4gIHBhZGRpbmc6IDhweDtcclxuICBmb250LXdlaWdodDogbGlnaHRlcjtcclxuICBtYXJnaW46IDhweCAwO1xyXG4gIGhlaWdodDogMTA0cHg7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtc3ltYm9sIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBmb250LXNpemU6IDQwcHg7XHJcbiAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcclxufVxyXG5cclxuLmV4YW1wbGUtZWxlbWVudC1kZXNjcmlwdGlvbiB7XHJcbiAgcGFkZGluZzogMTZweDtcclxufVxyXG5cclxuLmV4YW1wbGUtZWxlbWVudC1kZXNjcmlwdGlvbi1hdHRyaWJ1dGlvbiB7XHJcbiAgb3BhY2l0eTogMC41O1xyXG59Il19 */");
 
 /***/ }),
 
@@ -925,6 +950,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/index.js");
 /* harmony import */ var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../service/app-api-service.service */ "./src/app/website/service/app-api-service.service.ts");
 /* harmony import */ var _service_auth_service_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/auth-service.service */ "./src/app/website/service/auth-service.service.ts");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm2015/animations.js");
+
 
 
 
@@ -938,6 +965,9 @@ let TaskComponent = class TaskComponent {
         this.router = router;
         this.cookieService = cookieService;
         this.apiService = apiService;
+        this.displayedColumns = ['description', 'created_by'];
+        this.tasks = [];
+        this.username = this.cookieService.get('username');
         if (!srvLogin.checkLogValues()) {
             router.navigate(['/login']);
         }
@@ -947,8 +977,9 @@ let TaskComponent = class TaskComponent {
         this.getTasks();
     }
     createTask() {
-        this.apiService.putTask(this.taskForm.controls.description.value, this.cookieService.get('username'), this.taskForm.controls.reward.value, this.taskForm.controls.ifFailed.value).subscribe(data => {
-            console.log(data);
+        this.apiService.putTask(this.taskForm.controls.description.value, this.username, this.taskForm.controls.reward.value, this.taskForm.controls.ifFailed.value).subscribe(data => {
+            this.taskForm.reset();
+            this.getTasks();
         });
     }
     getTasks() {
@@ -959,11 +990,14 @@ let TaskComponent = class TaskComponent {
         });
     }
     deleteTask(task_id) {
-        this.apiService.deleteTask(task_id, this.cookieService.get('username')).subscribe(data => {
+        this.apiService.deleteTask(task_id, this.username).subscribe(data => {
             console.log(data);
-            console.log(data.length);
-            this.tasks = data;
+            this.getTasks();
         });
+    }
+    deleteRowData(obj) {
+        console.log(obj._id.$oid);
+        this.deleteTask(obj._id.$oid);
     }
     defineForm() {
         this.taskForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
@@ -983,6 +1017,13 @@ TaskComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-task',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./task.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/website/task/task.component.html")).default,
+        animations: [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('detailExpand', [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('collapsed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '0px', minHeight: '0' })),
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('expanded', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ height: '*' })),
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('expanded <=> collapsed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+            ]),
+        ],
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./task.component.css */ "./src/app/website/task/task.component.css")).default]
     })
 ], TaskComponent);
@@ -1069,6 +1110,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/index.js");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./login/login.component */ "./src/app/website/login/login.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+
 
 
 
@@ -1089,6 +1132,9 @@ WebsiteModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ReactiveFormsModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"],
             _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatGridListModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatDialogModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"],
         ],
         declarations: [
             _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"],
