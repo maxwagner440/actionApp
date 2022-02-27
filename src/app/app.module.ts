@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { WebsiteModule } from './website/website.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatDialogModule, MatIconModule, MatListModule, MatSidenavModule, MatTableModule, MatToolbarModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { CookieService } from 'ngx-cookie-service';
@@ -34,6 +34,9 @@ import { VoteComponent } from './website/vote/vote.component';
     MatIconModule,
     MatGridListModule,
     HttpClientModule,
+    MatTableModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
