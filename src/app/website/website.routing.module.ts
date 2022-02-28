@@ -1,13 +1,13 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
-import { NameFormComponent } from "./name-form/name-form.component";
+import { LoginComponent } from "./login/login.component";
 import { TaskComponent } from "./task/task.component";
 import { VoteComponent } from "./vote/vote.component";
 
 export const websiteRoutes: Routes = [
     {
-      path: 'login', component: NameFormComponent
+      path: 'login', component: LoginComponent
     },
     {
       path: 'task', component: TaskComponent

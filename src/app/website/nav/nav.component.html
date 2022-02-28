@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button class="example-icon" (click)="showNavigation()"
+      aria-label="Example icon-button with menu icon">
+      <mat-icon [matMenuTriggerFor]="menu">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="routeToLink('home')">Home</button>
+      <button mat-menu-item (click)="routeToLink('task')">Tasks</button>
+    </mat-menu>
+    <span class="example-spacer"></span>
+
+    <span *ngIf="!username"><button class="d-inline" (click)="routeToLink('login')">Login</button></span>
+    <span *ngIf="username"><button class="d-inline" (click)="logout()">Logout</button></span>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row style="height:25px" *ngIf="username">
+    <span class="example-spacer"></span>
+    <span style="font-size: 14px;">User: {{username}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>

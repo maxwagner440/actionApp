@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { EventEmitter } from 'protractor';
 import { AppApiServiceService } from '../service/app-api-service.service';
 import { AuthService, User } from '../service/auth-service.service';
 
@@ -11,12 +12,15 @@ import { AuthService, User } from '../service/auth-service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  @Input() incomingSnackMessage: string = 'Please Sign In!';
+ // loginEvent = new EventEmitter();
   Obj: User;
   signUpForm: FormGroup
   signInForm: FormGroup
   showSignUpInvalid = false
   showSignInInvalid = false
   showLogin = true
+  showSpinner = false;
   constructor(private srvLogin: AuthService, private router: Router, public activatedRoute: ActivatedRoute, private cookieService: CookieService, private apiService: AppApiServiceService) {
       this.Obj = new User();
   }
@@ -27,27 +31,33 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
+    this.incomingSnackMessage = null;
     if(this.signInForm.controls.email.value && this.signInForm.controls.password.value){
+      this.showSpinner = true;
       this.apiService.postUser(
         this.signInForm.controls.email.value,this.signInForm.controls.password.value
       ).subscribe((data: any) => {
         if(data.name && data.email) {
+          this.showSpinner = false;
           this.cookieService.set('username', data.email);
           this.cookieService.set('cookie', this.makeCooke())
+          //this.emitLoginEvent()
           this.router.navigate(['/home']);
         }
         else {
+          this.showSpinner = false;
           if(data.Warning) {
-            alert(data.Warning)
+            this.incomingSnackMessage = data.Warning;
           }else {
-            alert("Incorrent username/password")
+            this.incomingSnackMessage = "Incorrent username/password";
           }
         }
 
       })
     }
     else {
-      alert("enter username and password")
+      this.showSpinner = false;
+      this.incomingSnackMessage = "enter username and password";
     }
 
   }
@@ -80,6 +90,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  // emitLoginEvent(){
+  //   this.loginEvent.emit("test from event emitter homue")
+  // }
   defineForm(){
     this.signUpForm = new FormGroup({
       name: new FormControl('', Validators.required),

@@ -12,13 +12,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { CookieService } from 'ngx-cookie-service';
 import { TaskComponent } from './website/task/task.component';
 import { VoteComponent } from './website/vote/vote.component';
+import { NavComponent } from './website/nav/nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TaskComponent,
-    VoteComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,13 +26,13 @@ import { VoteComponent } from './website/vote/vote.component';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
     MatIconModule,
     MatGridListModule,
-    HttpClientModule,
     MatTableModule,
     MatDialogModule,
     BrowserAnimationsModule,
