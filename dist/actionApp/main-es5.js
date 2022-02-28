@@ -1103,7 +1103,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.router = router;
 
         if (!srvLogin.checkLogValues()) {
-          router.navigate(['/login']);
+          router.navigate(['/login', {
+            navMessage: "Please login"
+          }]);
         }
       }
 
@@ -1242,12 +1244,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LoginComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
+          var _this = this;
+
+          this.activatedRoute.params.subscribe(function (params) {
+            console.log(params.navMessage);
+            _this.incomingSnackMessage = params.navMessage;
+          });
           this.defineForm();
         }
       }, {
         key: "loginUser",
         value: function loginUser() {
-          var _this = this;
+          var _this2 = this;
 
           this.incomingSnackMessage = null;
 
@@ -1255,21 +1263,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.showSpinner = true;
             this.apiService.postUser(this.signInForm.controls.email.value, this.signInForm.controls.password.value).subscribe(function (data) {
               if (data.name && data.email) {
-                _this.showSpinner = false;
+                _this2.showSpinner = false;
 
-                _this.cookieService.set('username', data.email);
+                _this2.cookieService.set('username', data.email);
 
-                _this.cookieService.set('cookie', _this.makeCooke()); //this.emitLoginEvent()
+                _this2.cookieService.set('cookie', _this2.makeCooke()); //this.emitLoginEvent()
 
 
-                _this.router.navigate(['/home']);
+                _this2.router.navigate(['/home']);
               } else {
-                _this.showSpinner = false;
+                _this2.showSpinner = false;
 
                 if (data.Warning) {
-                  _this.incomingSnackMessage = data.Warning;
+                  _this2.incomingSnackMessage = data.Warning;
                 } else {
-                  _this.incomingSnackMessage = "Incorrent username/password";
+                  _this2.incomingSnackMessage = "Incorrent username/password";
                 }
               }
             });
@@ -1293,18 +1301,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "create_user",
         value: function create_user() {
-          var _this2 = this;
+          var _this3 = this;
 
           if (this.signUpForm.controls.email.value && this.signUpForm.controls.password.value && this.signUpForm.controls.name.value) {
             this.apiService.putUser(this.signUpForm.controls.name.value, this.signUpForm.controls.email.value, this.signUpForm.controls.password.value).subscribe(function (data) {
               if (data.email && data.name) {
                 alert("you have signed up with email '" + data.email + "' and are logged in");
 
-                _this2.cookieService.set('username', data.email);
+                _this3.cookieService.set('username', data.email);
 
-                _this2.cookieService.set('cookie', _this2.makeCooke());
+                _this3.cookieService.set('cookie', _this3.makeCooke());
 
-                _this2.router.navigate(['/home']);
+                _this3.router.navigate(['/home']);
               } else {
                 alert("Something went wrong");
               }
@@ -1348,7 +1356,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }];
     };
 
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], LoginComponent.prototype, "incomingSnackMessage", void 0);
     LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-login',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
@@ -1466,10 +1473,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          alert("logged out");
           this.cookieService.deleteAll();
           this.username = this.cookieService.get('username');
-          this.router.navigate(['/login']);
+          this.router.navigate(['/login', {
+            navMessage: "You have been logged out"
+          }]);
         }
       }]);
 
@@ -1834,7 +1842,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.username = this.cookieService.get('username');
 
         if (!srvLogin.checkLogValues()) {
-          router.navigate(['/login']);
+          router.navigate(['/login', {
+            navMessage: "Please login"
+          }]);
         }
       }
 
@@ -1849,44 +1859,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createTask",
         value: function createTask() {
-          var _this3 = this;
+          var _this4 = this;
 
           this.apiService.putTask(this.taskForm.controls.description.value, this.username, this.taskForm.controls.reward.value, this.taskForm.controls.ifFailed.value).subscribe(function (data) {
-            _this3.taskForm.reset();
+            _this4.taskForm.reset();
 
-            _this3.getTasks();
+            _this4.getTasks();
           });
         }
       }, {
         key: "getTasks",
         value: function getTasks() {
-          var _this4 = this;
+          var _this5 = this;
 
           this.apiService.getTasks().subscribe(function (data) {
             console.log(data);
             console.log(data.length);
-            _this4.tasks = data;
+            _this5.tasks = data;
           });
         }
       }, {
         key: "getVotes",
         value: function getVotes() {
-          var _this5 = this;
+          var _this6 = this;
 
           this.apiService.getVotes().subscribe(function (data) {
             console.log(data);
-            _this5.votes = data;
+            _this6.votes = data;
           });
         }
       }, {
         key: "aggregateVotesWithTasks",
         value: function aggregateVotesWithTasks() {
-          var _this6 = this;
+          var _this7 = this;
 
           this.tasksWithVotes = [];
           console.log(this.tasks);
           this.tasks.map(function (task) {
-            var matchingVote = _this6.votes[task._id.$oid]; // Object.keys(this.votes).forEach(key => arrayVal.push(myData[key]));
+            var matchingVote = _this7.votes[task._id.$oid]; // Object.keys(this.votes).forEach(key => arrayVal.push(myData[key]));
 
             console.log(task);
             console.log(matchingVote); // if(matching_task)
@@ -1899,12 +1909,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteTask",
         value: function deleteTask(task_id) {
-          var _this7 = this;
+          var _this8 = this;
 
           this.apiService.deleteTask(task_id, this.username).subscribe(function (data) {
             console.log(data);
 
-            _this7.getTasks();
+            _this8.getTasks();
           });
         }
       }, {
@@ -2029,7 +2039,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.router = router;
 
         if (!srvLogin.checkLogValues()) {
-          router.navigate(['/login']);
+          router.navigate(['/login', {
+            navMessage: "Please login"
+          }]);
         }
       }
 

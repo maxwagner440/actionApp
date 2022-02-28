@@ -31,7 +31,7 @@ export class TaskComponent implements OnInit {
     private srvLogin: AuthService, private router: Router, 
     private cookieService: CookieService, private apiService: AppApiServiceService) {
     if (!srvLogin.checkLogValues()) {  
-      router.navigate(['/login']);  
+      router.navigate(['/login', { navMessage: "Please login" }]);  
     }
   }
 

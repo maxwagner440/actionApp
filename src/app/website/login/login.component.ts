@@ -2,7 +2,6 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { EventEmitter } from 'protractor';
 import { AppApiServiceService } from '../service/app-api-service.service';
 import { AuthService, User } from '../service/auth-service.service';
 
@@ -12,7 +11,7 @@ import { AuthService, User } from '../service/auth-service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  @Input() incomingSnackMessage: string = 'Please Sign In!';
+  incomingSnackMessage: string = 'Please Sign In!';
  // loginEvent = new EventEmitter();
   Obj: User;
   signUpForm: FormGroup
@@ -21,12 +20,19 @@ export class LoginComponent implements OnInit {
   showSignInInvalid = false
   showLogin = true
   showSpinner = false;
-  constructor(private srvLogin: AuthService, private router: Router, public activatedRoute: ActivatedRoute, private cookieService: CookieService, private apiService: AppApiServiceService) {
+  constructor(private srvLogin: AuthService, 
+    private router: Router, public activatedRoute: ActivatedRoute,
+    private cookieService: CookieService, private apiService: AppApiServiceService,) {
       this.Obj = new User();
   }
 
+
   user: User;
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+     console.log(params.navMessage)
+     this.incomingSnackMessage = params.navMessage
+    });
     this.defineForm()
   }
 

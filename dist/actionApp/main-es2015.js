@@ -556,7 +556,7 @@ let HomeComponent = class HomeComponent {
         this.srvLogin = srvLogin;
         this.router = router;
         if (!srvLogin.checkLogValues()) {
-            router.navigate(['/login']);
+            router.navigate(['/login', { navMessage: "Please login" }]);
         }
     }
     ngOnInit() {
@@ -633,6 +633,10 @@ let LoginComponent = class LoginComponent {
         this.Obj = new _service_auth_service_service__WEBPACK_IMPORTED_MODULE_6__["User"]();
     }
     ngOnInit() {
+        this.activatedRoute.params.subscribe(params => {
+            console.log(params.navMessage);
+            this.incomingSnackMessage = params.navMessage;
+        });
         this.defineForm();
     }
     loginUser() {
@@ -710,9 +714,6 @@ LoginComponent.ctorParameters = () => [
     { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"] },
     { type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_5__["AppApiServiceService"] }
 ];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], LoginComponent.prototype, "incomingSnackMessage", void 0);
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-login',
@@ -783,10 +784,9 @@ let NavComponent = class NavComponent {
         this.router.navigate(["/" + link]);
     }
     logout() {
-        alert("logged out");
         this.cookieService.deleteAll();
         this.username = this.cookieService.get('username');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/login', { navMessage: "You have been logged out" }]);
     }
 };
 NavComponent.ctorParameters = () => [
@@ -987,7 +987,7 @@ let TaskComponent = class TaskComponent {
         this.tasksWithVotes = [];
         this.username = this.cookieService.get('username');
         if (!srvLogin.checkLogValues()) {
-            router.navigate(['/login']);
+            router.navigate(['/login', { navMessage: "Please login" }]);
         }
     }
     ngOnInit() {
@@ -1109,7 +1109,7 @@ let VoteComponent = class VoteComponent {
         this.srvLogin = srvLogin;
         this.router = router;
         if (!srvLogin.checkLogValues()) {
-            router.navigate(['/login']);
+            router.navigate(['/login', { navMessage: "Please login" }]);
         }
     }
     ngOnInit() {
