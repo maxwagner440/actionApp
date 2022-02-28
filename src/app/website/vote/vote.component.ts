@@ -11,7 +11,7 @@ export class VoteComponent implements OnInit {
 
   constructor(private srvLogin: AuthService, private router: Router) { 
     if (!srvLogin.checkLogValues()) {  
-      router.navigate(['/login']);  
+      router.navigate(['/login',{ navMessage: "Please login" }]);  
     }
   }
 

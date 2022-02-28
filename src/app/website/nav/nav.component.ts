@@ -33,10 +33,9 @@ export class NavComponent implements OnInit {
     this.router.navigate(["/"+link]);
   }
   logout(): void {  
-    alert("logged out")
     this.cookieService.deleteAll();  
     this.username = this.cookieService.get('username')
-    this.router.navigate(['/login']);  
+    this.router.navigate(['/login',{ navMessage: "You have been logged out" }]);  
   }  
 
 
