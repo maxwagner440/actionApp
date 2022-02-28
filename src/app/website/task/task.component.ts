@@ -24,6 +24,8 @@ export class TaskComponent implements OnInit {
   displayedColumns: string[] = ['description','created_by'];
   expandedElement: Task | null
   tasks = [];
+  votes = [];
+  tasksWithVotes = []
   username=this.cookieService.get('username')
   constructor(
     private srvLogin: AuthService, private router: Router, 
@@ -36,6 +38,8 @@ export class TaskComponent implements OnInit {
   ngOnInit() {
     this.defineForm()
     this.getTasks()
+    this.getVotes()
+    this.aggregateVotesWithTasks()
   }
 
   createTask() {
@@ -55,6 +59,30 @@ export class TaskComponent implements OnInit {
       console.log(data.length)
       this.tasks=data
     })
+  }
+
+  getVotes(){
+    this.apiService.getVotes().subscribe(data => {
+      console.log(data)
+      this.votes=data
+    })
+  }
+
+  aggregateVotesWithTasks(){
+    this.tasksWithVotes = []
+    console.log(this.tasks)
+    this.tasks.map((task) => {
+      var matchingVote = this.votes[task._id.$oid]
+      // Object.keys(this.votes).forEach(key => arrayVal.push(myData[key]));
+      console.log(task)
+      console.log(matchingVote)
+      // if(matching_task)
+      // this.tasksWithVotes.push({
+      //   ...matching_task,
+      //   votes:vote
+      // })
+    })
+
   }
 
   deleteTask(task_id) {

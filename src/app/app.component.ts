@@ -27,4 +27,5 @@ export class AppComponent implements OnInit {
     this.showNav = !this.showNav
     this.router.navigate(["/"+link]);
   }
+
 }
