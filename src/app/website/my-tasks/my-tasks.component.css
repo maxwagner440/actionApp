@@ -30,7 +30,7 @@ table {
     padding: 8px;
     font-weight: lighter;
     margin: 8px 0;
-    height: 104px;
+    /* height: 104px; */
   }
   
   .example-element-symbol {
@@ -48,6 +48,12 @@ table {
   }
 
   
+.mat-header-cell {
+    font-size: 18px;
+    font-weight: 500;
+    color:black
+}
+
 .input-width{
     width: 80%;
   }

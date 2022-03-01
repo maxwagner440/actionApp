@@ -22,14 +22,14 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class TaskComponent implements OnInit {
   taskForm: FormGroup
-  displayedColumns: string[] = ['description','created_by'];
   displayedColumnsTopTen: string[] = ['description', 'votes']
   expandedElement: Task | null
   tasks = [];
   votes = [];
-  tasksWithVotes =[] 
+  tasksWithVotes = [] 
   dataSource = new MatTableDataSource<Task>();
   username=this.cookieService.get('username')
+
   constructor(
     private srvLogin: AuthService, private router: Router, 
     private cookieService: CookieService, private apiService: AppApiServiceService, private changeDetectorRefs: ChangeDetectorRef) {
@@ -51,22 +51,9 @@ export class TaskComponent implements OnInit {
     this.aggregateVotesWithTasks()
   }
 
-  // createTask() {
-  //   this.apiService.putTask(
-  //     this.taskForm.controls.description.value,
-  //     this.username,
-  //     this.taskForm.controls.reward.value,
-  //     this.taskForm.controls.ifFailed.value).subscribe(data => {
-  //       this.taskForm.reset()
-  //       this.getData()
-  //     })
-  // }
-
   getTasks() {
     return new Promise<[]>((resolve, reject) => {
       this.apiService.getTasks().subscribe(data => {
-        // console.log(data)
-        // console.log(data.length)
         resolve(data)
       })
     })
@@ -75,7 +62,6 @@ export class TaskComponent implements OnInit {
   getVotes(){
     return new Promise<[]>((resolve, reject) => {
       this.apiService.getVotes().subscribe(data => {
-        //console.log(data)
         resolve(data)
       })
     })
@@ -91,6 +77,8 @@ export class TaskComponent implements OnInit {
       })
       
     })
+    newData.sort((a, b) => b.votes - a.votes);
+
     this.dataSource.data = newData;
   }
 
