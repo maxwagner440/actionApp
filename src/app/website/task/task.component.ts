@@ -22,6 +22,7 @@ import { Task } from '../models/task.model';
 export class TaskComponent implements OnInit {
   taskForm: FormGroup
   displayedColumns: string[] = ['description','created_by'];
+  displayedColumnsTopTen: string[] = ['description', 'votes']
   expandedElement: Task | null
   tasks = [];
   votes = [];
@@ -37,8 +38,14 @@ export class TaskComponent implements OnInit {
 
   ngOnInit() {
     this.defineForm()
-    this.getTasks()
-    this.getVotes()
+    this.getData()    
+  }
+
+  async getData(){
+    this.tasks = []
+    this.tasks = await this.getTasks()
+    this.votes = []
+    this.votes = await this.getVotes()
     this.aggregateVotesWithTasks()
   }
 
@@ -49,46 +56,53 @@ export class TaskComponent implements OnInit {
       this.taskForm.controls.reward.value,
       this.taskForm.controls.ifFailed.value).subscribe(data => {
         this.taskForm.reset()
-        this.getTasks()
+        this.getData()
       })
   }
 
   getTasks() {
-    this.apiService.getTasks().subscribe(data => {
-      console.log(data)
-      console.log(data.length)
-      this.tasks=data
+    return new Promise<[]>((resolve, reject) => {
+      this.apiService.getTasks().subscribe(data => {
+        // console.log(data)
+        // console.log(data.length)
+        resolve(data)
+      })
     })
   }
 
   getVotes(){
-    this.apiService.getVotes().subscribe(data => {
-      console.log(data)
-      this.votes=data
+    return new Promise<[]>((resolve, reject) => {
+      this.apiService.getVotes().subscribe(data => {
+        //console.log(data)
+        resolve(data)
+      })
     })
   }
 
   aggregateVotesWithTasks(){
-    this.tasksWithVotes = []
-    console.log(this.tasks)
     this.tasks.map((task) => {
       var matchingVote = this.votes[task._id.$oid]
-      // Object.keys(this.votes).forEach(key => arrayVal.push(myData[key]));
-      console.log(task)
-      console.log(matchingVote)
-      // if(matching_task)
-      // this.tasksWithVotes.push({
-      //   ...matching_task,
-      //   votes:vote
-      // })
+      if(matchingVote) {
+        this.tasksWithVotes.push({
+          ...task,
+          votes:matchingVote
+        })
+      }
     })
+  }
 
+  voteRow(obj) {
+    console.log(obj._id.$oid)
+    this.apiService.putVote(this.username, obj._id.$oid).subscribe(data => {
+      // console.log(data)
+      this.getData()
+    })
   }
 
   deleteTask(task_id) {
     this.apiService.deleteTask(task_id, this.username).subscribe(data => {
       console.log(data)
-      this.getTasks()
+      this.getData()
     })
   }
 
