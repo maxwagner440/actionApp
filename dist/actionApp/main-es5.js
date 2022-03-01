@@ -91,7 +91,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-nav></app-nav>\r\n<div class=\"container\" class=\"mt-5\">\r\n    <!-- LOGIN -->\r\n    <div class=\"row\" *ngIf=\"showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signInForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"loginUser()\">Sign In</button>\r\n  \r\n            <div *ngIf=\"showSignInInvalid\">Please enter your name!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <!-- SIGN UP -->\r\n    <div class=\"row\" *ngIf=\"!showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signUpForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"name\" placeholder=\"Name\" type=\"text\" formControlName=\"name\">\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"create_user()\">Sign Up</button>\r\n  \r\n            <div *ngIf=\"showSignUpInvalid\">Please enter your info!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <div *ngIf=\"showSpinner\">\r\n      <mat-spinner></mat-spinner>\r\n    </div>\r\n    <div *ngIf=\"incomingSnackMessage\" class=\"row m-3\">\r\n      <div class=\"col-12\">\r\n        <mat-card style=\"background-color:red; color:white;\">{{incomingSnackMessage}}</mat-card>\r\n      </div>\r\n    </div>\r\n    <div class=\"row text-center mt-4\" *ngIf=\"showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10 mx-1\">Not signed up yet? </div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-2\" *ngIf=\"showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10 mx-1\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Sign Up Here</button></div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-4\" *ngIf=\"!showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10\">Already a user?</div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-2\" *ngIf=\"!showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Login</button></div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n  </div>\r\n  ";
+    __webpack_exports__["default"] = "<app-nav></app-nav>\r\n<div class=\"container\" class=\"mt-5\">\r\n    <!-- LOGIN -->\r\n    <div class=\"row\" *ngIf=\"showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signInForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"loginUser()\">Sign In</button>\r\n  \r\n            <div *ngIf=\"showSignInInvalid\">Please enter your name!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <!-- SIGN UP -->\r\n    <div class=\"row\" *ngIf=\"!showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signUpForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"name\" placeholder=\"Name\" type=\"text\" formControlName=\"name\">\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"create_user()\">Sign Up</button>\r\n  \r\n            <div *ngIf=\"showSignUpInvalid\">Please enter your info!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <div *ngIf=\"showSpinner\" class=\"row m-3 text-center\">\r\n      <div class=\"col-4\"></div>\r\n      <div class=\"col-4\">\r\n        <mat-spinner></mat-spinner>\r\n      </div>\r\n      <div class=\"col-4\"></div>\r\n    </div>\r\n    <div *ngIf=\"incomingSnackMessage\" class=\"row m-3\">\r\n      <div class=\"col-12\">\r\n        <mat-card style=\"background-color:red; color:white;\">{{incomingSnackMessage}}</mat-card>\r\n      </div>\r\n    </div>\r\n    <div class=\"row text-center mt-4\" *ngIf=\"showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10 mx-1\">Not signed up yet? </div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-2\" *ngIf=\"showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10 mx-1\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Sign Up Here</button></div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-4\" *ngIf=\"!showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10\">Already a user?</div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-2\" *ngIf=\"!showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Login</button></div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n  </div>\r\n  ";
     /***/
   },
 
@@ -131,7 +131,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-nav></app-nav>\r\n\r\n<div class=\"container my-2\">\r\n  <div class=\"row w-80\">\r\n    <div class=\"col-12 w-60\">\r\n      <div class=\"card text-center\">\r\n        <div class=\"card-body\">\r\n          <h3 class=\"my-4\">Eric's Fate Lies in Your Hands</h3>\r\n          <form [formGroup]=\"taskForm\">\r\n            <textarea class=\"input-width\" id=\"task\" placeholder=\"Task\" type=\"text\"\r\n              formControlName=\"description\"></textarea>\r\n            <input class=\"input-width my-2\" id=\"ifFailed\" placeholder=\"If Failed\" type=\"text\" formControlName=\"ifFailed\">\r\n            <input class=\"input-width my-2\" id=\"reward\" placeholder=\"If Successful\" type=\"text\" formControlName=\"reward\">\r\n          </form>\r\n          <button class=\"m-4\" type=\"button\" (click)=\"createTask()\">Create Task</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!-- \r\n<table mat-table [dataSource]=\"tasks\" class=\"mat-elevation-z8\">\r\n\r\n    <ng-container matColumnDef=\"description\">\r\n      <th mat-header-cell *matHeaderCellDef> Task </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.description}} </td>\r\n    </ng-container>\r\n  \r\n    <ng-container matColumnDef=\"if_failed\">\r\n      <th mat-header-cell *matHeaderCellDef> If Failed </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.if_failed}} </td>\r\n    </ng-container>\r\n  \r\n    <ng-container matColumnDef=\"reward\">\r\n      <th mat-header-cell *matHeaderCellDef> If Victorious </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.reward}} </td>\r\n    </ng-container>\r\n  \r\n    <ng-container matColumnDef=\"created_by\">\r\n      <th mat-header-cell *matHeaderCellDef> The Creator </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.created_by}} </td>\r\n    </ng-container>\r\n\r\n    <ng-container matColumnDef=\"action\">\r\n        <th mat-header-cell *matHeaderCellDef> Action </th>\r\n        <td mat-cell *matCellDef=\"let element\" class=\"action-link pointer\"> \r\n          <button [disabled]=\"username!==element.created_by\" (click)=\"deleteRowData(element)\">Delete</button>  \r\n        </td>\r\n      </ng-container>\r\n  \r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n  </table> -->\r\n\r\n\r\n<table mat-table [dataSource]=\"tasks\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n  <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumns\">\r\n    <th mat-header-cell *matHeaderCellDef> {{column}} </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n  </ng-container>\r\n\r\n  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->\r\n  <ng-container matColumnDef=\"expandedDetail\">\r\n    <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\r\n      <div class=\"example-element-detail\" [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n        <!-- <div class=\"example-element-diagram\">\r\n          <div class=\"example-element-position\"> {{element.if_failed}} </div>\r\n          <div class=\"example-element-symbol\"> {{element.reward}} </div>\r\n          <div class=\"example-element-name\"> {{element.created_by}} </div>\r\n        </div>\r\n        <div class=\"pointer\">\r\n            <button [disabled]=\"username!==element.created_by\" (click)=\"deleteRowData(element)\">Delete</button>  \r\n        </div> -->\r\n        <div class=\"row w-100\">\r\n          <div class=\"col-10\">\r\n            <div class=\"example-element-diagram\">\r\n              <div class=\"example-element-position\"> {{element.if_failed}} </div>\r\n              <div class=\"example-element-symbol\"> {{element.reward}} </div>\r\n              <div class=\"example-element-name\"> {{element.created_by}} </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-2\">\r\n            <div class=\"pointer\">\r\n              <button [disabled]=\"username!==element.created_by\" (click)=\"deleteRowData(element)\">Delete</button>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n\r\n\r\n      </div>\r\n    </td>\r\n  </ng-container>\r\n\r\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n  <tr mat-row *matRowDef=\"let element; columns: displayedColumns;\" class=\"example-element-row\"\r\n    [class.example-expanded-row]=\"expandedElement === element\"\r\n    (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n  </tr>\r\n  <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n</table>\r\n\r\n\r\n<!-- <button (click)=\"aggregateVotesWithTasks()\">aggregate homes</button> -->";
+    __webpack_exports__["default"] = "<app-nav></app-nav>\r\n\r\n<div class=\"container my-2\">\r\n  <div class=\"row w-80\">\r\n    <div class=\"col-12 w-60\">\r\n      <div class=\"card text-center\">\r\n        <div class=\"card-body\">\r\n          <h3 class=\"my-4\">Eric's Fate Lies in Your Hands</h3>\r\n          <form [formGroup]=\"taskForm\">\r\n            <textarea class=\"input-width\" id=\"task\" placeholder=\"Task\" type=\"text\"\r\n              formControlName=\"description\"></textarea>\r\n            <input class=\"input-width my-2\" id=\"ifFailed\" placeholder=\"If Failed\" type=\"text\"\r\n              formControlName=\"ifFailed\">\r\n            <input class=\"input-width my-2\" id=\"reward\" placeholder=\"If Successful\" type=\"text\"\r\n              formControlName=\"reward\">\r\n          </form>\r\n          <button class=\"m-4\" type=\"button\" (click)=\"createTask()\">Create Task</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<mat-tab-group dynamicHeight>\r\n  \r\n  <mat-tab label=\"All Tasks\">\r\n    <div class=\"example-large-box mat-elevation-z4\">\r\n      <!-- TABLE -->\r\n      <table mat-table [dataSource]=\"tasks\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n        <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumns\">\r\n          <th mat-header-cell *matHeaderCellDef> {{column}} </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"expandedDetail\">\r\n          <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\r\n            <div class=\"example-element-detail\" [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n              <div class=\"row w-100\">\r\n                <div class=\"col-10\">\r\n                  <div class=\"example-element-diagram\">\r\n                    <div class=\"example-element-position\"> {{element.if_failed}} </div>\r\n                    <div class=\"example-element-symbol\"> {{element.reward}} </div>\r\n                    <div class=\"example-element-name\"> {{element.created_by}} </div>\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-2\">\r\n                  <div class=\"pointer\">\r\n                    <!-- <button [disabled]=\"username==element.created_by\" (click)=\"voteRow(element)\">Vote</button> -->\r\n                    <button  (click)=\"voteRow(element)\">Vote</button>\r\n\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </td>\r\n        </ng-container>\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n        <tr mat-row *matRowDef=\"let element; columns: displayedColumns;\" class=\"example-element-row\"\r\n          [class.example-expanded-row]=\"expandedElement === element\"\r\n          (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n        </tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n      </table>\r\n\r\n    </div>\r\n  </mat-tab>\r\n\r\n\r\n  <mat-tab label=\"Top Ten Tasks\">\r\n    <ng-template matTabContent>\r\n      <div class=\"example-small-box mat-elevation-z4\">\r\n\r\n        <!-- TABLE -->\r\n        <table mat-table [dataSource]=\"tasksWithVotes\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n          <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumnsTopTen\">\r\n            <th mat-header-cell *matHeaderCellDef> {{column}} </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n          </ng-container>\r\n          <ng-container matColumnDef=\"expandedDetail\">\r\n            <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\r\n              <div class=\"example-element-detail\"\r\n                [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n                <div class=\"row w-100\">\r\n                  <div class=\"col-10\">\r\n                    <div class=\"example-element-diagram\">\r\n                      <div class=\"example-element-position\"> {{element.if_failed}} </div>\r\n                      <div class=\"example-element-symbol\"> {{element.reward}} </div>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </td>\r\n          </ng-container>\r\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumnsTopTen\"></tr>\r\n          <tr mat-row *matRowDef=\"let element; columns: displayedColumnsTopTen;\" class=\"example-element-row\"\r\n            [class.example-expanded-row]=\"expandedElement === element\"\r\n            (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n          </tr>\r\n          <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n        </table>\r\n      </div>\r\n    </ng-template>\r\n  </mat-tab>\r\n\r\n\r\n  <mat-tab label=\"Your Tasks\">\r\n    <!-- TABLE -->\r\n    <table mat-table [dataSource]=\"tasks\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n      <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumns\">\r\n        <th mat-header-cell *matHeaderCellDef> {{column}} </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n      </ng-container>\r\n      <ng-container matColumnDef=\"expandedDetail\">\r\n        <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\r\n          <div class=\"example-element-detail\" [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n            <div class=\"row w-100\">\r\n              <div class=\"col-10\">\r\n                <div class=\"example-element-diagram\">\r\n                  <div class=\"example-element-position\"> {{element.if_failed}} </div>\r\n                  <div class=\"example-element-symbol\"> {{element.reward}} </div>\r\n                  <div class=\"example-element-name\"> {{element.created_by}} </div>\r\n                </div>\r\n              </div>\r\n              <div class=\"col-2\">\r\n                <div class=\"pointer\">\r\n                  <button [disabled]=\"username!==element.created_by\" (click)=\"deleteRowData(element)\">Delete</button>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </ng-container>\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n      <tr mat-row *matRowDef=\"let element; columns: displayedColumns;\" class=\"example-element-row\"\r\n        [class.example-expanded-row]=\"expandedElement === element\"\r\n        (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n      </tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n    </table>\r\n  </mat-tab>\r\n</mat-tab-group>";
     /***/
   },
 
@@ -1625,8 +1625,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "putVote",
-        value: function putVote(body) {
-          return this.http.put(this.baseUrl + this.voteUrl, body);
+        value: function putVote(username, task_id) {
+          return this.http.put(this.baseUrl + this.voteUrl, {
+            "created_by": username,
+            "task_id": task_id
+          });
         }
       }]);
 
@@ -1836,6 +1839,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.cookieService = cookieService;
         this.apiService = apiService;
         this.displayedColumns = ['description', 'created_by'];
+        this.displayedColumnsTopTen = ['description', 'votes'];
         this.tasks = [];
         this.votes = [];
         this.tasksWithVotes = [];
@@ -1852,9 +1856,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "ngOnInit",
         value: function ngOnInit() {
           this.defineForm();
-          this.getTasks();
-          this.getVotes();
-          this.aggregateVotesWithTasks();
+          this.getData();
+        }
+      }, {
+        key: "getData",
+        value: function getData() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    this.tasks = [];
+                    _context.next = 3;
+                    return this.getTasks();
+
+                  case 3:
+                    this.tasks = _context.sent;
+                    this.votes = [];
+                    _context.next = 7;
+                    return this.getVotes();
+
+                  case 7:
+                    this.votes = _context.sent;
+                    this.aggregateVotesWithTasks();
+
+                  case 9:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
         }
       }, {
         key: "createTask",
@@ -1864,7 +1896,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.apiService.putTask(this.taskForm.controls.description.value, this.username, this.taskForm.controls.reward.value, this.taskForm.controls.ifFailed.value).subscribe(function (data) {
             _this4.taskForm.reset();
 
-            _this4.getTasks();
+            _this4.getData();
           });
         }
       }, {
@@ -1872,10 +1904,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getTasks() {
           var _this5 = this;
 
-          this.apiService.getTasks().subscribe(function (data) {
-            console.log(data);
-            console.log(data.length);
-            _this5.tasks = data;
+          return new Promise(function (resolve, reject) {
+            _this5.apiService.getTasks().subscribe(function (data) {
+              // console.log(data)
+              // console.log(data.length)
+              resolve(data);
+            });
           });
         }
       }, {
@@ -1883,9 +1917,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getVotes() {
           var _this6 = this;
 
-          this.apiService.getVotes().subscribe(function (data) {
-            console.log(data);
-            _this6.votes = data;
+          return new Promise(function (resolve, reject) {
+            _this6.apiService.getVotes().subscribe(function (data) {
+              //console.log(data)
+              resolve(data);
+            });
           });
         }
       }, {
@@ -1893,28 +1929,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function aggregateVotesWithTasks() {
           var _this7 = this;
 
-          this.tasksWithVotes = [];
-          console.log(this.tasks);
           this.tasks.map(function (task) {
-            var matchingVote = _this7.votes[task._id.$oid]; // Object.keys(this.votes).forEach(key => arrayVal.push(myData[key]));
+            var matchingVote = _this7.votes[task._id.$oid];
 
-            console.log(task);
-            console.log(matchingVote); // if(matching_task)
-            // this.tasksWithVotes.push({
-            //   ...matching_task,
-            //   votes:vote
-            // })
+            if (matchingVote) {
+              _this7.tasksWithVotes.push(Object.assign({}, task, {
+                votes: matchingVote
+              }));
+            }
+          });
+        }
+      }, {
+        key: "voteRow",
+        value: function voteRow(obj) {
+          var _this8 = this;
+
+          console.log(obj._id.$oid);
+          this.apiService.putVote(this.username, obj._id.$oid).subscribe(function (data) {
+            // console.log(data)
+            _this8.getData();
           });
         }
       }, {
         key: "deleteTask",
         value: function deleteTask(task_id) {
-          var _this8 = this;
+          var _this9 = this;
 
           this.apiService.deleteTask(task_id, this.username).subscribe(function (data) {
             console.log(data);
 
-            _this8.getTasks();
+            _this9.getData();
           });
         }
       }, {
@@ -2176,7 +2220,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     });
 
     WebsiteModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _website_routing_module__WEBPACK_IMPORTED_MODULE_4__["WebsiteRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSidenavModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatGridListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatMenuModule"]],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _website_routing_module__WEBPACK_IMPORTED_MODULE_4__["WebsiteRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSidenavModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatGridListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatMenuModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTabsModule"]],
       declarations: [_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"], _nav_nav_component__WEBPACK_IMPORTED_MODULE_10__["NavComponent"], _task_task_component__WEBPACK_IMPORTED_MODULE_11__["TaskComponent"], _vote_vote_component__WEBPACK_IMPORTED_MODULE_12__["VoteComponent"]],
       providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_7__["CookieService"]]
     })], WebsiteModule);
