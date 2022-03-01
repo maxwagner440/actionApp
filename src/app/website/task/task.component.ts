@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
@@ -6,6 +6,7 @@ import { AppApiServiceService } from '../service/app-api-service.service';
 import { AuthService } from '../service/auth-service.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import { Task } from '../models/task.model';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-task',
@@ -26,11 +27,12 @@ export class TaskComponent implements OnInit {
   expandedElement: Task | null
   tasks = [];
   votes = [];
-  tasksWithVotes = []
+  tasksWithVotes =[] 
+  dataSource = new MatTableDataSource<Task>();
   username=this.cookieService.get('username')
   constructor(
     private srvLogin: AuthService, private router: Router, 
-    private cookieService: CookieService, private apiService: AppApiServiceService) {
+    private cookieService: CookieService, private apiService: AppApiServiceService, private changeDetectorRefs: ChangeDetectorRef) {
     if (!srvLogin.checkLogValues()) {  
       router.navigate(['/login', { navMessage: "Please login" }]);  
     }
@@ -49,16 +51,16 @@ export class TaskComponent implements OnInit {
     this.aggregateVotesWithTasks()
   }
 
-  createTask() {
-    this.apiService.putTask(
-      this.taskForm.controls.description.value,
-      this.username,
-      this.taskForm.controls.reward.value,
-      this.taskForm.controls.ifFailed.value).subscribe(data => {
-        this.taskForm.reset()
-        this.getData()
-      })
-  }
+  // createTask() {
+  //   this.apiService.putTask(
+  //     this.taskForm.controls.description.value,
+  //     this.username,
+  //     this.taskForm.controls.reward.value,
+  //     this.taskForm.controls.ifFailed.value).subscribe(data => {
+  //       this.taskForm.reset()
+  //       this.getData()
+  //     })
+  // }
 
   getTasks() {
     return new Promise<[]>((resolve, reject) => {
@@ -80,15 +82,16 @@ export class TaskComponent implements OnInit {
   }
 
   aggregateVotesWithTasks(){
+    var newData = []
     this.tasks.map((task) => {
       var matchingVote = this.votes[task._id.$oid]
-      if(matchingVote) {
-        this.tasksWithVotes.push({
-          ...task,
-          votes:matchingVote
-        })
-      }
+      newData.push({
+        ...task,
+        votes:matchingVote ? matchingVote : 0
+      })
+      
     })
+    this.dataSource.data = newData;
   }
 
   voteRow(obj) {
@@ -99,17 +102,17 @@ export class TaskComponent implements OnInit {
     })
   }
 
-  deleteTask(task_id) {
-    this.apiService.deleteTask(task_id, this.username).subscribe(data => {
-      console.log(data)
-      this.getData()
-    })
-  }
+  // deleteTask(task_id) {
+  //   this.apiService.deleteTask(task_id, this.username).subscribe(data => {
+  //     console.log(data)
+  //     this.getData()
+  //   })
+  // }
 
-  deleteRowData(obj){
-    console.log(obj._id.$oid)
-    this.deleteTask(obj._id.$oid)
-  }
+  // deleteRowData(obj){
+  //   console.log(obj._id.$oid)
+  //   this.deleteTask(obj._id.$oid)
+  // }
 
   defineForm(){
     this.taskForm = new FormGroup({
