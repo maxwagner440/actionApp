@@ -9,7 +9,7 @@ import { LoginComponent } from "./login/login.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NavComponent } from "./nav/nav.component";
 import { TaskComponent } from "./task/task.component";
-import { VoteComponent } from "./vote/vote.component";
+import { MyTasksComponent } from "./my-tasks/my-tasks.component";
 
 
 
@@ -38,7 +38,7 @@ import { VoteComponent } from "./vote/vote.component";
       LoginComponent,
       NavComponent,
       TaskComponent,
-      VoteComponent,
+      MyTasksComponent,
     ],
     providers: [ CookieService ]
   })

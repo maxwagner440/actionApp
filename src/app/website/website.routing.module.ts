@@ -3,7 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
 import { TaskComponent } from "./task/task.component";
-import { VoteComponent } from "./vote/vote.component";
+import { MyTasksComponent } from "./my-tasks/my-tasks.component";
 
 export const websiteRoutes: Routes = [
     {
@@ -13,7 +13,7 @@ export const websiteRoutes: Routes = [
       path: 'task', component: TaskComponent
     },
     {
-      path: 'vote', component: VoteComponent
+      path: 'my-tasks', component: MyTasksComponent
     },
     {
         path: '**', component: HomeComponent
