@@ -1,0 +1,10 @@
+.dropshadowclass {
+    width:80%;
+    padding: 5px;
+    border: solid 1px #EFEFEF;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius:5px;
+    }
+    

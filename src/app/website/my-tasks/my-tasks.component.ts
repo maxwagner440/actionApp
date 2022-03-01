@@ -44,16 +44,16 @@ export class MyTasksComponent implements OnInit {
   }
 
   getTasksByUser(username) {
-    // return new Promise<[]>((resolve, reject) => {
+    var newTasks = []
       this.apiService.getTasks().subscribe(data => {
-        this.tasks = data.map((task) => {
+        data.map((task) => {
           if(task.created_by == username){
-            return task
+            newTasks.push(task)
           }
         })
-        console.log(this.tasks)
       })
-    // })
+
+    this.tasks = newTasks
   }
 
   deleteTask(task_id) {
