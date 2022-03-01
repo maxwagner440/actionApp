@@ -37,8 +37,12 @@
       </div>
       <div class="col"></div>
     </div>
-    <div *ngIf="showSpinner">
-      <mat-spinner></mat-spinner>
+    <div *ngIf="showSpinner" class="row m-3 text-center">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <mat-spinner></mat-spinner>
+      </div>
+      <div class="col-4"></div>
     </div>
     <div *ngIf="incomingSnackMessage" class="row m-3">
       <div class="col-12">

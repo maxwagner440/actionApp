@@ -65,8 +65,8 @@ export class AppApiServiceService {
     return this.http.get<any>(this.baseUrl+this.voteUrl+"s");
   }
 
-  putVote(body) {
-    return this.http.put<any>(this.baseUrl+this.voteUrl, body);
+  putVote(username, task_id) {
+    return this.http.put<any>(this.baseUrl+this.voteUrl, {"created_by":username, "task_id":task_id});
   }
 
   // postVote(body) {

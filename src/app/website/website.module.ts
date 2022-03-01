@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { HomeComponent } from "./home/home.component";
 import { WebsiteRoutingModule } from "./website.routing.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { MatButtonModule, MatCardModule, MatDialogModule, MatGridListModule, MatIconModule, MatListModule, MatMenuModule, MatProgressSpinnerModule, MatSidenavModule, MatTableModule, MatToolbarModule } from "@angular/material";
+import { MatButtonModule, MatCardModule, MatDialogModule, MatGridListModule, MatIconModule, MatListModule, MatMenuModule, MatProgressSpinnerModule, MatSidenavModule, MatTableModule, MatTabsModule, MatToolbarModule } from "@angular/material";
 import { CookieService } from "ngx-cookie-service";
 import { LoginComponent } from "./login/login.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -31,6 +31,7 @@ import { VoteComponent } from "./vote/vote.component";
       MatProgressSpinnerModule,
       MatCardModule,
       MatMenuModule,
+      MatTabsModule,
     ],
     declarations: [
       HomeComponent,

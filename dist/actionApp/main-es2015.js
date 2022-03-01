@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-nav></app-nav>\r\n<div class=\"container\" class=\"mt-5\">\r\n    <!-- LOGIN -->\r\n    <div class=\"row\" *ngIf=\"showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signInForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"loginUser()\">Sign In</button>\r\n  \r\n            <div *ngIf=\"showSignInInvalid\">Please enter your name!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <!-- SIGN UP -->\r\n    <div class=\"row\" *ngIf=\"!showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signUpForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"name\" placeholder=\"Name\" type=\"text\" formControlName=\"name\">\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"create_user()\">Sign Up</button>\r\n  \r\n            <div *ngIf=\"showSignUpInvalid\">Please enter your info!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <div *ngIf=\"showSpinner\">\r\n      <mat-spinner></mat-spinner>\r\n    </div>\r\n    <div *ngIf=\"incomingSnackMessage\" class=\"row m-3\">\r\n      <div class=\"col-12\">\r\n        <mat-card style=\"background-color:red; color:white;\">{{incomingSnackMessage}}</mat-card>\r\n      </div>\r\n    </div>\r\n    <div class=\"row text-center mt-4\" *ngIf=\"showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10 mx-1\">Not signed up yet? </div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-2\" *ngIf=\"showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10 mx-1\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Sign Up Here</button></div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-4\" *ngIf=\"!showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10\">Already a user?</div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-2\" *ngIf=\"!showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Login</button></div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n  </div>\r\n  ");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-nav></app-nav>\r\n<div class=\"container\" class=\"mt-5\">\r\n    <!-- LOGIN -->\r\n    <div class=\"row\" *ngIf=\"showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signInForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"loginUser()\">Sign In</button>\r\n  \r\n            <div *ngIf=\"showSignInInvalid\">Please enter your name!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <!-- SIGN UP -->\r\n    <div class=\"row\" *ngIf=\"!showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signUpForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"name\" placeholder=\"Name\" type=\"text\" formControlName=\"name\">\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"create_user()\">Sign Up</button>\r\n  \r\n            <div *ngIf=\"showSignUpInvalid\">Please enter your info!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <div *ngIf=\"showSpinner\" class=\"row m-3 text-center\">\r\n      <div class=\"col-4\"></div>\r\n      <div class=\"col-4\">\r\n        <mat-spinner></mat-spinner>\r\n      </div>\r\n      <div class=\"col-4\"></div>\r\n    </div>\r\n    <div *ngIf=\"incomingSnackMessage\" class=\"row m-3\">\r\n      <div class=\"col-12\">\r\n        <mat-card style=\"background-color:red; color:white;\">{{incomingSnackMessage}}</mat-card>\r\n      </div>\r\n    </div>\r\n    <div class=\"row text-center mt-4\" *ngIf=\"showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10 mx-1\">Not signed up yet? </div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-2\" *ngIf=\"showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10 mx-1\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Sign Up Here</button></div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-4\" *ngIf=\"!showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10\">Already a user?</div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-2\" *ngIf=\"!showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Login</button></div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n  </div>\r\n  ");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-nav></app-nav>\r\n\r\n<div class=\"container my-2\">\r\n  <div class=\"row w-80\">\r\n    <div class=\"col-12 w-60\">\r\n      <div class=\"card text-center\">\r\n        <div class=\"card-body\">\r\n          <h3 class=\"my-4\">Eric's Fate Lies in Your Hands</h3>\r\n          <form [formGroup]=\"taskForm\">\r\n            <textarea class=\"input-width\" id=\"task\" placeholder=\"Task\" type=\"text\"\r\n              formControlName=\"description\"></textarea>\r\n            <input class=\"input-width my-2\" id=\"ifFailed\" placeholder=\"If Failed\" type=\"text\" formControlName=\"ifFailed\">\r\n            <input class=\"input-width my-2\" id=\"reward\" placeholder=\"If Successful\" type=\"text\" formControlName=\"reward\">\r\n          </form>\r\n          <button class=\"m-4\" type=\"button\" (click)=\"createTask()\">Create Task</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!-- \r\n<table mat-table [dataSource]=\"tasks\" class=\"mat-elevation-z8\">\r\n\r\n    <ng-container matColumnDef=\"description\">\r\n      <th mat-header-cell *matHeaderCellDef> Task </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.description}} </td>\r\n    </ng-container>\r\n  \r\n    <ng-container matColumnDef=\"if_failed\">\r\n      <th mat-header-cell *matHeaderCellDef> If Failed </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.if_failed}} </td>\r\n    </ng-container>\r\n  \r\n    <ng-container matColumnDef=\"reward\">\r\n      <th mat-header-cell *matHeaderCellDef> If Victorious </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.reward}} </td>\r\n    </ng-container>\r\n  \r\n    <ng-container matColumnDef=\"created_by\">\r\n      <th mat-header-cell *matHeaderCellDef> The Creator </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.created_by}} </td>\r\n    </ng-container>\r\n\r\n    <ng-container matColumnDef=\"action\">\r\n        <th mat-header-cell *matHeaderCellDef> Action </th>\r\n        <td mat-cell *matCellDef=\"let element\" class=\"action-link pointer\"> \r\n          <button [disabled]=\"username!==element.created_by\" (click)=\"deleteRowData(element)\">Delete</button>  \r\n        </td>\r\n      </ng-container>\r\n  \r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n  </table> -->\r\n\r\n\r\n<table mat-table [dataSource]=\"tasks\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n  <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumns\">\r\n    <th mat-header-cell *matHeaderCellDef> {{column}} </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n  </ng-container>\r\n\r\n  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->\r\n  <ng-container matColumnDef=\"expandedDetail\">\r\n    <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\r\n      <div class=\"example-element-detail\" [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n        <!-- <div class=\"example-element-diagram\">\r\n          <div class=\"example-element-position\"> {{element.if_failed}} </div>\r\n          <div class=\"example-element-symbol\"> {{element.reward}} </div>\r\n          <div class=\"example-element-name\"> {{element.created_by}} </div>\r\n        </div>\r\n        <div class=\"pointer\">\r\n            <button [disabled]=\"username!==element.created_by\" (click)=\"deleteRowData(element)\">Delete</button>  \r\n        </div> -->\r\n        <div class=\"row w-100\">\r\n          <div class=\"col-10\">\r\n            <div class=\"example-element-diagram\">\r\n              <div class=\"example-element-position\"> {{element.if_failed}} </div>\r\n              <div class=\"example-element-symbol\"> {{element.reward}} </div>\r\n              <div class=\"example-element-name\"> {{element.created_by}} </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-2\">\r\n            <div class=\"pointer\">\r\n              <button [disabled]=\"username!==element.created_by\" (click)=\"deleteRowData(element)\">Delete</button>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n\r\n\r\n      </div>\r\n    </td>\r\n  </ng-container>\r\n\r\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n  <tr mat-row *matRowDef=\"let element; columns: displayedColumns;\" class=\"example-element-row\"\r\n    [class.example-expanded-row]=\"expandedElement === element\"\r\n    (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n  </tr>\r\n  <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n</table>\r\n\r\n\r\n<!-- <button (click)=\"aggregateVotesWithTasks()\">aggregate homes</button> -->");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-nav></app-nav>\r\n\r\n<div class=\"container my-2\">\r\n  <div class=\"row w-80\">\r\n    <div class=\"col-12 w-60\">\r\n      <div class=\"card text-center\">\r\n        <div class=\"card-body\">\r\n          <h3 class=\"my-4\">Eric's Fate Lies in Your Hands</h3>\r\n          <form [formGroup]=\"taskForm\">\r\n            <textarea class=\"input-width\" id=\"task\" placeholder=\"Task\" type=\"text\"\r\n              formControlName=\"description\"></textarea>\r\n            <input class=\"input-width my-2\" id=\"ifFailed\" placeholder=\"If Failed\" type=\"text\"\r\n              formControlName=\"ifFailed\">\r\n            <input class=\"input-width my-2\" id=\"reward\" placeholder=\"If Successful\" type=\"text\"\r\n              formControlName=\"reward\">\r\n          </form>\r\n          <button class=\"m-4\" type=\"button\" (click)=\"createTask()\">Create Task</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<mat-tab-group dynamicHeight>\r\n  \r\n  <mat-tab label=\"All Tasks\">\r\n    <div class=\"example-large-box mat-elevation-z4\">\r\n      <!-- TABLE -->\r\n      <table mat-table [dataSource]=\"tasks\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n        <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumns\">\r\n          <th mat-header-cell *matHeaderCellDef> {{column}} </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"expandedDetail\">\r\n          <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\r\n            <div class=\"example-element-detail\" [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n              <div class=\"row w-100\">\r\n                <div class=\"col-10\">\r\n                  <div class=\"example-element-diagram\">\r\n                    <div class=\"example-element-position\"> {{element.if_failed}} </div>\r\n                    <div class=\"example-element-symbol\"> {{element.reward}} </div>\r\n                    <div class=\"example-element-name\"> {{element.created_by}} </div>\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-2\">\r\n                  <div class=\"pointer\">\r\n                    <!-- <button [disabled]=\"username==element.created_by\" (click)=\"voteRow(element)\">Vote</button> -->\r\n                    <button  (click)=\"voteRow(element)\">Vote</button>\r\n\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </td>\r\n        </ng-container>\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n        <tr mat-row *matRowDef=\"let element; columns: displayedColumns;\" class=\"example-element-row\"\r\n          [class.example-expanded-row]=\"expandedElement === element\"\r\n          (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n        </tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n      </table>\r\n\r\n    </div>\r\n  </mat-tab>\r\n\r\n\r\n  <mat-tab label=\"Top Ten Tasks\">\r\n    <ng-template matTabContent>\r\n      <div class=\"example-small-box mat-elevation-z4\">\r\n\r\n        <!-- TABLE -->\r\n        <table mat-table [dataSource]=\"tasksWithVotes\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n          <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumnsTopTen\">\r\n            <th mat-header-cell *matHeaderCellDef> {{column}} </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n          </ng-container>\r\n          <ng-container matColumnDef=\"expandedDetail\">\r\n            <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\r\n              <div class=\"example-element-detail\"\r\n                [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n                <div class=\"row w-100\">\r\n                  <div class=\"col-10\">\r\n                    <div class=\"example-element-diagram\">\r\n                      <div class=\"example-element-position\"> {{element.if_failed}} </div>\r\n                      <div class=\"example-element-symbol\"> {{element.reward}} </div>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </td>\r\n          </ng-container>\r\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumnsTopTen\"></tr>\r\n          <tr mat-row *matRowDef=\"let element; columns: displayedColumnsTopTen;\" class=\"example-element-row\"\r\n            [class.example-expanded-row]=\"expandedElement === element\"\r\n            (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n          </tr>\r\n          <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n        </table>\r\n      </div>\r\n    </ng-template>\r\n  </mat-tab>\r\n\r\n\r\n  <mat-tab label=\"Your Tasks\">\r\n    <!-- TABLE -->\r\n    <table mat-table [dataSource]=\"tasks\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n      <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumns\">\r\n        <th mat-header-cell *matHeaderCellDef> {{column}} </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n      </ng-container>\r\n      <ng-container matColumnDef=\"expandedDetail\">\r\n        <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\r\n          <div class=\"example-element-detail\" [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n            <div class=\"row w-100\">\r\n              <div class=\"col-10\">\r\n                <div class=\"example-element-diagram\">\r\n                  <div class=\"example-element-position\"> {{element.if_failed}} </div>\r\n                  <div class=\"example-element-symbol\"> {{element.reward}} </div>\r\n                  <div class=\"example-element-name\"> {{element.created_by}} </div>\r\n                </div>\r\n              </div>\r\n              <div class=\"col-2\">\r\n                <div class=\"pointer\">\r\n                  <button [disabled]=\"username!==element.created_by\" (click)=\"deleteRowData(element)\">Delete</button>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </ng-container>\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n      <tr mat-row *matRowDef=\"let element; columns: displayedColumns;\" class=\"example-element-row\"\r\n        [class.example-expanded-row]=\"expandedElement === element\"\r\n        (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n      </tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n    </table>\r\n  </mat-tab>\r\n</mat-tab-group>");
 
 /***/ }),
 
@@ -868,8 +868,8 @@ let AppApiServiceService = class AppApiServiceService {
     getVotes() {
         return this.http.get(this.baseUrl + this.voteUrl + "s");
     }
-    putVote(body) {
-        return this.http.put(this.baseUrl + this.voteUrl, body);
+    putVote(username, task_id) {
+        return this.http.put(this.baseUrl + this.voteUrl, { "created_by": username, "task_id": task_id });
     }
 };
 AppApiServiceService.ctorParameters = () => [
@@ -982,6 +982,7 @@ let TaskComponent = class TaskComponent {
         this.cookieService = cookieService;
         this.apiService = apiService;
         this.displayedColumns = ['description', 'created_by'];
+        this.displayedColumnsTopTen = ['description', 'votes'];
         this.tasks = [];
         this.votes = [];
         this.tasksWithVotes = [];
@@ -992,48 +993,59 @@ let TaskComponent = class TaskComponent {
     }
     ngOnInit() {
         this.defineForm();
-        this.getTasks();
-        this.getVotes();
-        this.aggregateVotesWithTasks();
+        this.getData();
+    }
+    getData() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.tasks = [];
+            this.tasks = yield this.getTasks();
+            this.votes = [];
+            this.votes = yield this.getVotes();
+            this.aggregateVotesWithTasks();
+        });
     }
     createTask() {
         this.apiService.putTask(this.taskForm.controls.description.value, this.username, this.taskForm.controls.reward.value, this.taskForm.controls.ifFailed.value).subscribe(data => {
             this.taskForm.reset();
-            this.getTasks();
+            this.getData();
         });
     }
     getTasks() {
-        this.apiService.getTasks().subscribe(data => {
-            console.log(data);
-            console.log(data.length);
-            this.tasks = data;
+        return new Promise((resolve, reject) => {
+            this.apiService.getTasks().subscribe(data => {
+                // console.log(data)
+                // console.log(data.length)
+                resolve(data);
+            });
         });
     }
     getVotes() {
-        this.apiService.getVotes().subscribe(data => {
-            console.log(data);
-            this.votes = data;
+        return new Promise((resolve, reject) => {
+            this.apiService.getVotes().subscribe(data => {
+                //console.log(data)
+                resolve(data);
+            });
         });
     }
     aggregateVotesWithTasks() {
-        this.tasksWithVotes = [];
-        console.log(this.tasks);
         this.tasks.map((task) => {
             var matchingVote = this.votes[task._id.$oid];
-            // Object.keys(this.votes).forEach(key => arrayVal.push(myData[key]));
-            console.log(task);
-            console.log(matchingVote);
-            // if(matching_task)
-            // this.tasksWithVotes.push({
-            //   ...matching_task,
-            //   votes:vote
-            // })
+            if (matchingVote) {
+                this.tasksWithVotes.push(Object.assign({}, task, { votes: matchingVote }));
+            }
+        });
+    }
+    voteRow(obj) {
+        console.log(obj._id.$oid);
+        this.apiService.putVote(this.username, obj._id.$oid).subscribe(data => {
+            // console.log(data)
+            this.getData();
         });
     }
     deleteTask(task_id) {
         this.apiService.deleteTask(task_id, this.username).subscribe(data => {
             console.log(data);
-            this.getTasks();
+            this.getData();
         });
     }
     deleteRowData(obj) {
@@ -1188,6 +1200,7 @@ WebsiteModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"],
             _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"],
             _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatMenuModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTabsModule"],
         ],
         declarations: [
             _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"],
