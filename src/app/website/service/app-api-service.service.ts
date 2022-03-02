@@ -16,7 +16,7 @@ export class AppApiServiceService {
   userUrl = '/user';
   taskUrl = "/task";
   voteUrl = "/vote";
-
+  photoUrl = "/photos";
   //USER
   getUser() {
     return this.http.get<User>(this.baseUrl+this.userUrl+"/6217eb6d5eacf615cf83ebd8");
@@ -69,9 +69,15 @@ export class AppApiServiceService {
     return this.http.put<any>(this.baseUrl+this.voteUrl, {"created_by":username, "task_id":task_id});
   }
 
-  // postVote(body) {
-  //   return this.http.post<any>(this.baseUrl+this.voteUrl, body);
-  // }
+  
+  //PHOTOS
+  postPhoto(file){
+    console.log(file)
+    return this.http.post<any>(this.baseUrl+this.photoUrl, file)
+  }
+  getPhotos(){
+    return this.http.get<any>(this.baseUrl+this.photoUrl)
+  }
 }
 
 

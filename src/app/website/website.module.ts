@@ -10,7 +10,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NavComponent } from "./nav/nav.component";
 import { TaskComponent } from "./task/task.component";
 import { MyTasksComponent } from "./my-tasks/my-tasks.component";
-
+import { PhotoUploadComponent } from "./photo-upload/photo-upload.component";
+import { PhotoViewComponent } from "./photo-view/photo-view.component";
 
 
 @NgModule({
@@ -39,6 +40,8 @@ import { MyTasksComponent } from "./my-tasks/my-tasks.component";
       NavComponent,
       TaskComponent,
       MyTasksComponent,
+      PhotoUploadComponent,
+      PhotoViewComponent,
     ],
     providers: [ CookieService ]
   })
