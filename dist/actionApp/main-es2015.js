@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-nav></app-nav>\r\n\r\n\r\n<div class=\"row text-center w-100\">\r\n    <div class=\"col my-4 w-100\">\r\n        <h2>Let's get weird!</h2>\r\n    </div>\r\n</div>\r\n<div class=\"row w-100\">\r\n    <div class=\"col w-100\">\r\n        <img class=\"dropshadowclass\" src=\"../../../assets/Shirtless-Eric-Cropped-Animation.jpg\">\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-nav></app-nav>\r\n\r\n\r\n<div class=\"row text-center w-100\">\r\n    <div class=\"col my-4 w-100\">\r\n        <h2>Let's get weird!</h2>\r\n    </div>\r\n</div>\r\n<div class=\"row w-100\">\r\n    <div class=\"col w-100\">\r\n        <img class=\"dropshadowclass\" src=\"../../../assets/Shirtless-Eric-Cropped-Animation.jpg\">\r\n    </div>\r\n</div>\r\n\r\n<div class=\"row text-center w-100\">\r\n    <div class=\"col my-4 w-100\">\r\n        <h3>The Idea</h3>\r\n    </div>\r\n</div>\r\n<div class=\"row text-center w-100\">\r\n    <div class=\"col my-4 w-100\">\r\n        <p>\r\n            Navigate to \"My Tasks\" to create your own task(s). Feel free to be a real asshole here... \r\n        </p>\r\n        <p>\r\n            Then navigate the \"Tasks\" to vote on all tasks available. The top ten will be used in the random generator.\r\n        </p>\r\n    </div>\r\n</div>");
 
 /***/ }),
 
@@ -84,7 +84,33 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar color=\"primary\">\r\n  <mat-toolbar-row>\r\n    <button mat-icon-button class=\"example-icon\" (click)=\"showNavigation()\"\r\n      aria-label=\"Example icon-button with menu icon\">\r\n      <mat-icon [matMenuTriggerFor]=\"menu\">menu</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\">\r\n      <button mat-menu-item (click)=\"routeToLink('home')\">Home</button>\r\n      <button mat-menu-item (click)=\"routeToLink('task')\">Tasks</button>\r\n      <button mat-menu-item (click)=\"routeToLink('my-tasks')\">My Tasks</button>\r\n    </mat-menu>\r\n    <span class=\"example-spacer\"></span>\r\n\r\n    <span *ngIf=\"!username\"><button class=\"d-inline\" (click)=\"routeToLink('login')\">Login</button></span>\r\n    <span *ngIf=\"username\"><button class=\"d-inline\" (click)=\"logout()\">Logout</button></span>\r\n  </mat-toolbar-row>\r\n\r\n  <mat-toolbar-row style=\"height:25px\" *ngIf=\"username\">\r\n    <span class=\"example-spacer\"></span>\r\n    <span style=\"font-size: 14px;\">User: {{username}}</span>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar color=\"primary\">\r\n  <mat-toolbar-row>\r\n    <button mat-icon-button class=\"example-icon\" (click)=\"showNavigation()\"\r\n      aria-label=\"Example icon-button with menu icon\">\r\n      <mat-icon [matMenuTriggerFor]=\"menu\">menu</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\">\r\n      <button mat-menu-item (click)=\"routeToLink('home')\">Home</button>\r\n      <button mat-menu-item (click)=\"routeToLink('task')\">Tasks</button>\r\n      <button mat-menu-item (click)=\"routeToLink('my-tasks')\">My Tasks</button>\r\n      <button mat-menu-item (click)=\"routeToLink('upload-photo')\">Upload Photo</button>\r\n      <button mat-menu-item (click)=\"routeToLink('view-photos')\">View Photos</button>\r\n\r\n    </mat-menu>\r\n    <span class=\"example-spacer\"></span>\r\n\r\n    <span *ngIf=\"!username\"><button class=\"d-inline\" (click)=\"routeToLink('login')\">Login</button></span>\r\n    <span *ngIf=\"username\"><button class=\"d-inline\" (click)=\"logout()\">Logout</button></span>\r\n  </mat-toolbar-row>\r\n\r\n  <mat-toolbar-row style=\"height:25px\" *ngIf=\"username\">\r\n    <span class=\"example-spacer\"></span>\r\n    <span style=\"font-size: 14px;\">User: {{username}}</span>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/website/photo-upload/photo-upload.component.html":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/website/photo-upload/photo-upload.component.html ***!
+  \********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-nav></app-nav>\n\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6 offset-md-3\">\n            <h3>Choose File</h3>            \n            <div class=\"form-group\">\n                <input type=\"file\" name=\"image\" (change)=\"fileProgress($event)\" />\n            </div>\n            <div *ngIf=\"fileUploadProgress\">\n                Upload progress: {{ fileUploadProgress }}\n            </div>\n            <div class=\"image-preview mb-3\" *ngIf=\"previewUrl\">\n                <img [src]=\"previewUrl\" height=\"300\" />                 \n            </div>\n \n            <div class=\"mb-3\" *ngIf=\"uploadedFilePath\">\n                {{uploadedFilePath}}\n            </div>\n             \n            <div class=\"form-group\">\n                <button class=\"btn btn-primary\"  (click)=\"onSubmit()\">Submit</button>\n            </div>\n        </div>\n    </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/website/photo-view/photo-view.component.html":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/website/photo-view/photo-view.component.html ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-nav></app-nav>\n<div class=\"container my-2\">\n    <div class=\"row w-80\">\n      <div class=\"col-12 w-60\">\n        <div class=\"card text-center\">\n          <div class=\"card-body\">\n            <h3 class=\"my-4\">Let the Fun Begin!</h3>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div> \n<div *ngFor=\"let link of photo_links\">\n    <div class=\"row mx-1 my-2\">\n        <div class=\"col\">\n            <img class=\"image-class\" [src]=\"link\"/>\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -932,6 +958,152 @@ NavComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/website/photo-upload/photo-upload.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/website/photo-upload/photo-upload.component.css ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3dlYnNpdGUvcGhvdG8tdXBsb2FkL3Bob3RvLXVwbG9hZC5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/website/photo-upload/photo-upload.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/website/photo-upload/photo-upload.component.ts ***!
+  \****************************************************************/
+/*! exports provided: PhotoUploadComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PhotoUploadComponent", function() { return PhotoUploadComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/app-api-service.service */ "./src/app/website/service/app-api-service.service.ts");
+
+
+
+let PhotoUploadComponent = class PhotoUploadComponent {
+    constructor(apiService) {
+        this.apiService = apiService;
+        this.fileData = null;
+        this.previewUrl = null;
+        this.fileUploadProgress = null;
+        this.uploadedFilePath = null;
+    }
+    ngOnInit() {
+    }
+    fileProgress(fileInput) {
+        console.log(fileInput.target.files);
+        this.fileData = fileInput.target.files[0];
+        console.log(fileInput);
+        this.preview();
+    }
+    preview() {
+        // Show preview 
+        var mimeType = this.fileData.type;
+        if (mimeType.match(/image\/*/) == null) {
+            return;
+        }
+        var reader = new FileReader();
+        reader.readAsDataURL(this.fileData);
+        reader.onload = (_event) => {
+            this.previewUrl = reader.result;
+        };
+    }
+    onSubmit() {
+        var formData = new FormData();
+        formData.append('file', this.fileData);
+        console.log(this.fileData);
+        console.log(formData);
+        this.apiService.postPhoto(formData).subscribe(data => {
+            console.log(data);
+        });
+        // this.http.post('url/to/your/api', formData)
+        //   .subscribe(res => {
+        //     console.log(res);
+        //     //this.uploadedFilePath = res.data.filePath;
+        //     alert('SUCCESS !!');
+        //   }) 
+    }
+};
+PhotoUploadComponent.ctorParameters = () => [
+    { type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_2__["AppApiServiceService"] }
+];
+PhotoUploadComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-photo-upload',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./photo-upload.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/website/photo-upload/photo-upload.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./photo-upload.component.css */ "./src/app/website/photo-upload/photo-upload.component.css")).default]
+    })
+], PhotoUploadComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/website/photo-view/photo-view.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/website/photo-view/photo-view.component.css ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".image-class {\r\n    max-width: 80%;\r\n    width:80%;\r\n    padding: 5px;\r\n    border: solid 1px #EFEFEF;\r\n    display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  border-radius:5px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2Vic2l0ZS9waG90by12aWV3L3Bob3RvLXZpZXcuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGNBQWM7SUFDZCxTQUFTO0lBQ1QsWUFBWTtJQUNaLHlCQUF5QjtJQUN6QixjQUFjO0VBQ2hCLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIsaUJBQWlCO0FBQ25CIiwiZmlsZSI6InNyYy9hcHAvd2Vic2l0ZS9waG90by12aWV3L3Bob3RvLXZpZXcuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbWFnZS1jbGFzcyB7XHJcbiAgICBtYXgtd2lkdGg6IDgwJTtcclxuICAgIHdpZHRoOjgwJTtcclxuICAgIHBhZGRpbmc6IDVweDtcclxuICAgIGJvcmRlcjogc29saWQgMXB4ICNFRkVGRUY7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICBtYXJnaW4tbGVmdDogYXV0bztcclxuICBtYXJnaW4tcmlnaHQ6IGF1dG87XHJcbiAgYm9yZGVyLXJhZGl1czo1cHg7XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/website/photo-view/photo-view.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/website/photo-view/photo-view.component.ts ***!
+  \************************************************************/
+/*! exports provided: PhotoViewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PhotoViewComponent", function() { return PhotoViewComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/app-api-service.service */ "./src/app/website/service/app-api-service.service.ts");
+
+
+
+let PhotoViewComponent = class PhotoViewComponent {
+    constructor(apiService) {
+        this.apiService = apiService;
+        this.photo_links = [];
+    }
+    ngOnInit() {
+        this.getAllPhotos();
+    }
+    getAllPhotos() {
+        this.apiService.getPhotos().subscribe(data => {
+            this.photo_links = data;
+        });
+    }
+};
+PhotoViewComponent.ctorParameters = () => [
+    { type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_2__["AppApiServiceService"] }
+];
+PhotoViewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-photo-view',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./photo-view.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/website/photo-view/photo-view.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./photo-view.component.css */ "./src/app/website/photo-view/photo-view.component.css")).default]
+    })
+], PhotoViewComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/website/service/app-api-service.service.ts":
 /*!************************************************************!*\
   !*** ./src/app/website/service/app-api-service.service.ts ***!
@@ -956,6 +1128,7 @@ let AppApiServiceService = class AppApiServiceService {
         this.userUrl = '/user';
         this.taskUrl = "/task";
         this.voteUrl = "/vote";
+        this.photoUrl = "/photos";
     }
     //USER
     getUser() {
@@ -993,6 +1166,14 @@ let AppApiServiceService = class AppApiServiceService {
     }
     putVote(username, task_id) {
         return this.http.put(this.baseUrl + this.voteUrl, { "created_by": username, "task_id": task_id });
+    }
+    //PHOTOS
+    postPhoto(file) {
+        console.log(file);
+        return this.http.post(this.baseUrl + this.photoUrl, file);
+    }
+    getPhotos() {
+        return this.http.get(this.baseUrl + this.photoUrl);
     }
 };
 AppApiServiceService.ctorParameters = () => [
@@ -1227,6 +1408,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./nav/nav.component */ "./src/app/website/nav/nav.component.ts");
 /* harmony import */ var _task_task_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./task/task.component */ "./src/app/website/task/task.component.ts");
 /* harmony import */ var _my_tasks_my_tasks_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./my-tasks/my-tasks.component */ "./src/app/website/my-tasks/my-tasks.component.ts");
+/* harmony import */ var _photo_upload_photo_upload_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./photo-upload/photo-upload.component */ "./src/app/website/photo-upload/photo-upload.component.ts");
+/* harmony import */ var _photo_view_photo_view_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./photo-view/photo-view.component */ "./src/app/website/photo-view/photo-view.component.ts");
+
+
 
 
 
@@ -1269,6 +1454,8 @@ WebsiteModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _nav_nav_component__WEBPACK_IMPORTED_MODULE_10__["NavComponent"],
             _task_task_component__WEBPACK_IMPORTED_MODULE_11__["TaskComponent"],
             _my_tasks_my_tasks_component__WEBPACK_IMPORTED_MODULE_12__["MyTasksComponent"],
+            _photo_upload_photo_upload_component__WEBPACK_IMPORTED_MODULE_13__["PhotoUploadComponent"],
+            _photo_view_photo_view_component__WEBPACK_IMPORTED_MODULE_14__["PhotoViewComponent"],
         ],
         providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_7__["CookieService"]]
     })
@@ -1296,6 +1483,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./login/login.component */ "./src/app/website/login/login.component.ts");
 /* harmony import */ var _task_task_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./task/task.component */ "./src/app/website/task/task.component.ts");
 /* harmony import */ var _my_tasks_my_tasks_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./my-tasks/my-tasks.component */ "./src/app/website/my-tasks/my-tasks.component.ts");
+/* harmony import */ var _photo_upload_photo_upload_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./photo-upload/photo-upload.component */ "./src/app/website/photo-upload/photo-upload.component.ts");
+/* harmony import */ var _photo_view_photo_view_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./photo-view/photo-view.component */ "./src/app/website/photo-view/photo-view.component.ts");
+
+
 
 
 
@@ -1312,6 +1503,12 @@ const websiteRoutes = [
     },
     {
         path: 'my-tasks', component: _my_tasks_my_tasks_component__WEBPACK_IMPORTED_MODULE_6__["MyTasksComponent"]
+    },
+    {
+        path: 'upload-photo', component: _photo_upload_photo_upload_component__WEBPACK_IMPORTED_MODULE_7__["PhotoUploadComponent"]
+    },
+    {
+        path: 'view-photos', component: _photo_view_photo_view_component__WEBPACK_IMPORTED_MODULE_8__["PhotoViewComponent"]
     },
     {
         path: '**', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"]

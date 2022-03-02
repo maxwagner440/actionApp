@@ -1,0 +1,19 @@
+<app-nav></app-nav>
+<div class="container my-2">
+    <div class="row w-80">
+      <div class="col-12 w-60">
+        <div class="card text-center">
+          <div class="card-body">
+            <h3 class="my-4">Let the Fun Begin!</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+<div *ngFor="let link of photo_links">
+    <div class="row mx-1 my-2">
+        <div class="col">
+            <img class="image-class" [src]="link"/>
+        </div>
+    </div>
+</div>
