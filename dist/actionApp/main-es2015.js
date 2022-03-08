@@ -784,6 +784,7 @@ let LoginComponent = class LoginComponent {
                 if (data.name && data.email) {
                     this.showSpinner = false;
                     this.cookieService.set('username', data.email);
+                    this.cookieService.set('name', data.name);
                     this.cookieService.set('cookie', this.makeCooke());
                     //this.emitLoginEvent()
                     this.router.navigate(['/home']);
@@ -918,16 +919,17 @@ let MyTasksComponent = class MyTasksComponent {
     ngOnInit() {
         this.defineForm();
         this.username = this.cookieService.get("username");
-        this.getTasksByUser(this.username);
+        this.name = this.cookieService.get("name");
+        this.getTasksByUser();
     }
     showForm() {
         this.showCreateTask = !this.showCreateTask;
     }
-    getTasksByUser(username) {
+    getTasksByUser() {
         var newTasks = [];
         this.apiService.getTasks().subscribe(data => {
             data.map((task) => {
-                if (task.created_by == username) {
+                if (task.created_by == this.name) {
                     newTasks.push(task);
                 }
             });
@@ -935,8 +937,8 @@ let MyTasksComponent = class MyTasksComponent {
         this.tasks = newTasks;
     }
     deleteTask(task_id) {
-        this.apiService.deleteTask(task_id, this.username).subscribe(data => {
-            this.getTasksByUser(this.username);
+        this.apiService.deleteTask(task_id, this.name).subscribe(data => {
+            this.getTasksByUser();
         });
     }
     deleteRowData(obj) {
@@ -944,9 +946,9 @@ let MyTasksComponent = class MyTasksComponent {
     }
     createTask() {
         if (this.taskForm.controls.description.value && this.taskForm.controls.ifFailed.value) {
-            this.apiService.putTask(this.taskForm.controls.description.value, this.username, this.taskForm.controls.ifFailed.value).subscribe(data => {
+            this.apiService.putTask(this.taskForm.controls.description.value, this.name, this.taskForm.controls.ifFailed.value).subscribe(data => {
                 this.taskForm.reset();
-                this.getTasksByUser(this.username);
+                this.getTasksByUser();
             });
         }
         else {
@@ -956,7 +958,7 @@ let MyTasksComponent = class MyTasksComponent {
     completeTask(task) {
         console.log(task);
         this.apiService.completeTask(task._id.$oid).subscribe(data => {
-            this.getTasksByUser(this.username);
+            this.getTasksByUser();
         });
     }
     defineForm() {

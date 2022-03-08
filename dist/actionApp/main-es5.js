@@ -1513,6 +1513,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 _this3.cookieService.set('username', data.email);
 
+                _this3.cookieService.set('name', data.name);
+
                 _this3.cookieService.set('cookie', _this3.makeCooke()); //this.emitLoginEvent()
 
 
@@ -1726,7 +1728,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ngOnInit() {
           this.defineForm();
           this.username = this.cookieService.get("username");
-          this.getTasksByUser(this.username);
+          this.name = this.cookieService.get("name");
+          this.getTasksByUser();
         }
       }, {
         key: "showForm",
@@ -1735,11 +1738,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "getTasksByUser",
-        value: function getTasksByUser(username) {
+        value: function getTasksByUser() {
+          var _this5 = this;
+
           var newTasks = [];
           this.apiService.getTasks().subscribe(function (data) {
             data.map(function (task) {
-              if (task.created_by == username) {
+              if (task.created_by == _this5.name) {
                 newTasks.push(task);
               }
             });
@@ -1749,10 +1754,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteTask",
         value: function deleteTask(task_id) {
-          var _this5 = this;
+          var _this6 = this;
 
-          this.apiService.deleteTask(task_id, this.username).subscribe(function (data) {
-            _this5.getTasksByUser(_this5.username);
+          this.apiService.deleteTask(task_id, this.name).subscribe(function (data) {
+            _this6.getTasksByUser();
           });
         }
       }, {
@@ -1763,13 +1768,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createTask",
         value: function createTask() {
-          var _this6 = this;
+          var _this7 = this;
 
           if (this.taskForm.controls.description.value && this.taskForm.controls.ifFailed.value) {
-            this.apiService.putTask(this.taskForm.controls.description.value, this.username, this.taskForm.controls.ifFailed.value).subscribe(function (data) {
-              _this6.taskForm.reset();
+            this.apiService.putTask(this.taskForm.controls.description.value, this.name, this.taskForm.controls.ifFailed.value).subscribe(function (data) {
+              _this7.taskForm.reset();
 
-              _this6.getTasksByUser(_this6.username);
+              _this7.getTasksByUser();
             });
           } else {
             alert('Please fill out form completely');
@@ -1778,11 +1783,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "completeTask",
         value: function completeTask(task) {
-          var _this7 = this;
+          var _this8 = this;
 
           console.log(task);
           this.apiService.completeTask(task._id.$oid).subscribe(function (data) {
-            _this7.getTasksByUser(_this7.username);
+            _this8.getTasksByUser();
           });
         }
       }, {
@@ -2067,7 +2072,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "preview",
         value: function preview() {
-          var _this8 = this;
+          var _this9 = this;
 
           // Show preview 
           var mimeType = this.fileData.type;
@@ -2080,13 +2085,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           reader.readAsDataURL(this.fileData);
 
           reader.onload = function (_event) {
-            _this8.previewUrl = reader.result;
+            _this9.previewUrl = reader.result;
           };
         }
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this9 = this;
+          var _this10 = this;
 
           this.photoError = null;
           var formData = new FormData();
@@ -2094,15 +2099,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.photoIsLoading = true;
           this.apiService.postPhoto(formData).subscribe(function (data) {
             if (data.response === "Successful upload") {
-              _this9.previewUrl = "";
+              _this10.previewUrl = "";
 
-              _this9.photoUploadForm.reset();
+              _this10.photoUploadForm.reset();
 
-              _this9.photoIsLoading = false;
-              _this9.photoSuccess = "File uploaded Successfully";
+              _this10.photoIsLoading = false;
+              _this10.photoSuccess = "File uploaded Successfully";
             } else {
-              _this9.photoIsLoading = false;
-              _this9.photoError = "Something went wrong. Try again please and thank you";
+              _this10.photoIsLoading = false;
+              _this10.photoError = "Something went wrong. Try again please and thank you";
             }
           }); // this.http.post('url/to/your/api', formData)
           //   .subscribe(res => {
@@ -2222,10 +2227,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllPhotos",
         value: function getAllPhotos() {
-          var _this10 = this;
+          var _this11 = this;
 
           this.apiService.getPhotos().subscribe(function (data) {
-            _this10.photo_links = data;
+            _this11.photo_links = data;
           });
         }
       }]);
@@ -2640,10 +2645,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getTasks",
         value: function getTasks() {
-          var _this11 = this;
+          var _this12 = this;
 
           return new Promise(function (resolve, reject) {
-            _this11.apiService.getTasks().subscribe(function (data) {
+            _this12.apiService.getTasks().subscribe(function (data) {
               resolve(data);
             });
           });
