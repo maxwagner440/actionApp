@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-nav></app-nav>\n\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6 offset-md-3\">\n            <h3>Choose File</h3>            \n            <div class=\"form-group\">\n                <input type=\"file\" name=\"image\" (change)=\"fileProgress($event)\" />\n            </div>\n            <div *ngIf=\"fileUploadProgress\">\n                Upload progress: {{ fileUploadProgress }}\n            </div>\n            <div class=\"image-preview mb-3\" *ngIf=\"previewUrl\">\n                <img [src]=\"previewUrl\" height=\"300\" />                 \n            </div>\n \n            <div class=\"mb-3\" *ngIf=\"uploadedFilePath\">\n                {{uploadedFilePath}}\n            </div>\n             \n            <div class=\"form-group\">\n                <button class=\"btn btn-primary\"  (click)=\"onSubmit()\">Submit</button>\n            </div>\n        </div>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-nav></app-nav>\n\n<!-- <div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6 offset-md-3\">\n            <h3>Choose File</h3>            \n            <div class=\"form-group\">\n                <input type=\"file\" name=\"image\" (change)=\"fileProgress($event)\" />\n            </div>\n            <div *ngIf=\"fileUploadProgress\">\n                Upload progress: {{ fileUploadProgress }}\n            </div>\n            <div class=\"image-preview mb-3\" *ngIf=\"previewUrl\">\n                <img [src]=\"previewUrl\" height=\"300\" />                 \n            </div>\n \n            <div class=\"mb-3\" *ngIf=\"uploadedFilePath\">\n                {{uploadedFilePath}}\n            </div>\n             \n            <div class=\"form-group\">\n                <button class=\"btn btn-primary\"  (click)=\"onSubmit()\">Submit</button>\n            </div>\n        </div>\n    </div>\n</div> -->\n\n<div class=\"container\">\n<form [formGroup]=\"photoUploadForm\">\n    <input class=\"input-width\" id=\"image\" placeholder=\"image\" type=\"file\"\n        formControlName=\"image\" (change)=\"fileProgress($event)\"/>\n    \n    <div class=\"image-preview mb-3\" *ngIf=\"previewUrl\">\n        <img [src]=\"previewUrl\" height=\"300\" />                 \n    </div>\n\n    <div class=\"mb-3\" *ngIf=\"uploadedFilePath\">\n        {{uploadedFilePath}}\n    </div>\n    <div class=\"form-group\">\n        <button class=\"btn btn-primary\"  (click)=\"onSubmit()\">Submit</button>\n    </div>\n\n    \n    \n</form>\n\n</div>\n<div class=\"row w-80\">\n    <div class=\"col-12 w-60\">\n        <div class=\"card text-center\">\n            <div class=\"card-body\">\n                <div *ngIf=\"photoIsLoading\">\n                    <div  class=\"row m-3 text-center\">\n                        <div class=\"col-4\"></div>\n                        <div class=\"col-4\">\n                          <mat-spinner></mat-spinner>\n                        </div>\n                        <div class=\"col-4\"></div>\n                      </div>\n                </div>\n                                \n                <div *ngIf=\"photoError\">\n                    {{photoError}}\n                </div>\n                <div *ngIf=\"photoSuccess\">\n                    {{photoSuccess}}\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n");
 
 /***/ }),
 
@@ -983,19 +983,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PhotoUploadComponent", function() { return PhotoUploadComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/app-api-service.service */ "./src/app/website/service/app-api-service.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service/app-api-service.service */ "./src/app/website/service/app-api-service.service.ts");
+
+
 
 
 
 let PhotoUploadComponent = class PhotoUploadComponent {
-    constructor(apiService) {
+    constructor(apiService, router) {
         this.apiService = apiService;
+        this.router = router;
         this.fileData = null;
         this.previewUrl = null;
-        this.fileUploadProgress = null;
+        this.photoIsLoading = false;
+        this.photoError = null;
+        this.photoSuccess = null;
         this.uploadedFilePath = null;
     }
     ngOnInit() {
+        this.defineForm();
     }
     fileProgress(fileInput) {
         console.log(fileInput.target.files);
@@ -1016,12 +1024,21 @@ let PhotoUploadComponent = class PhotoUploadComponent {
         };
     }
     onSubmit() {
+        this.photoError = null;
         var formData = new FormData();
         formData.append('file', this.fileData);
-        console.log(this.fileData);
-        console.log(formData);
+        this.photoIsLoading = true;
         this.apiService.postPhoto(formData).subscribe(data => {
-            console.log(data);
+            if (data.response === "Successful upload") {
+                this.previewUrl = "";
+                this.photoUploadForm.reset();
+                this.photoIsLoading = false;
+                this.photoSuccess = "File uploaded Successfully";
+            }
+            else {
+                this.photoIsLoading = false;
+                this.photoError = "Something went wrong. Try again please and thank you";
+            }
         });
         // this.http.post('url/to/your/api', formData)
         //   .subscribe(res => {
@@ -1030,9 +1047,15 @@ let PhotoUploadComponent = class PhotoUploadComponent {
         //     alert('SUCCESS !!');
         //   }) 
     }
+    defineForm() {
+        this.photoUploadForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            image: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
+        });
+    }
 };
 PhotoUploadComponent.ctorParameters = () => [
-    { type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_2__["AppApiServiceService"] }
+    { type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_4__["AppApiServiceService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
 PhotoUploadComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

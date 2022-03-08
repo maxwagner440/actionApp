@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AppApiServiceService } from '../service/app-api-service.service';
 
 @Component({
@@ -8,14 +10,18 @@ import { AppApiServiceService } from '../service/app-api-service.service';
 })
 export class PhotoUploadComponent implements OnInit {
 
-  
+  photoUploadForm: FormGroup
+
   fileData: File = null;
   previewUrl:any = null;
-  fileUploadProgress: string = null;
+  photoIsLoading: boolean = false
+  photoError: string = null;
+  photoSuccess: string = null
   uploadedFilePath: string = null;
-  constructor(  private apiService: AppApiServiceService) { }
+  constructor(  private apiService: AppApiServiceService, private router: Router) { }
    
   ngOnInit() {
+    this.defineForm()
   }
    
   fileProgress(fileInput: any) {
@@ -40,12 +46,23 @@ export class PhotoUploadComponent implements OnInit {
   }
    
   onSubmit() {
+      this.photoError = null;
       var formData = new FormData();
       formData.append('file', this.fileData);
-      console.log(this.fileData)
-      console.log(formData)
+
+      this.photoIsLoading = true
       this.apiService.postPhoto(formData).subscribe(data => {
-        console.log(data)
+        
+        if(data.response === "Successful upload"){
+          this.previewUrl=""
+          this.photoUploadForm.reset()
+          this.photoIsLoading = false;
+          this.photoSuccess = "File uploaded Successfully"
+        }
+        else {
+          this.photoIsLoading = false;
+          this.photoError = "Something went wrong. Try again please and thank you"
+        }
       })
       // this.http.post('url/to/your/api', formData)
       //   .subscribe(res => {
@@ -54,4 +71,13 @@ export class PhotoUploadComponent implements OnInit {
       //     alert('SUCCESS !!');
       //   }) 
   }
+
+  defineForm(){
+    this.photoUploadForm = new FormGroup({
+      image: new FormControl(''),
+     
+    });
+    
+  }
+  
 }

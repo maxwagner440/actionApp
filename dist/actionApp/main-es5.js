@@ -151,7 +151,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-nav></app-nav>\n\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6 offset-md-3\">\n            <h3>Choose File</h3>            \n            <div class=\"form-group\">\n                <input type=\"file\" name=\"image\" (change)=\"fileProgress($event)\" />\n            </div>\n            <div *ngIf=\"fileUploadProgress\">\n                Upload progress: {{ fileUploadProgress }}\n            </div>\n            <div class=\"image-preview mb-3\" *ngIf=\"previewUrl\">\n                <img [src]=\"previewUrl\" height=\"300\" />                 \n            </div>\n \n            <div class=\"mb-3\" *ngIf=\"uploadedFilePath\">\n                {{uploadedFilePath}}\n            </div>\n             \n            <div class=\"form-group\">\n                <button class=\"btn btn-primary\"  (click)=\"onSubmit()\">Submit</button>\n            </div>\n        </div>\n    </div>\n</div>";
+    __webpack_exports__["default"] = "<app-nav></app-nav>\n\n<!-- <div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6 offset-md-3\">\n            <h3>Choose File</h3>            \n            <div class=\"form-group\">\n                <input type=\"file\" name=\"image\" (change)=\"fileProgress($event)\" />\n            </div>\n            <div *ngIf=\"fileUploadProgress\">\n                Upload progress: {{ fileUploadProgress }}\n            </div>\n            <div class=\"image-preview mb-3\" *ngIf=\"previewUrl\">\n                <img [src]=\"previewUrl\" height=\"300\" />                 \n            </div>\n \n            <div class=\"mb-3\" *ngIf=\"uploadedFilePath\">\n                {{uploadedFilePath}}\n            </div>\n             \n            <div class=\"form-group\">\n                <button class=\"btn btn-primary\"  (click)=\"onSubmit()\">Submit</button>\n            </div>\n        </div>\n    </div>\n</div> -->\n\n<div class=\"container\">\n<form [formGroup]=\"photoUploadForm\">\n    <input class=\"input-width\" id=\"image\" placeholder=\"image\" type=\"file\"\n        formControlName=\"image\" (change)=\"fileProgress($event)\"/>\n    \n    <div class=\"image-preview mb-3\" *ngIf=\"previewUrl\">\n        <img [src]=\"previewUrl\" height=\"300\" />                 \n    </div>\n\n    <div class=\"mb-3\" *ngIf=\"uploadedFilePath\">\n        {{uploadedFilePath}}\n    </div>\n    <div class=\"form-group\">\n        <button class=\"btn btn-primary\"  (click)=\"onSubmit()\">Submit</button>\n    </div>\n\n    \n    \n</form>\n\n</div>\n<div class=\"row w-80\">\n    <div class=\"col-12 w-60\">\n        <div class=\"card text-center\">\n            <div class=\"card-body\">\n                <div *ngIf=\"photoIsLoading\">\n                    <div  class=\"row m-3 text-center\">\n                        <div class=\"col-4\"></div>\n                        <div class=\"col-4\">\n                          <mat-spinner></mat-spinner>\n                        </div>\n                        <div class=\"col-4\"></div>\n                      </div>\n                </div>\n                                \n                <div *ngIf=\"photoError\">\n                    {{photoError}}\n                </div>\n                <div *ngIf=\"photoSuccess\">\n                    {{photoSuccess}}\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n";
     /***/
   },
 
@@ -1806,24 +1806,41 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../service/app-api-service.service */
     "./src/app/website/service/app-api-service.service.ts");
 
     var PhotoUploadComponent = /*#__PURE__*/function () {
-      function PhotoUploadComponent(apiService) {
+      function PhotoUploadComponent(apiService, router) {
         _classCallCheck(this, PhotoUploadComponent);
 
         this.apiService = apiService;
+        this.router = router;
         this.fileData = null;
         this.previewUrl = null;
-        this.fileUploadProgress = null;
+        this.photoIsLoading = false;
+        this.photoError = null;
+        this.photoSuccess = null;
         this.uploadedFilePath = null;
       }
 
       _createClass(PhotoUploadComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          this.defineForm();
+        }
       }, {
         key: "fileProgress",
         value: function fileProgress(fileInput) {
@@ -1854,18 +1871,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onSubmit",
         value: function onSubmit() {
+          var _this7 = this;
+
+          this.photoError = null;
           var formData = new FormData();
           formData.append('file', this.fileData);
-          console.log(this.fileData);
-          console.log(formData);
+          this.photoIsLoading = true;
           this.apiService.postPhoto(formData).subscribe(function (data) {
-            console.log(data);
+            if (data.response === "Successful upload") {
+              _this7.previewUrl = "";
+
+              _this7.photoUploadForm.reset();
+
+              _this7.photoIsLoading = false;
+              _this7.photoSuccess = "File uploaded Successfully";
+            } else {
+              _this7.photoIsLoading = false;
+              _this7.photoError = "Something went wrong. Try again please and thank you";
+            }
           }); // this.http.post('url/to/your/api', formData)
           //   .subscribe(res => {
           //     console.log(res);
           //     //this.uploadedFilePath = res.data.filePath;
           //     alert('SUCCESS !!');
           //   }) 
+        }
+      }, {
+        key: "defineForm",
+        value: function defineForm() {
+          this.photoUploadForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            image: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('')
+          });
         }
       }]);
 
@@ -1874,7 +1910,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     PhotoUploadComponent.ctorParameters = function () {
       return [{
-        type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_2__["AppApiServiceService"]
+        type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_4__["AppApiServiceService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
       }];
     };
 
@@ -1964,10 +2002,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllPhotos",
         value: function getAllPhotos() {
-          var _this7 = this;
+          var _this8 = this;
 
           this.apiService.getPhotos().subscribe(function (data) {
-            _this7.photo_links = data;
+            _this8.photo_links = data;
           });
         }
       }]);
@@ -2397,10 +2435,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getTasks",
         value: function getTasks() {
-          var _this8 = this;
+          var _this9 = this;
 
           return new Promise(function (resolve, reject) {
-            _this8.apiService.getTasks().subscribe(function (data) {
+            _this9.apiService.getTasks().subscribe(function (data) {
               resolve(data);
             });
           });
@@ -2408,10 +2446,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getVotes",
         value: function getVotes() {
-          var _this9 = this;
+          var _this10 = this;
 
           return new Promise(function (resolve, reject) {
-            _this9.apiService.getVotes().subscribe(function (data) {
+            _this10.apiService.getVotes().subscribe(function (data) {
               resolve(data);
             });
           });
@@ -2419,11 +2457,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "aggregateVotesWithTasks",
         value: function aggregateVotesWithTasks() {
-          var _this10 = this;
+          var _this11 = this;
 
           var newData = [];
           this.tasks.map(function (task) {
-            var matchingVote = _this10.votes[task._id.$oid];
+            var matchingVote = _this11.votes[task._id.$oid];
             newData.push(Object.assign({}, task, {
               votes: matchingVote ? matchingVote : 0
             }));
@@ -2436,12 +2474,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "voteRow",
         value: function voteRow(obj) {
-          var _this11 = this;
+          var _this12 = this;
 
           console.log(obj._id.$oid);
           this.apiService.putVote(this.username, obj._id.$oid).subscribe(function (data) {
             // console.log(data)
-            _this11.getData();
+            _this12.getData();
           });
         } // deleteTask(task_id) {
         //   this.apiService.deleteTask(task_id, this.username).subscribe(data => {
