@@ -72,6 +72,10 @@ export class PhotoUploadComponent implements OnInit {
       //   }) 
   }
 
+  routeToPics(){
+    this.router.navigate(['/view-photos']);
+  }
+
   defineForm(){
     this.photoUploadForm = new FormGroup({
       image: new FormControl(''),
