@@ -1,6 +1,6 @@
 <app-nav></app-nav>
 
-<div class="container my-2">
+<div class="container my-3">
     <button *ngIf="!showCreateTask"  (click)="showForm()">Make a Task<span class="material-icons">arrow_drop_down</span></button>
     <button *ngIf="showCreateTask" (click)="showForm()">Make a Task<span class="material-icons">arrow_drop_up</span></button>
     <div class="row w-80" *ngIf="showCreateTask">
@@ -13,8 +13,6 @@
                             formControlName="description"></textarea>
                         <input class="input-width my-2" id="ifFailed" placeholder="If Failed" type="text"
                             formControlName="ifFailed">
-                        <input class="input-width my-2" id="reward" placeholder="If Successful" type="text"
-                            formControlName="reward">
                     </form>
                     <button class="m-4" type="button" (click)="createTask()">Create Task</button>
                 </div>
@@ -45,12 +43,20 @@
                             <div class="example-element-diagram">
                                 <div class="example-element-position"><b>Task:</b> {{element.description}} </div>
                                 <div class="example-element-position"><b>Failed:</b> {{element.if_failed}} </div>
-                                <div class="example-element-position"><b>Succeeded:</b> {{element.reward}} </div>
+                                <div class="example-element-position" *ngIf="element && element.completed=='True'">
+                                    <mat-icon style="color:green;">check</mat-icon>
+                                  </div>
+                                  <div class="example-element-position" *ngIf="element && element.completed=='False'">
+                                    <mat-icon style="color:red;">cancel</mat-icon>
+                                  </div>
                             </div>
                         </div>
                         <div class="col-3">
-                            <div class="pointer">
+                            <div class="my-2">
                                 <button (click)="deleteRowData(element)">Delete</button>
+                            </div>
+                            <div class="my-2">
+                                <button (click)="completeTask(element)">Complete</button>
                             </div>
                         </div>
                     </div>

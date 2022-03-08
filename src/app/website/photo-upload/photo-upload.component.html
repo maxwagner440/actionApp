@@ -1,73 +1,52 @@
 <app-nav></app-nav>
-
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h3>Choose File</h3>            
-            <div class="form-group">
-                <input type="file" name="image" (change)="fileProgress($event)" />
-            </div>
-            <div *ngIf="fileUploadProgress">
-                Upload progress: {{ fileUploadProgress }}
-            </div>
-            <div class="image-preview mb-3" *ngIf="previewUrl">
-                <img [src]="previewUrl" height="300" />                 
-            </div>
- 
-            <div class="mb-3" *ngIf="uploadedFilePath">
-                {{uploadedFilePath}}
-            </div>
-             
-            <div class="form-group">
-                <button class="btn btn-primary"  (click)="onSubmit()">Submit</button>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <div class="container">
-<form [formGroup]="photoUploadForm">
-    <input class="input-width" id="image" placeholder="image" type="file"
-        formControlName="image" (change)="fileProgress($event)"/>
-    
-    <div class="image-preview mb-3" *ngIf="previewUrl">
-        <img [src]="previewUrl" height="300" />                 
-    </div>
-
-    <div class="mb-3" *ngIf="uploadedFilePath">
-        {{uploadedFilePath}}
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary"  (click)="onSubmit()">Submit</button>
-    </div>
-
-    
-    
-</form>
-
-</div>
-<div class="row w-80">
-    <div class="col-12 w-60">
-        <div class="card text-center">
-            <div class="card-body">
-                <div *ngIf="photoIsLoading">
-                    <div  class="row m-3 text-center">
-                        <div class="col-4"></div>
-                        <div class="col-4">
-                          <mat-spinner></mat-spinner>
+    <div class="row w-80">
+        <div class="col-12 w-60">
+            <div class="card text-center">
+                <div class="card-body" style="overflow:hidden;">
+                    <form [formGroup]="photoUploadForm">
+                        <input class="input-width" id="image" placeholder="image" type="file"
+                            formControlName="image" (change)="fileProgress($event)"/>
+                        <div class="mb-3" *ngIf="uploadedFilePath">
+                            {{uploadedFilePath}}
                         </div>
-                        <div class="col-4"></div>
-                      </div>
+                        <div class="image-preview m-3" *ngIf="previewUrl">
+                            <img [src]="previewUrl" height="300" />                 
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <button class="btn btn-primary"  (click)="onSubmit()">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                                
-                <div *ngIf="photoError">
-                    {{photoError}}
-                </div>
-                <div *ngIf="photoSuccess">
-                    {{photoSuccess}}
+            </div>
+        </div>
+    </div>
+    <div class="row w-80">
+        <div class="col-12 w-60">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div *ngIf="photoIsLoading">
+                        <div  class="row m-3 text-center">
+                            <div class="col-4"></div>
+                            <div class="col-4">
+                              <mat-spinner></mat-spinner>
+                            </div>
+                            <div class="col-4"></div>
+                          </div>
+                    </div>
+                                    
+                    <div *ngIf="photoError">
+                        {{photoError}}
+                    </div>
+                    <div *ngIf="photoSuccess">
+                        {{photoSuccess}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 

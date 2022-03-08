@@ -67,11 +67,10 @@ export class MyTasksComponent implements OnInit {
   }
   
   createTask() {
-    if(this.taskForm.controls.description.value && this.taskForm.controls.reward.value && this.taskForm.controls.ifFailed.value) {
+    if(this.taskForm.controls.description.value && this.taskForm.controls.ifFailed.value) {
       this.apiService.putTask(
         this.taskForm.controls.description.value,
         this.username,
-        this.taskForm.controls.reward.value,
         this.taskForm.controls.ifFailed.value).subscribe(data => {
           this.taskForm.reset()
           this.getTasksByUser(this.username)
@@ -83,11 +82,17 @@ export class MyTasksComponent implements OnInit {
   }
 
   
+  completeTask(task){
+    console.log(task)
+    this.apiService.completeTask(task._id.$oid).subscribe(data => {
+      this.getTasksByUser(this.username)
+    })
+  }
+
   defineForm(){
     this.taskForm = new FormGroup({
       description: new FormControl('', Validators.required),
       ifFailed: new FormControl('', Validators.required),
-      reward: new FormControl('', Validators.required),
     });
     
   }
