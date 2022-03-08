@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
         if(data.name && data.email) {
           this.showSpinner = false;
           this.cookieService.set('username', data.email);
+          this.cookieService.set('name', data.name)
           this.cookieService.set('cookie', this.makeCooke())
           //this.emitLoginEvent()
           this.router.navigate(['/home']);
