@@ -12,6 +12,7 @@ import { TaskComponent } from "./task/task.component";
 import { MyTasksComponent } from "./my-tasks/my-tasks.component";
 import { PhotoUploadComponent } from "./photo-upload/photo-upload.component";
 import { PhotoViewComponent } from "./photo-view/photo-view.component";
+import { AllTaskComponent } from "./all-tasks/all-tasks.component";
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { PhotoViewComponent } from "./photo-view/photo-view.component";
       MatTabsModule,
     ],
     declarations: [
+      AllTaskComponent,
       HomeComponent,
       LoginComponent,
       NavComponent,

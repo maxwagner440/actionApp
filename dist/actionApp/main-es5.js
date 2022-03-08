@@ -56,6 +56,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/website/all-tasks/all-tasks.component.html":
+  /*!**************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/website/all-tasks/all-tasks.component.html ***!
+    \**************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppWebsiteAllTasksAllTasksComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<app-nav></app-nav>\r\n<div class=\"text-center my-4\">\r\n<h2>All Tasks</h2>\r\n</div>\r\n\r\n\r\n    <div class=\"example-large-box mat-elevation-z4\" *ngIf=\"dataSource.data.length > 0\">\r\n      <table mat-table [dataSource]=\"dataSource\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n        <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumnsTopTen\">\r\n          <th mat-header-cell *matHeaderCellDef> Tasks For Shithead </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"expandedDetail\">\r\n          <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumnsTopTen.length\">\r\n            <div class=\"example-element-detail\" [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n              <div class=\"row w-100\">\r\n                <div class=\"col-11\">\r\n                  <div class=\"example-element-diagram\">\r\n                    <div class=\"example-element-position\"><b>Task:</b> {{element.description}} </div>\r\n                    <div class=\"example-element-position\"><b>Failed:</b> {{element.if_failed}} </div>\r\n                    <div class=\"example-element-position\"><b>Created By:</b> {{element.created_by}} </div>\r\n                    <div class=\"example-element-position\" *ngIf=\"element && element.completed=='True'\">\r\n                      <mat-icon style=\"color:green;\">check</mat-icon>\r\n                    </div>\r\n                    <div class=\"example-element-position\" *ngIf=\"element && element.completed=='False'\">\r\n                      <mat-icon style=\"color:red;\">cancel</mat-icon>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-1\">\r\n                 \r\n                </div>\r\n              </div>\r\n            </div>\r\n          </td>\r\n        </ng-container>\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsTopTen\"></tr>\r\n        <tr mat-row *matRowDef=\"let element; columns: displayedColumnsTopTen;\" class=\"example-element-row\"\r\n          [class.example-expanded-row]=\"expandedElement === element\"\r\n          (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n        </tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n      </table> \r\n";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/website/home/home.component.html":
   /*!****************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/website/home/home.component.html ***!
@@ -91,7 +111,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-nav></app-nav>\r\n<div class=\"container\" class=\"mt-5\">\r\n    <!-- LOGIN -->\r\n    <div class=\"row\" *ngIf=\"showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signInForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"loginUser()\">Sign In</button>\r\n  \r\n            <div *ngIf=\"showSignInInvalid\">Please enter your name!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <!-- SIGN UP -->\r\n    <div class=\"row\" *ngIf=\"!showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signUpForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"name\" placeholder=\"Name\" type=\"text\" formControlName=\"name\">\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"create_user()\">Sign Up</button>\r\n  \r\n            <div *ngIf=\"showSignUpInvalid\">Please enter your info!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <div *ngIf=\"showSpinner\" class=\"row m-3 text-center\">\r\n      <div class=\"col-4\"></div>\r\n      <div class=\"col-4\">\r\n        <mat-spinner></mat-spinner>\r\n      </div>\r\n      <div class=\"col-4\"></div>\r\n    </div>\r\n    <div *ngIf=\"incomingSnackMessage\" class=\"row m-3\">\r\n      <div class=\"col-12\">\r\n        <mat-card style=\"background-color:red; color:white;\">{{incomingSnackMessage}}</mat-card>\r\n      </div>\r\n    </div>\r\n    <div class=\"row text-center mt-4\" *ngIf=\"showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10 mx-1\">Not signed up yet? </div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-2\" *ngIf=\"showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10 mx-1\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Sign Up Here</button></div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-4\" *ngIf=\"!showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10\">Already a user?</div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-2\" *ngIf=\"!showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Login</button></div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n  </div>\r\n  ";
+    __webpack_exports__["default"] = "<app-nav></app-nav>\r\n<div class=\"container\" class=\"mt-5\">\r\n    <!-- LOGIN -->\r\n    <div class=\"row\" *ngIf=\"showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signInForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Username\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"loginUser()\">Sign In</button>\r\n  \r\n            <div *ngIf=\"showSignInInvalid\">Please enter your name!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <!-- SIGN UP -->\r\n    <div class=\"row\" *ngIf=\"!showLogin\">\r\n      <div class=\"col\"></div>\r\n      <div class=\"col\">\r\n        <div class=\"card\" style=\"width: 18rem;\">\r\n          <div class=\"card-body\">\r\n            <form [formGroup]=\"signUpForm\" >\r\n              <input class=\"mx-4 my-2\" id=\"name\" placeholder=\"Name\" type=\"text\" formControlName=\"name\">\r\n              <input class=\"mx-4 my-2\" id=\"email\" placeholder=\"Email\" type=\"email\" formControlName=\"email\">\r\n              <input class=\"mx-4 my-2\" id=\"password\" placeholder=\"Password\" type=\"password\" formControlName=\"password\">\r\n            </form>\r\n            <button class=\"m-4\"type=\"button\" (click)=\"create_user()\">Sign Up</button>\r\n  \r\n            <div *ngIf=\"showSignUpInvalid\">Please enter your info!</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\"></div>\r\n    </div>\r\n    <div *ngIf=\"showSpinner\" class=\"row m-3 text-center\">\r\n      <div class=\"col-4\"></div>\r\n      <div class=\"col-4\">\r\n        <mat-spinner></mat-spinner>\r\n      </div>\r\n      <div class=\"col-4\"></div>\r\n    </div>\r\n    <div *ngIf=\"incomingSnackMessage\" class=\"row m-3\">\r\n      <div class=\"col-12\">\r\n        <mat-card style=\"background-color:red; color:white;\">{{incomingSnackMessage}}</mat-card>\r\n      </div>\r\n    </div>\r\n    <div class=\"row text-center mt-4\" *ngIf=\"showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10 mx-1\">Not signed up yet? </div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-2\" *ngIf=\"showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10 mx-1\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Sign Up Here</button></div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-4\" *ngIf=\"!showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10\">Already a user?</div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n    <div class=\"row text-center mt-2\" *ngIf=\"!showLogin\">\r\n      <div class=\"col-1\"></div>\r\n      <div class=\"col-10\"><button type=\"button\" (click)=\"showLogin =! showLogin\">Login</button></div>\r\n      <div class=\"col-1\"></div>\r\n    </div>\r\n  </div>\r\n  ";
     /***/
   },
 
@@ -111,7 +131,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-nav></app-nav>\r\n\r\n<div class=\"container my-2\">\r\n    <button *ngIf=\"!showCreateTask\"  (click)=\"showForm()\">Make a Task<span class=\"material-icons\">arrow_drop_down</span></button>\r\n    <button *ngIf=\"showCreateTask\" (click)=\"showForm()\">Make a Task<span class=\"material-icons\">arrow_drop_up</span></button>\r\n    <div class=\"row w-80\" *ngIf=\"showCreateTask\">\r\n        <div class=\"col-12 w-60\">\r\n            <div class=\"card text-center\">\r\n                <div class=\"card-body\">\r\n                    <h3 class=\"my-4\">Eric's Fate Lies in Your Hands</h3>\r\n                    <form [formGroup]=\"taskForm\">\r\n                        <textarea class=\"input-width\" id=\"task\" placeholder=\"Task\" type=\"text\"\r\n                            formControlName=\"description\"></textarea>\r\n                        <input class=\"input-width my-2\" id=\"ifFailed\" placeholder=\"If Failed\" type=\"text\"\r\n                            formControlName=\"ifFailed\">\r\n                        <input class=\"input-width my-2\" id=\"reward\" placeholder=\"If Successful\" type=\"text\"\r\n                            formControlName=\"reward\">\r\n                    </form>\r\n                    <button class=\"m-4\" type=\"button\" (click)=\"createTask()\">Create Task</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n<div *ngIf=\"tasks.length > 0\">\r\n    <!-- TABLE -->\r\n    <div class=\"row text-center my-3\">\r\n        <div class=\"col\">\r\n            <h2>My Tasks</h2>\r\n        </div>\r\n    </div>\r\n    <table mat-table [dataSource]=\"tasks\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n        <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumns\">\r\n            <th mat-header-cell *matHeaderCellDef> Task(s) </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"expandedDetail\">\r\n            <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\r\n                <div class=\"example-element-detail\"\r\n                    [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n                    <div class=\"row w-100\">\r\n                        <div class=\"col-9\">\r\n                            <div class=\"example-element-diagram\">\r\n                                <div class=\"example-element-position\"><b>Task:</b> {{element.description}} </div>\r\n                                <div class=\"example-element-position\"><b>Failed:</b> {{element.if_failed}} </div>\r\n                                <div class=\"example-element-position\"><b>Succeeded:</b> {{element.reward}} </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-3\">\r\n                            <div class=\"pointer\">\r\n                                <button (click)=\"deleteRowData(element)\">Delete</button>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </td>\r\n        </ng-container>\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n        <tr mat-row *matRowDef=\"let element; columns: displayedColumns;\" class=\"example-element-row\"\r\n            [class.example-expanded-row]=\"expandedElement === element\"\r\n            (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n        </tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n    </table>\r\n</div>\r\n<div class=\"text-center\" *ngIf=\"tasks.length === 0\">\r\n    <div class=\"card text-center\">\r\n        <div class=\"card-body\">\r\n            <h4>Make a task...bitch!</h4>\r\n        </div>\r\n    </div>\r\n</div>";
+    __webpack_exports__["default"] = "<app-nav></app-nav>\r\n\r\n<div class=\"container my-3\">\r\n    <button *ngIf=\"!showCreateTask\"  (click)=\"showForm()\">Make a Task<span class=\"material-icons\">arrow_drop_down</span></button>\r\n    <button *ngIf=\"showCreateTask\" (click)=\"showForm()\">Make a Task<span class=\"material-icons\">arrow_drop_up</span></button>\r\n    <div class=\"row w-80\" *ngIf=\"showCreateTask\">\r\n        <div class=\"col-12 w-60\">\r\n            <div class=\"card text-center\">\r\n                <div class=\"card-body\">\r\n                    <h3 class=\"my-4\">Eric's Fate Lies in Your Hands</h3>\r\n                    <form [formGroup]=\"taskForm\">\r\n                        <textarea class=\"input-width\" id=\"task\" placeholder=\"Task\" type=\"text\"\r\n                            formControlName=\"description\"></textarea>\r\n                        <input class=\"input-width my-2\" id=\"ifFailed\" placeholder=\"If Failed\" type=\"text\"\r\n                            formControlName=\"ifFailed\">\r\n                    </form>\r\n                    <button class=\"m-4\" type=\"button\" (click)=\"createTask()\">Create Task</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n<div *ngIf=\"tasks.length > 0\">\r\n    <!-- TABLE -->\r\n    <div class=\"row text-center my-3\">\r\n        <div class=\"col\">\r\n            <h2>My Tasks</h2>\r\n        </div>\r\n    </div>\r\n    <table mat-table [dataSource]=\"tasks\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n        <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumns\">\r\n            <th mat-header-cell *matHeaderCellDef> Task(s) </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"expandedDetail\">\r\n            <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\r\n                <div class=\"example-element-detail\"\r\n                    [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n                    <div class=\"row w-100\">\r\n                        <div class=\"col-9\">\r\n                            <div class=\"example-element-diagram\">\r\n                                <div class=\"example-element-position\"><b>Task:</b> {{element.description}} </div>\r\n                                <div class=\"example-element-position\"><b>Failed:</b> {{element.if_failed}} </div>\r\n                                <div class=\"example-element-position\" *ngIf=\"element && element.completed=='True'\">\r\n                                    <mat-icon style=\"color:green;\">check</mat-icon>\r\n                                  </div>\r\n                                  <div class=\"example-element-position\" *ngIf=\"element && element.completed=='False'\">\r\n                                    <mat-icon style=\"color:red;\">cancel</mat-icon>\r\n                                  </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-3\">\r\n                            <div class=\"my-2\">\r\n                                <button (click)=\"deleteRowData(element)\">Delete</button>\r\n                            </div>\r\n                            <div class=\"my-2\">\r\n                                <button (click)=\"completeTask(element)\">Complete</button>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </td>\r\n        </ng-container>\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n        <tr mat-row *matRowDef=\"let element; columns: displayedColumns;\" class=\"example-element-row\"\r\n            [class.example-expanded-row]=\"expandedElement === element\"\r\n            (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n        </tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n    </table>\r\n</div>\r\n<div class=\"text-center\" *ngIf=\"tasks.length === 0\">\r\n    <div class=\"card text-center\">\r\n        <div class=\"card-body\">\r\n            <h4>Make a task...bitch!</h4>\r\n        </div>\r\n    </div>\r\n</div>";
     /***/
   },
 
@@ -131,7 +151,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-toolbar color=\"primary\">\r\n  <mat-toolbar-row>\r\n    <button mat-icon-button class=\"example-icon\" (click)=\"showNavigation()\"\r\n      aria-label=\"Example icon-button with menu icon\">\r\n      <mat-icon [matMenuTriggerFor]=\"menu\">menu</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\">\r\n      <button mat-menu-item (click)=\"routeToLink('home')\">Home</button>\r\n      <button mat-menu-item (click)=\"routeToLink('task')\">Tasks</button>\r\n      <button mat-menu-item (click)=\"routeToLink('my-tasks')\">My Tasks</button>\r\n      <button mat-menu-item (click)=\"routeToLink('upload-photo')\">Upload Photo</button>\r\n      <button mat-menu-item (click)=\"routeToLink('view-photos')\">View Photos</button>\r\n\r\n    </mat-menu>\r\n    <span class=\"example-spacer\"></span>\r\n\r\n    <span *ngIf=\"!username\"><button class=\"d-inline\" (click)=\"routeToLink('login')\">Login</button></span>\r\n    <span *ngIf=\"username\"><button class=\"d-inline\" (click)=\"logout()\">Logout</button></span>\r\n  </mat-toolbar-row>\r\n\r\n  <mat-toolbar-row style=\"height:25px\" *ngIf=\"username\">\r\n    <span class=\"example-spacer\"></span>\r\n    <span style=\"font-size: 14px;\">User: {{username}}</span>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>";
+    __webpack_exports__["default"] = "<mat-toolbar color=\"primary\">\r\n  <mat-toolbar-row>\r\n    <button mat-icon-button class=\"example-icon\" (click)=\"showNavigation()\"\r\n      aria-label=\"Example icon-button with menu icon\">\r\n      <mat-icon [matMenuTriggerFor]=\"menu\">menu</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\">\r\n      <button mat-menu-item (click)=\"routeToLink('home')\">Home</button>\r\n      <button mat-menu-item (click)=\"routeToLink('all-tasks')\">All Tasks</button>\r\n      <button mat-menu-item (click)=\"routeToLink('task')\">Task Generator</button>\r\n      <button mat-menu-item (click)=\"routeToLink('my-tasks')\">My Tasks</button>\r\n      <button mat-menu-item (click)=\"routeToLink('upload-photo')\">Upload Photo</button>\r\n      <button mat-menu-item (click)=\"routeToLink('view-photos')\">View Photos</button>\r\n\r\n    </mat-menu>\r\n    <span class=\"example-spacer\"></span>\r\n\r\n    <span *ngIf=\"!username\"><button class=\"d-inline\" (click)=\"routeToLink('login')\">Login</button></span>\r\n    <span *ngIf=\"username\"><button class=\"d-inline\" (click)=\"logout()\">Logout</button></span>\r\n  </mat-toolbar-row>\r\n\r\n  <mat-toolbar-row style=\"height:25px\" *ngIf=\"username\">\r\n    <span class=\"example-spacer\"></span>\r\n    <span style=\"font-size: 14px;\">User: {{username}}</span>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>";
     /***/
   },
 
@@ -151,7 +171,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-nav></app-nav>\n\n<!-- <div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6 offset-md-3\">\n            <h3>Choose File</h3>            \n            <div class=\"form-group\">\n                <input type=\"file\" name=\"image\" (change)=\"fileProgress($event)\" />\n            </div>\n            <div *ngIf=\"fileUploadProgress\">\n                Upload progress: {{ fileUploadProgress }}\n            </div>\n            <div class=\"image-preview mb-3\" *ngIf=\"previewUrl\">\n                <img [src]=\"previewUrl\" height=\"300\" />                 \n            </div>\n \n            <div class=\"mb-3\" *ngIf=\"uploadedFilePath\">\n                {{uploadedFilePath}}\n            </div>\n             \n            <div class=\"form-group\">\n                <button class=\"btn btn-primary\"  (click)=\"onSubmit()\">Submit</button>\n            </div>\n        </div>\n    </div>\n</div> -->\n\n<div class=\"container\">\n<form [formGroup]=\"photoUploadForm\">\n    <input class=\"input-width\" id=\"image\" placeholder=\"image\" type=\"file\"\n        formControlName=\"image\" (change)=\"fileProgress($event)\"/>\n    \n    <div class=\"image-preview mb-3\" *ngIf=\"previewUrl\">\n        <img [src]=\"previewUrl\" height=\"300\" />                 \n    </div>\n\n    <div class=\"mb-3\" *ngIf=\"uploadedFilePath\">\n        {{uploadedFilePath}}\n    </div>\n    <div class=\"form-group\">\n        <button class=\"btn btn-primary\"  (click)=\"onSubmit()\">Submit</button>\n    </div>\n\n    \n    \n</form>\n\n</div>\n<div class=\"row w-80\">\n    <div class=\"col-12 w-60\">\n        <div class=\"card text-center\">\n            <div class=\"card-body\">\n                <div *ngIf=\"photoIsLoading\">\n                    <div  class=\"row m-3 text-center\">\n                        <div class=\"col-4\"></div>\n                        <div class=\"col-4\">\n                          <mat-spinner></mat-spinner>\n                        </div>\n                        <div class=\"col-4\"></div>\n                      </div>\n                </div>\n                                \n                <div *ngIf=\"photoError\">\n                    {{photoError}}\n                </div>\n                <div *ngIf=\"photoSuccess\">\n                    {{photoSuccess}}\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n";
+    __webpack_exports__["default"] = "<app-nav></app-nav>\n<div class=\"container\">\n    <div class=\"row w-80\">\n        <div class=\"col-12 w-60\">\n            <div class=\"card text-center\">\n                <div class=\"card-body\" style=\"overflow:hidden;\">\n                    <form [formGroup]=\"photoUploadForm\">\n                        <input class=\"input-width\" id=\"image\" placeholder=\"image\" type=\"file\"\n                            formControlName=\"image\" (change)=\"fileProgress($event)\"/>\n                        <div class=\"mb-3\" *ngIf=\"uploadedFilePath\">\n                            {{uploadedFilePath}}\n                        </div>\n                        <div class=\"image-preview m-3\" *ngIf=\"previewUrl\">\n                            <img [src]=\"previewUrl\" height=\"300\" />                 \n                        </div>\n\n                        \n                        <div class=\"form-group\">\n                            <button class=\"btn btn-primary\"  (click)=\"onSubmit()\">Submit</button>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"row w-80\">\n        <div class=\"col-12 w-60\">\n            <div class=\"card text-center\">\n                <div class=\"card-body\">\n                    <div *ngIf=\"photoIsLoading\">\n                        <div  class=\"row m-3 text-center\">\n                            <div class=\"col-4\"></div>\n                            <div class=\"col-4\">\n                              <mat-spinner></mat-spinner>\n                            </div>\n                            <div class=\"col-4\"></div>\n                          </div>\n                    </div>\n                                    \n                    <div *ngIf=\"photoError\">\n                        {{photoError}}\n                    </div>\n                    <div *ngIf=\"photoSuccess\">\n                        {{photoSuccess}}\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n\n";
     /***/
   },
 
@@ -191,7 +211,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-nav></app-nav>\r\n\r\n<div class=\"container my-2\">\r\n  <div class=\"row w-80\">\r\n    <div class=\"col-12 w-60\">\r\n      <div class=\"card text-center\">\r\n        <div class=\"card-body\">\r\n          <h3 class=\"my-4\">Vote you dumb idiots!</h3>\r\n          \r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div> \r\n\r\n    <div class=\"example-large-box mat-elevation-z4\" *ngIf=\"dataSource.data.length > 0\">\r\n      <!-- TABLE -->\r\n      <table mat-table [dataSource]=\"dataSource\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n        <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumnsTopTen\">\r\n          <th mat-header-cell *matHeaderCellDef> {{column |titlecase}} </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"expandedDetail\">\r\n          <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumnsTopTen.length\">\r\n            <div class=\"example-element-detail\" [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n              <div class=\"row w-100\">\r\n                <div class=\"col-9\">\r\n                  <div class=\"example-element-diagram\">\r\n                    <div class=\"example-element-position\"><b>Task:</b> {{element.description}} </div>\r\n                    <div class=\"example-element-position\"><b>Failed:</b> {{element.if_failed}} </div>\r\n                    <div class=\"example-element-position\"><b>Succeeded:</b> {{element.reward}} </div>\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-3\">\r\n                  <div class=\"pointer\">\r\n                    <!-- <button [disabled]=\"username==element.created_by\" (click)=\"voteRow(element)\">Vote</button> -->\r\n                    <button  (click)=\"voteRow(element)\">Vote</button>\r\n\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </td>\r\n        </ng-container>\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsTopTen\"></tr>\r\n        <tr mat-row *matRowDef=\"let element; columns: displayedColumnsTopTen;\" class=\"example-element-row\"\r\n          [class.example-expanded-row]=\"expandedElement === element\"\r\n          (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n        </tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n      </table>\r\n";
+    __webpack_exports__["default"] = "<app-nav></app-nav>\r\n<div class=\"text-center my-3\">\r\n<h2>Task Generator</h2>\r\n</div>\r\n<div class=\"card text-center\">\r\n  <div class=\"card-body\">\r\n    <div class=\"container my-2\">\r\n      <div class=\"row w-80\">\r\n        <div class=\"col-12\">\r\n          <button class=\"choosing-buttons\" mat-raised-button color=\"primary\" (click)=\"getRandomTask()\">Random Task</button>\r\n        </div>\r\n       \r\n      </div>\r\n    </div>\r\n  </div>\r\n</div> \r\n<div class=\"card text-center\">\r\n  <div class=\"card-body\">\r\n    <div class=\"container my-2\">\r\n      <div class=\"row w-100\" style=\"text-align: left;\">\r\n        <div class=\"col-6\">\r\n          <b>Task</b>\r\n          <p *ngIf=\"randomTask\">{{randomTask.description}}</p>\r\n        </div>\r\n        <div class=\"col-4\">\r\n          <b>If Failed</b>\r\n          <p *ngIf=\"randomTask\">{{randomTask.if_failed}}</p>\r\n        </div>\r\n        <div class=\"col-2\" *ngIf=\"randomTask && randomTask.completed=='True'\">\r\n          <mat-icon style=\"color:green;\">check</mat-icon>\r\n        </div>\r\n        <div class=\"col-2\" *ngIf=\"randomTask && randomTask.completed=='False'\">\r\n          <mat-icon style=\"color:red;\">cancel</mat-icon>\r\n        </div>\r\n        \r\n      </div>\r\n      <!-- <div>\r\n        <button (click)=\"completeTask(randomTask)\">Completed</button>\r\n      </div> -->\r\n    </div>\r\n  </div>\r\n</div> \r\n\r\n<!-- \r\n    <div class=\"example-large-box mat-elevation-z4\" *ngIf=\"dataSource.data.length > 0\">\r\n      <table mat-table [dataSource]=\"dataSource\" multiTemplateDataRows class=\"mat-elevation-z8\">\r\n        <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumnsTopTen\">\r\n          <th mat-header-cell *matHeaderCellDef> {{column |titlecase}} </th>\r\n          <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"expandedDetail\">\r\n          <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumnsTopTen.length\">\r\n            <div class=\"example-element-detail\" [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\r\n              <div class=\"row w-100\">\r\n                <div class=\"col-11\">\r\n                  <div class=\"example-element-diagram\">\r\n                    <div class=\"example-element-position\"><b>Task:</b> {{element.description}} </div>\r\n                    <div class=\"example-element-position\"><b>Failed:</b> {{element.if_failed}} </div>\r\n                    <div class=\"example-element-position\"><b>Succeeded:</b> {{element.reward}} </div>\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-1\">\r\n                 \r\n                </div>\r\n              </div>\r\n            </div>\r\n          </td>\r\n        </ng-container>\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumnsTopTen\"></tr>\r\n        <tr mat-row *matRowDef=\"let element; columns: displayedColumnsTopTen;\" class=\"example-element-row\"\r\n          [class.example-expanded-row]=\"expandedElement === element\"\r\n          (click)=\"expandedElement = expandedElement === element ? null : element\">\r\n        </tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\r\n      </table>  -->\r\n";
     /***/
   },
 
@@ -1072,6 +1092,192 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/website/all-tasks/all-tasks.component.css":
+  /*!***********************************************************!*\
+    !*** ./src/app/website/all-tasks/all-tasks.component.css ***!
+    \***********************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppWebsiteAllTasksAllTasksComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = ".pointer {\r\n    cursor: pointer;\r\n}\r\ntable {\r\n  width: 100%;\r\n}\r\ntr.example-detail-row {\r\n  height: 0;\r\n}\r\ntr.example-element-row:not(.example-expanded-row):hover {\r\n  background: whitesmoke;\r\n}\r\ntr.example-element-row:not(.example-expanded-row):active {\r\n  background: #efefef;\r\n}\r\n.example-element-row td {\r\n  border-bottom-width: 0;\r\n}\r\n.example-element-detail {\r\n  overflow: hidden;\r\n  display: flex;\r\n}\r\n.example-element-diagram {\r\n  min-width: 80px;\r\n  border: 2px solid black;\r\n  padding: 8px;\r\n  font-weight: lighter;\r\n  margin: 8px 0;\r\n  /* height: 104px; */\r\n}\r\n.example-element-symbol {\r\n  font-weight: bold;\r\n  font-size: 40px;\r\n  line-height: normal;\r\n}\r\n.example-element-description {\r\n  padding: 16px;\r\n}\r\n.example-element-description-attribution {\r\n  opacity: 0.5;\r\n}\r\n.mat-header-cell {\r\n  font-size: 18px;\r\n  font-weight: 500;\r\n  color:black\r\n}\r\n.input-width{\r\n  width: 80%;\r\n}\r\n.choosing-buttons{\r\n  height:80px;\r\n  width:120px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2Vic2l0ZS9hbGwtdGFza3MvYWxsLXRhc2tzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxlQUFlO0FBQ25CO0FBQ0E7RUFDRSxXQUFXO0FBQ2I7QUFFQTtFQUNFLFNBQVM7QUFDWDtBQUVBO0VBQ0Usc0JBQXNCO0FBQ3hCO0FBRUE7RUFDRSxtQkFBbUI7QUFDckI7QUFFQTtFQUNFLHNCQUFzQjtBQUN4QjtBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGFBQWE7QUFDZjtBQUVBO0VBQ0UsZUFBZTtFQUNmLHVCQUF1QjtFQUN2QixZQUFZO0VBQ1osb0JBQW9CO0VBQ3BCLGFBQWE7RUFDYixtQkFBbUI7QUFDckI7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2YsbUJBQW1CO0FBQ3JCO0FBRUE7RUFDRSxhQUFhO0FBQ2Y7QUFFQTtFQUNFLFlBQVk7QUFDZDtBQUVBO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQjtBQUNGO0FBRUE7RUFDRSxVQUFVO0FBQ1o7QUFFQTtFQUNFLFdBQVc7RUFDWCxXQUFXO0FBQ2IiLCJmaWxlIjoic3JjL2FwcC93ZWJzaXRlL2FsbC10YXNrcy9hbGwtdGFza3MuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wb2ludGVyIHtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG50YWJsZSB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbnRyLmV4YW1wbGUtZGV0YWlsLXJvdyB7XHJcbiAgaGVpZ2h0OiAwO1xyXG59XHJcblxyXG50ci5leGFtcGxlLWVsZW1lbnQtcm93Om5vdCguZXhhbXBsZS1leHBhbmRlZC1yb3cpOmhvdmVyIHtcclxuICBiYWNrZ3JvdW5kOiB3aGl0ZXNtb2tlO1xyXG59XHJcblxyXG50ci5leGFtcGxlLWVsZW1lbnQtcm93Om5vdCguZXhhbXBsZS1leHBhbmRlZC1yb3cpOmFjdGl2ZSB7XHJcbiAgYmFja2dyb3VuZDogI2VmZWZlZjtcclxufVxyXG5cclxuLmV4YW1wbGUtZWxlbWVudC1yb3cgdGQge1xyXG4gIGJvcmRlci1ib3R0b20td2lkdGg6IDA7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtZGV0YWlsIHtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtZGlhZ3JhbSB7XHJcbiAgbWluLXdpZHRoOiA4MHB4O1xyXG4gIGJvcmRlcjogMnB4IHNvbGlkIGJsYWNrO1xyXG4gIHBhZGRpbmc6IDhweDtcclxuICBmb250LXdlaWdodDogbGlnaHRlcjtcclxuICBtYXJnaW46IDhweCAwO1xyXG4gIC8qIGhlaWdodDogMTA0cHg7ICovXHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtc3ltYm9sIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBmb250LXNpemU6IDQwcHg7XHJcbiAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcclxufVxyXG5cclxuLmV4YW1wbGUtZWxlbWVudC1kZXNjcmlwdGlvbiB7XHJcbiAgcGFkZGluZzogMTZweDtcclxufVxyXG5cclxuLmV4YW1wbGUtZWxlbWVudC1kZXNjcmlwdGlvbi1hdHRyaWJ1dGlvbiB7XHJcbiAgb3BhY2l0eTogMC41O1xyXG59XHJcbiAgXHJcbi5tYXQtaGVhZGVyLWNlbGwge1xyXG4gIGZvbnQtc2l6ZTogMThweDtcclxuICBmb250LXdlaWdodDogNTAwO1xyXG4gIGNvbG9yOmJsYWNrXHJcbn1cclxuXHJcbi5pbnB1dC13aWR0aHtcclxuICB3aWR0aDogODAlO1xyXG59XHJcblxyXG4uY2hvb3NpbmctYnV0dG9uc3tcclxuICBoZWlnaHQ6ODBweDtcclxuICB3aWR0aDoxMjBweDtcclxufSJdfQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/website/all-tasks/all-tasks.component.ts":
+  /*!**********************************************************!*\
+    !*** ./src/app/website/all-tasks/all-tasks.component.ts ***!
+    \**********************************************************/
+
+  /*! exports provided: AllTaskComponent */
+
+  /***/
+  function srcAppWebsiteAllTasksAllTasksComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AllTaskComponent", function () {
+      return AllTaskComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ngx-cookie-service */
+    "./node_modules/ngx-cookie-service/index.js");
+    /* harmony import */
+
+
+    var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../service/app-api-service.service */
+    "./src/app/website/service/app-api-service.service.ts");
+    /* harmony import */
+
+
+    var _service_auth_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ../service/auth-service.service */
+    "./src/app/website/service/auth-service.service.ts");
+    /* harmony import */
+
+
+    var _angular_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! @angular/animations */
+    "./node_modules/@angular/animations/fesm2015/animations.js");
+    /* harmony import */
+
+
+    var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @angular/material */
+    "./node_modules/@angular/material/esm2015/material.js");
+
+    var AllTaskComponent = /*#__PURE__*/function () {
+      function AllTaskComponent(srvLogin, router, cookieService, apiService, changeDetectorRefs) {
+        _classCallCheck(this, AllTaskComponent);
+
+        this.srvLogin = srvLogin;
+        this.router = router;
+        this.cookieService = cookieService;
+        this.apiService = apiService;
+        this.changeDetectorRefs = changeDetectorRefs;
+        this.displayedColumnsTopTen = ['description'];
+        this.tasks = [];
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"]();
+        this.username = this.cookieService.get('username');
+
+        if (!srvLogin.checkLogValues()) {
+          router.navigate(['/login', {
+            navMessage: "Please login"
+          }]);
+        }
+      }
+
+      _createClass(AllTaskComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.getData();
+        }
+      }, {
+        key: "getData",
+        value: function getData() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    this.tasks = [];
+                    _context.next = 3;
+                    return this.getTasks();
+
+                  case 3:
+                    this.tasks = _context.sent;
+                    this.dataSource.data = this.tasks;
+
+                  case 5:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
+        }
+      }, {
+        key: "getTasks",
+        value: function getTasks() {
+          var _this = this;
+
+          return new Promise(function (resolve, reject) {
+            _this.apiService.getTasks().subscribe(function (data) {
+              resolve(data);
+            });
+          });
+        }
+      }]);
+
+      return AllTaskComponent;
+    }();
+
+    AllTaskComponent.ctorParameters = function () {
+      return [{
+        type: _service_auth_service_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+      }, {
+        type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"]
+      }, {
+        type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_4__["AppApiServiceService"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]
+      }];
+    };
+
+    AllTaskComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-task',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./all-tasks.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/website/all-tasks/all-tasks.component.html"))["default"],
+      animations: [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["trigger"])('detailExpand', [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["state"])('collapsed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({
+        height: '0px',
+        minHeight: '0'
+      })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["state"])('expanded', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({
+        height: '*'
+      })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["transition"])('expanded <=> collapsed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["animate"])('225ms cubic-bezier(0.4, 0.0, 0.2, 1)'))])],
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./all-tasks.component.css */
+      "./src/app/website/all-tasks/all-tasks.component.css"))["default"]]
+    })], AllTaskComponent);
+    /***/
+  },
+
+  /***/
   "./src/app/website/home/home.component.css":
   /*!*************************************************!*\
     !*** ./src/app/website/home/home.component.css ***!
@@ -1284,18 +1490,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LoginComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this = this;
+          var _this2 = this;
 
           this.activatedRoute.params.subscribe(function (params) {
             console.log(params.navMessage);
-            _this.incomingSnackMessage = params.navMessage;
+            _this2.incomingSnackMessage = params.navMessage;
           });
           this.defineForm();
         }
       }, {
         key: "loginUser",
         value: function loginUser() {
-          var _this2 = this;
+          var _this3 = this;
 
           this.incomingSnackMessage = null;
 
@@ -1303,21 +1509,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.showSpinner = true;
             this.apiService.postUser(this.signInForm.controls.email.value, this.signInForm.controls.password.value).subscribe(function (data) {
               if (data.name && data.email) {
-                _this2.showSpinner = false;
+                _this3.showSpinner = false;
 
-                _this2.cookieService.set('username', data.email);
+                _this3.cookieService.set('username', data.email);
 
-                _this2.cookieService.set('cookie', _this2.makeCooke()); //this.emitLoginEvent()
+                _this3.cookieService.set('cookie', _this3.makeCooke()); //this.emitLoginEvent()
 
 
-                _this2.router.navigate(['/home']);
+                _this3.router.navigate(['/home']);
               } else {
-                _this2.showSpinner = false;
+                _this3.showSpinner = false;
 
                 if (data.Warning) {
-                  _this2.incomingSnackMessage = data.Warning;
+                  _this3.incomingSnackMessage = data.Warning;
                 } else {
-                  _this2.incomingSnackMessage = "Incorrent username/password";
+                  _this3.incomingSnackMessage = "Incorrent username/password";
                 }
               }
             });
@@ -1341,18 +1547,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "create_user",
         value: function create_user() {
-          var _this3 = this;
+          var _this4 = this;
 
           if (this.signUpForm.controls.email.value && this.signUpForm.controls.password.value && this.signUpForm.controls.name.value) {
             this.apiService.putUser(this.signUpForm.controls.name.value, this.signUpForm.controls.email.value, this.signUpForm.controls.password.value).subscribe(function (data) {
               if (data.email && data.name) {
                 alert("you have signed up with email '" + data.email + "' and are logged in");
 
-                _this3.cookieService.set('username', data.email);
+                _this4.cookieService.set('username', data.email);
 
-                _this3.cookieService.set('cookie', _this3.makeCooke());
+                _this4.cookieService.set('cookie', _this4.makeCooke());
 
-                _this3.router.navigate(['/home']);
+                _this4.router.navigate(['/home']);
               } else {
                 alert("Something went wrong");
               }
@@ -1543,10 +1749,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteTask",
         value: function deleteTask(task_id) {
-          var _this4 = this;
+          var _this5 = this;
 
           this.apiService.deleteTask(task_id, this.username).subscribe(function (data) {
-            _this4.getTasksByUser(_this4.username);
+            _this5.getTasksByUser(_this5.username);
           });
         }
       }, {
@@ -1557,25 +1763,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createTask",
         value: function createTask() {
-          var _this5 = this;
+          var _this6 = this;
 
-          if (this.taskForm.controls.description.value && this.taskForm.controls.reward.value && this.taskForm.controls.ifFailed.value) {
-            this.apiService.putTask(this.taskForm.controls.description.value, this.username, this.taskForm.controls.reward.value, this.taskForm.controls.ifFailed.value).subscribe(function (data) {
-              _this5.taskForm.reset();
+          if (this.taskForm.controls.description.value && this.taskForm.controls.ifFailed.value) {
+            this.apiService.putTask(this.taskForm.controls.description.value, this.username, this.taskForm.controls.ifFailed.value).subscribe(function (data) {
+              _this6.taskForm.reset();
 
-              _this5.getTasksByUser(_this5.username);
+              _this6.getTasksByUser(_this6.username);
             });
           } else {
             alert('Please fill out form completely');
           }
         }
       }, {
+        key: "completeTask",
+        value: function completeTask(task) {
+          var _this7 = this;
+
+          console.log(task);
+          this.apiService.completeTask(task._id.$oid).subscribe(function (data) {
+            _this7.getTasksByUser(_this7.username);
+          });
+        }
+      }, {
         key: "defineForm",
         value: function defineForm() {
           this.taskForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormGroup"]({
             description: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_7__["Validators"].required),
-            ifFailed: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_7__["Validators"].required),
-            reward: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_7__["Validators"].required)
+            ifFailed: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_7__["Validators"].required)
           });
         }
       }]);
@@ -1852,7 +2067,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "preview",
         value: function preview() {
-          var _this6 = this;
+          var _this8 = this;
 
           // Show preview 
           var mimeType = this.fileData.type;
@@ -1865,13 +2080,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           reader.readAsDataURL(this.fileData);
 
           reader.onload = function (_event) {
-            _this6.previewUrl = reader.result;
+            _this8.previewUrl = reader.result;
           };
         }
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this7 = this;
+          var _this9 = this;
 
           this.photoError = null;
           var formData = new FormData();
@@ -1879,15 +2094,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.photoIsLoading = true;
           this.apiService.postPhoto(formData).subscribe(function (data) {
             if (data.response === "Successful upload") {
-              _this7.previewUrl = "";
+              _this9.previewUrl = "";
 
-              _this7.photoUploadForm.reset();
+              _this9.photoUploadForm.reset();
 
-              _this7.photoIsLoading = false;
-              _this7.photoSuccess = "File uploaded Successfully";
+              _this9.photoIsLoading = false;
+              _this9.photoSuccess = "File uploaded Successfully";
             } else {
-              _this7.photoIsLoading = false;
-              _this7.photoError = "Something went wrong. Try again please and thank you";
+              _this9.photoIsLoading = false;
+              _this9.photoError = "Something went wrong. Try again please and thank you";
             }
           }); // this.http.post('url/to/your/api', formData)
           //   .subscribe(res => {
@@ -2002,10 +2217,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllPhotos",
         value: function getAllPhotos() {
-          var _this8 = this;
+          var _this10 = this;
 
           this.apiService.getPhotos().subscribe(function (data) {
-            _this8.photo_links = data;
+            _this10.photo_links = data;
           });
         }
       }]);
@@ -2118,13 +2333,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "putTask",
-        value: function putTask(description, createdBy, reward, if_failed) {
-          //TODO: Add reward to API
+        value: function putTask(description, createdBy, if_failed) {
           return this.http.put(this.baseUrl + this.taskUrl, {
             "description": description,
             "created_by": createdBy,
-            "if_failed": if_failed,
-            "reward": reward
+            "if_failed": if_failed
           });
         }
       }, {
@@ -2133,10 +2346,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return this.http.post(this.baseUrl + this.taskUrl + '/delete/' + task_id, {
             "created_by": created_by
           });
-        } // postTask(body) {
-        //   return this.http.post<any>(this.baseUrl+this.taskUrl, body);
-        // }
-        //USER
+        }
+      }, {
+        key: "completeTask",
+        value: function completeTask(task_id) {
+          return this.http.post(this.baseUrl + '/complete/' + task_id, {});
+        } //USER
 
       }, {
         key: "getVote",
@@ -2295,7 +2510,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".pointer {\r\n    cursor: pointer;\r\n}\r\ntable {\r\n  width: 100%;\r\n}\r\ntr.example-detail-row {\r\n  height: 0;\r\n}\r\ntr.example-element-row:not(.example-expanded-row):hover {\r\n  background: whitesmoke;\r\n}\r\ntr.example-element-row:not(.example-expanded-row):active {\r\n  background: #efefef;\r\n}\r\n.example-element-row td {\r\n  border-bottom-width: 0;\r\n}\r\n.example-element-detail {\r\n  overflow: hidden;\r\n  display: flex;\r\n}\r\n.example-element-diagram {\r\n  min-width: 80px;\r\n  border: 2px solid black;\r\n  padding: 8px;\r\n  font-weight: lighter;\r\n  margin: 8px 0;\r\n  /* height: 104px; */\r\n}\r\n.example-element-symbol {\r\n  font-weight: bold;\r\n  font-size: 40px;\r\n  line-height: normal;\r\n}\r\n.example-element-description {\r\n  padding: 16px;\r\n}\r\n.example-element-description-attribution {\r\n  opacity: 0.5;\r\n}\r\n.mat-header-cell {\r\n  font-size: 18px;\r\n  font-weight: 500;\r\n  color:black\r\n}\r\n.input-width{\r\n  width: 80%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2Vic2l0ZS90YXNrL3Rhc2suY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGVBQWU7QUFDbkI7QUFDQTtFQUNFLFdBQVc7QUFDYjtBQUVBO0VBQ0UsU0FBUztBQUNYO0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7QUFFQTtFQUNFLG1CQUFtQjtBQUNyQjtBQUVBO0VBQ0Usc0JBQXNCO0FBQ3hCO0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsYUFBYTtBQUNmO0FBRUE7RUFDRSxlQUFlO0VBQ2YsdUJBQXVCO0VBQ3ZCLFlBQVk7RUFDWixvQkFBb0I7RUFDcEIsYUFBYTtFQUNiLG1CQUFtQjtBQUNyQjtBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZixtQkFBbUI7QUFDckI7QUFFQTtFQUNFLGFBQWE7QUFDZjtBQUVBO0VBQ0UsWUFBWTtBQUNkO0FBRUE7RUFDRSxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCO0FBQ0Y7QUFFQTtFQUNFLFVBQVU7QUFDWiIsImZpbGUiOiJzcmMvYXBwL3dlYnNpdGUvdGFzay90YXNrLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucG9pbnRlciB7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxudGFibGUge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG50ci5leGFtcGxlLWRldGFpbC1yb3cge1xyXG4gIGhlaWdodDogMDtcclxufVxyXG5cclxudHIuZXhhbXBsZS1lbGVtZW50LXJvdzpub3QoLmV4YW1wbGUtZXhwYW5kZWQtcm93KTpob3ZlciB7XHJcbiAgYmFja2dyb3VuZDogd2hpdGVzbW9rZTtcclxufVxyXG5cclxudHIuZXhhbXBsZS1lbGVtZW50LXJvdzpub3QoLmV4YW1wbGUtZXhwYW5kZWQtcm93KTphY3RpdmUge1xyXG4gIGJhY2tncm91bmQ6ICNlZmVmZWY7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtcm93IHRkIHtcclxuICBib3JkZXItYm90dG9tLXdpZHRoOiAwO1xyXG59XHJcblxyXG4uZXhhbXBsZS1lbGVtZW50LWRldGFpbCB7XHJcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcblxyXG4uZXhhbXBsZS1lbGVtZW50LWRpYWdyYW0ge1xyXG4gIG1pbi13aWR0aDogODBweDtcclxuICBib3JkZXI6IDJweCBzb2xpZCBibGFjaztcclxuICBwYWRkaW5nOiA4cHg7XHJcbiAgZm9udC13ZWlnaHQ6IGxpZ2h0ZXI7XHJcbiAgbWFyZ2luOiA4cHggMDtcclxuICAvKiBoZWlnaHQ6IDEwNHB4OyAqL1xyXG59XHJcblxyXG4uZXhhbXBsZS1lbGVtZW50LXN5bWJvbCB7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgZm9udC1zaXplOiA0MHB4O1xyXG4gIGxpbmUtaGVpZ2h0OiBub3JtYWw7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtZGVzY3JpcHRpb24ge1xyXG4gIHBhZGRpbmc6IDE2cHg7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtZGVzY3JpcHRpb24tYXR0cmlidXRpb24ge1xyXG4gIG9wYWNpdHk6IDAuNTtcclxufVxyXG4gIFxyXG4ubWF0LWhlYWRlci1jZWxsIHtcclxuICBmb250LXNpemU6IDE4cHg7XHJcbiAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICBjb2xvcjpibGFja1xyXG59XHJcblxyXG4uaW5wdXQtd2lkdGh7XHJcbiAgd2lkdGg6IDgwJTtcclxufSJdfQ== */";
+    __webpack_exports__["default"] = ".pointer {\r\n    cursor: pointer;\r\n}\r\ntable {\r\n  width: 100%;\r\n}\r\ntr.example-detail-row {\r\n  height: 0;\r\n}\r\ntr.example-element-row:not(.example-expanded-row):hover {\r\n  background: whitesmoke;\r\n}\r\ntr.example-element-row:not(.example-expanded-row):active {\r\n  background: #efefef;\r\n}\r\n.example-element-row td {\r\n  border-bottom-width: 0;\r\n}\r\n.example-element-detail {\r\n  overflow: hidden;\r\n  display: flex;\r\n}\r\n.example-element-diagram {\r\n  min-width: 80px;\r\n  border: 2px solid black;\r\n  padding: 8px;\r\n  font-weight: lighter;\r\n  margin: 8px 0;\r\n  /* height: 104px; */\r\n}\r\n.example-element-symbol {\r\n  font-weight: bold;\r\n  font-size: 40px;\r\n  line-height: normal;\r\n}\r\n.example-element-description {\r\n  padding: 16px;\r\n}\r\n.example-element-description-attribution {\r\n  opacity: 0.5;\r\n}\r\n.mat-header-cell {\r\n  font-size: 18px;\r\n  font-weight: 500;\r\n  color:black\r\n}\r\n.input-width{\r\n  width: 80%;\r\n}\r\n.choosing-buttons{\r\n  height:80px;\r\n  width:120px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2Vic2l0ZS90YXNrL3Rhc2suY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGVBQWU7QUFDbkI7QUFDQTtFQUNFLFdBQVc7QUFDYjtBQUVBO0VBQ0UsU0FBUztBQUNYO0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7QUFFQTtFQUNFLG1CQUFtQjtBQUNyQjtBQUVBO0VBQ0Usc0JBQXNCO0FBQ3hCO0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsYUFBYTtBQUNmO0FBRUE7RUFDRSxlQUFlO0VBQ2YsdUJBQXVCO0VBQ3ZCLFlBQVk7RUFDWixvQkFBb0I7RUFDcEIsYUFBYTtFQUNiLG1CQUFtQjtBQUNyQjtBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZixtQkFBbUI7QUFDckI7QUFFQTtFQUNFLGFBQWE7QUFDZjtBQUVBO0VBQ0UsWUFBWTtBQUNkO0FBRUE7RUFDRSxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCO0FBQ0Y7QUFFQTtFQUNFLFVBQVU7QUFDWjtBQUVBO0VBQ0UsV0FBVztFQUNYLFdBQVc7QUFDYiIsImZpbGUiOiJzcmMvYXBwL3dlYnNpdGUvdGFzay90YXNrLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucG9pbnRlciB7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxudGFibGUge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG50ci5leGFtcGxlLWRldGFpbC1yb3cge1xyXG4gIGhlaWdodDogMDtcclxufVxyXG5cclxudHIuZXhhbXBsZS1lbGVtZW50LXJvdzpub3QoLmV4YW1wbGUtZXhwYW5kZWQtcm93KTpob3ZlciB7XHJcbiAgYmFja2dyb3VuZDogd2hpdGVzbW9rZTtcclxufVxyXG5cclxudHIuZXhhbXBsZS1lbGVtZW50LXJvdzpub3QoLmV4YW1wbGUtZXhwYW5kZWQtcm93KTphY3RpdmUge1xyXG4gIGJhY2tncm91bmQ6ICNlZmVmZWY7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtcm93IHRkIHtcclxuICBib3JkZXItYm90dG9tLXdpZHRoOiAwO1xyXG59XHJcblxyXG4uZXhhbXBsZS1lbGVtZW50LWRldGFpbCB7XHJcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcblxyXG4uZXhhbXBsZS1lbGVtZW50LWRpYWdyYW0ge1xyXG4gIG1pbi13aWR0aDogODBweDtcclxuICBib3JkZXI6IDJweCBzb2xpZCBibGFjaztcclxuICBwYWRkaW5nOiA4cHg7XHJcbiAgZm9udC13ZWlnaHQ6IGxpZ2h0ZXI7XHJcbiAgbWFyZ2luOiA4cHggMDtcclxuICAvKiBoZWlnaHQ6IDEwNHB4OyAqL1xyXG59XHJcblxyXG4uZXhhbXBsZS1lbGVtZW50LXN5bWJvbCB7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgZm9udC1zaXplOiA0MHB4O1xyXG4gIGxpbmUtaGVpZ2h0OiBub3JtYWw7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtZGVzY3JpcHRpb24ge1xyXG4gIHBhZGRpbmc6IDE2cHg7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtZGVzY3JpcHRpb24tYXR0cmlidXRpb24ge1xyXG4gIG9wYWNpdHk6IDAuNTtcclxufVxyXG4gIFxyXG4ubWF0LWhlYWRlci1jZWxsIHtcclxuICBmb250LXNpemU6IDE4cHg7XHJcbiAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICBjb2xvcjpibGFja1xyXG59XHJcblxyXG4uaW5wdXQtd2lkdGh7XHJcbiAgd2lkdGg6IDgwJTtcclxufVxyXG5cclxuLmNob29zaW5nLWJ1dHRvbnN7XHJcbiAgaGVpZ2h0OjgwcHg7XHJcbiAgd2lkdGg6MTIwcHg7XHJcbn0iXX0= */";
     /***/
   },
 
@@ -2333,43 +2548,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/forms */
-    "./node_modules/@angular/forms/fesm2015/forms.js");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
-    var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ngx-cookie-service */
     "./node_modules/ngx-cookie-service/index.js");
     /* harmony import */
 
 
-    var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../service/app-api-service.service */
     "./src/app/website/service/app-api-service.service.ts");
     /* harmony import */
 
 
-    var _service_auth_service_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _service_auth_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../service/auth-service.service */
     "./src/app/website/service/auth-service.service.ts");
     /* harmony import */
 
 
-    var _angular_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _angular_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/animations */
     "./node_modules/@angular/animations/fesm2015/animations.js");
     /* harmony import */
 
 
-    var _angular_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/material */
     "./node_modules/@angular/material/esm2015/material.js");
 
@@ -2383,10 +2592,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.apiService = apiService;
         this.changeDetectorRefs = changeDetectorRefs;
         this.displayedColumnsTopTen = ['description', 'votes'];
-        this.tasks = [];
-        this.votes = [];
-        this.tasksWithVotes = [];
-        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"]();
+        this.tasks = []; // votes = [];
+        // tasksWithVotes = [] 
+
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableDataSource"]();
         this.username = this.cookieService.get('username');
 
         if (!srvLogin.checkLogValues()) {
@@ -2399,106 +2608,55 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TaskComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.defineForm();
           this.getData();
         }
       }, {
         key: "getData",
         value: function getData() {
-          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-            return regeneratorRuntime.wrap(function _callee$(_context) {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
               while (1) {
-                switch (_context.prev = _context.next) {
+                switch (_context2.prev = _context2.next) {
                   case 0:
                     this.tasks = [];
-                    _context.next = 3;
+                    _context2.next = 3;
                     return this.getTasks();
 
                   case 3:
-                    this.tasks = _context.sent;
-                    this.votes = [];
-                    _context.next = 7;
-                    return this.getVotes();
+                    this.tasks = _context2.sent;
+                    this.dataSource.data = this.tasks;
 
-                  case 7:
-                    this.votes = _context.sent;
-                    this.aggregateVotesWithTasks();
-
-                  case 9:
+                  case 5:
                   case "end":
-                    return _context.stop();
+                    return _context2.stop();
                 }
               }
-            }, _callee, this);
+            }, _callee2, this);
           }));
         }
       }, {
         key: "getTasks",
         value: function getTasks() {
-          var _this9 = this;
-
-          return new Promise(function (resolve, reject) {
-            _this9.apiService.getTasks().subscribe(function (data) {
-              resolve(data);
-            });
-          });
-        }
-      }, {
-        key: "getVotes",
-        value: function getVotes() {
-          var _this10 = this;
-
-          return new Promise(function (resolve, reject) {
-            _this10.apiService.getVotes().subscribe(function (data) {
-              resolve(data);
-            });
-          });
-        }
-      }, {
-        key: "aggregateVotesWithTasks",
-        value: function aggregateVotesWithTasks() {
           var _this11 = this;
 
-          var newData = [];
-          this.tasks.map(function (task) {
-            var matchingVote = _this11.votes[task._id.$oid];
-            newData.push(Object.assign({}, task, {
-              votes: matchingVote ? matchingVote : 0
-            }));
+          return new Promise(function (resolve, reject) {
+            _this11.apiService.getTasks().subscribe(function (data) {
+              resolve(data);
+            });
           });
-          newData.sort(function (a, b) {
-            return b.votes - a.votes;
-          });
-          this.dataSource.data = newData;
         }
       }, {
-        key: "voteRow",
-        value: function voteRow(obj) {
-          var _this12 = this;
-
-          console.log(obj._id.$oid);
-          this.apiService.putVote(this.username, obj._id.$oid).subscribe(function (data) {
-            // console.log(data)
-            _this12.getData();
-          });
-        } // deleteTask(task_id) {
-        //   this.apiService.deleteTask(task_id, this.username).subscribe(data => {
-        //     console.log(data)
-        //     this.getData()
-        //   })
-        // }
-        // deleteRowData(obj){
-        //   console.log(obj._id.$oid)
-        //   this.deleteTask(obj._id.$oid)
-        // }
-
+        key: "getRandomTask",
+        value: function getRandomTask() {
+          this.randomTask = this.tasks[Math.floor(Math.random() * this.tasks.length)];
+          console.log(this.randomTask);
+        }
       }, {
-        key: "defineForm",
-        value: function defineForm() {
-          this.taskForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
-            description: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            ifFailed: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            reward: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+        key: "completeTask",
+        value: function completeTask(task) {
+          console.log(task);
+          this.apiService.completeTask(task._id.$oid).subscribe(function (data) {
+            console.log(data);
           });
         }
       }]);
@@ -2508,13 +2666,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     TaskComponent.ctorParameters = function () {
       return [{
-        type: _service_auth_service_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"]
+        type: _service_auth_service_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]
       }, {
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
       }, {
-        type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"]
+        type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"]
       }, {
-        type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_5__["AppApiServiceService"]
+        type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_4__["AppApiServiceService"]
       }, {
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]
       }];
@@ -2525,12 +2683,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./task.component.html */
       "./node_modules/raw-loader/dist/cjs.js!./src/app/website/task/task.component.html"))["default"],
-      animations: [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('detailExpand', [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('collapsed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({
+      animations: [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["trigger"])('detailExpand', [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["state"])('collapsed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({
         height: '0px',
         minHeight: '0'
-      })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["state"])('expanded', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({
+      })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["state"])('expanded', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({
         height: '*'
-      })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('expanded <=> collapsed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('225ms cubic-bezier(0.4, 0.0, 0.2, 1)'))])],
+      })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["transition"])('expanded <=> collapsed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["animate"])('225ms cubic-bezier(0.4, 0.0, 0.2, 1)'))])],
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./task.component.css */
       "./src/app/website/task/task.component.css"))["default"]]
@@ -2647,6 +2805,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _photo_view_photo_view_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
     /*! ./photo-view/photo-view.component */
     "./src/app/website/photo-view/photo-view.component.ts");
+    /* harmony import */
+
+
+    var _all_tasks_all_tasks_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+    /*! ./all-tasks/all-tasks.component */
+    "./src/app/website/all-tasks/all-tasks.component.ts");
 
     var WebsiteModule = /*#__PURE__*/_createClass(function WebsiteModule() {
       _classCallCheck(this, WebsiteModule);
@@ -2654,7 +2818,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     WebsiteModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _website_routing_module__WEBPACK_IMPORTED_MODULE_4__["WebsiteRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSidenavModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatGridListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatMenuModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTabsModule"]],
-      declarations: [_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"], _nav_nav_component__WEBPACK_IMPORTED_MODULE_10__["NavComponent"], _task_task_component__WEBPACK_IMPORTED_MODULE_11__["TaskComponent"], _my_tasks_my_tasks_component__WEBPACK_IMPORTED_MODULE_12__["MyTasksComponent"], _photo_upload_photo_upload_component__WEBPACK_IMPORTED_MODULE_13__["PhotoUploadComponent"], _photo_view_photo_view_component__WEBPACK_IMPORTED_MODULE_14__["PhotoViewComponent"]],
+      declarations: [_all_tasks_all_tasks_component__WEBPACK_IMPORTED_MODULE_15__["AllTaskComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"], _nav_nav_component__WEBPACK_IMPORTED_MODULE_10__["NavComponent"], _task_task_component__WEBPACK_IMPORTED_MODULE_11__["TaskComponent"], _my_tasks_my_tasks_component__WEBPACK_IMPORTED_MODULE_12__["MyTasksComponent"], _photo_upload_photo_upload_component__WEBPACK_IMPORTED_MODULE_13__["PhotoUploadComponent"], _photo_view_photo_view_component__WEBPACK_IMPORTED_MODULE_14__["PhotoViewComponent"]],
       providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_7__["CookieService"]]
     })], WebsiteModule);
     /***/
@@ -2739,10 +2903,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _photo_view_photo_view_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ./photo-view/photo-view.component */
     "./src/app/website/photo-view/photo-view.component.ts");
+    /* harmony import */
+
+
+    var _all_tasks_all_tasks_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! ./all-tasks/all-tasks.component */
+    "./src/app/website/all-tasks/all-tasks.component.ts");
 
     var websiteRoutes = [{
       path: 'login',
       component: _login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"]
+    }, {
+      path: 'all-tasks',
+      component: _all_tasks_all_tasks_component__WEBPACK_IMPORTED_MODULE_9__["AllTaskComponent"]
     }, {
       path: 'task',
       component: _task_task_component__WEBPACK_IMPORTED_MODULE_5__["TaskComponent"]

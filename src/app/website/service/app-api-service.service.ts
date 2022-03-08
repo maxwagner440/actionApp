@@ -41,10 +41,9 @@ export class AppApiServiceService {
     return this.http.get<any>(this.baseUrl+this.taskUrl+"s");
   }
 
-  putTask(description,createdBy,reward,if_failed) {
-    //TODO: Add reward to API
+  putTask(description,createdBy,if_failed) {
     return this.http.put<any>(this.baseUrl+this.taskUrl,  
-      {"description":description, "created_by":createdBy, "if_failed":if_failed, "reward":reward});
+      {"description":description, "created_by":createdBy, "if_failed":if_failed});
   }
 
   deleteTask(task_id, created_by) {
@@ -52,9 +51,10 @@ export class AppApiServiceService {
       {"created_by":created_by});
   }
 
-  // postTask(body) {
-  //   return this.http.post<any>(this.baseUrl+this.taskUrl, body);
-  // }
+  completeTask(task_id) {
+    return this.http.post<any>(this.baseUrl+'/complete/'+task_id,{});
+    }
+
 
   //USER
   getVote(vote_id) {

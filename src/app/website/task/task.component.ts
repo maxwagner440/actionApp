@@ -25,8 +25,9 @@ export class TaskComponent implements OnInit {
   displayedColumnsTopTen: string[] = ['description', 'votes']
   expandedElement: Task | null
   tasks = [];
-  votes = [];
-  tasksWithVotes = [] 
+  randomTask: Task
+  // votes = [];
+  // tasksWithVotes = [] 
   dataSource = new MatTableDataSource<Task>();
   username=this.cookieService.get('username')
 
@@ -38,17 +39,16 @@ export class TaskComponent implements OnInit {
     }
   }
 
+
   ngOnInit() {
-    this.defineForm()
     this.getData()    
   }
 
   async getData(){
     this.tasks = []
     this.tasks = await this.getTasks()
-    this.votes = []
-    this.votes = await this.getVotes()
-    this.aggregateVotesWithTasks()
+    this.dataSource.data = this.tasks
+   
   }
 
   getTasks() {
@@ -59,56 +59,51 @@ export class TaskComponent implements OnInit {
     })
   }
 
-  getVotes(){
-    return new Promise<[]>((resolve, reject) => {
-      this.apiService.getVotes().subscribe(data => {
-        resolve(data)
-      })
+  getRandomTask(){
+    this.randomTask =  this.tasks[Math.floor(Math.random() * this.tasks.length)]
+    console.log(this.randomTask)
+  }
+
+  completeTask(task){
+    console.log(task)
+    this.apiService.completeTask(task._id.$oid).subscribe(data => {
+      console.log(data)
     })
   }
 
-  aggregateVotesWithTasks(){
-    var newData = []
-    this.tasks.map((task) => {
-      var matchingVote = this.votes[task._id.$oid]
-      newData.push({
-        ...task,
-        votes:matchingVote ? matchingVote : 0
-      })
+  // getRandomFailure(){
+  //   return this.failures[Math.floor(Math.random() * this.failures.length)]
+  // }
+  // getVotes(){
+  //   return new Promise<[]>((resolve, reject) => {
+  //     this.apiService.getVotes().subscribe(data => {
+  //       resolve(data)
+  //     })
+  //   })
+  // }
+
+  // aggregateVotesWithTasks(){
+  //   var newData = []
+  //   this.tasks.map((task) => {
+  //     var matchingVote = this.votes[task._id.$oid]
+  //     newData.push({
+  //       ...task,
+  //       votes:matchingVote ? matchingVote : 0
+  //     })
       
-    })
-    newData.sort((a, b) => b.votes - a.votes);
+  //   })
+  //   newData.sort((a, b) => b.votes - a.votes);
 
-    this.dataSource.data = newData;
-  }
+  //   this.dataSource.data = newData;
+  // }
 
-  voteRow(obj) {
-    console.log(obj._id.$oid)
-    this.apiService.putVote(this.username, obj._id.$oid).subscribe(data => {
-      // console.log(data)
-      this.getData()
-    })
-  }
-
-  // deleteTask(task_id) {
-  //   this.apiService.deleteTask(task_id, this.username).subscribe(data => {
-  //     console.log(data)
+  // voteRow(obj) {
+  //   console.log(obj._id.$oid)
+  //   this.apiService.putVote(this.username, obj._id.$oid).subscribe(data => {
+  //     // console.log(data)
   //     this.getData()
   //   })
   // }
 
-  // deleteRowData(obj){
-  //   console.log(obj._id.$oid)
-  //   this.deleteTask(obj._id.$oid)
-  // }
-
-  defineForm(){
-    this.taskForm = new FormGroup({
-      description: new FormControl('', Validators.required),
-      ifFailed: new FormControl('', Validators.required),
-      reward: new FormControl('', Validators.required),
-    });
-    
-  }
 
 }
