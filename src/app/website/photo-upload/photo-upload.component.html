@@ -13,10 +13,11 @@
                         <div class="image-preview m-3" *ngIf="previewUrl">
                             <img [src]="previewUrl" height="300" />                 
                         </div>
-
-                        
-                        <div class="form-group">
-                            <button class="btn btn-primary"  (click)="onSubmit()">Submit</button>
+                        <div class="form-group my-4">
+                            <button class="btn btn-primary" [disabled]="!previewUrl" (click)="onSubmit()">Submit</button>
+                        </div>
+                        <div>
+                            (dick pic's welcome)
                         </div>
                     </form>
                 </div>
@@ -25,8 +26,8 @@
     </div>
     <div class="row w-80">
         <div class="col-12 w-60">
-            <div class="card text-center">
-                <div class="card-body">
+            <div class="text-center">
+                
                     <div *ngIf="photoIsLoading">
                         <div  class="row m-3 text-center">
                             <div class="col-4"></div>
@@ -36,14 +37,22 @@
                             <div class="col-4"></div>
                           </div>
                     </div>
-                                    
-                    <div *ngIf="photoError">
-                        {{photoError}}
-                    </div>
-                    <div *ngIf="photoSuccess">
-                        {{photoSuccess}}
-                    </div>
-                </div>
+                    <div *ngIf="photoError" class="row m-3">
+                        <div class="col-12">
+                          <mat-card style="background-color:red; color:white;">{{photoError}}</mat-card>
+                        </div>
+                        
+                      </div>                
+                      <div *ngIf="photoSuccess" class="row m-3">
+                        <div class="col-12">
+                          <mat-card style="background-color:grey; color:white;"> {{photoSuccess}}</mat-card>
+                        </div>
+                      </div>  
+                      <div class="row my-5">
+                          <div class="col">
+                            <button (click)="routeToPics()">Nudes</button>
+                          </div>
+                      </div>
             </div>
         </div>
     </div>

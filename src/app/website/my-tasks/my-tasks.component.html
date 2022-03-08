@@ -1,8 +1,8 @@
 <app-nav></app-nav>
 
-<div class="container my-3">
-    <button *ngIf="!showCreateTask"  (click)="showForm()">Make a Task<span class="material-icons">arrow_drop_down</span></button>
-    <button *ngIf="showCreateTask" (click)="showForm()">Make a Task<span class="material-icons">arrow_drop_up</span></button>
+<div class="container my-4">
+    <button *ngIf="!showCreateTask" mat-raised-button color="primary" (click)="showForm()">Make a Task<span class="material-icons">arrow_drop_down</span></button>
+    <button *ngIf="showCreateTask" mat-raised-button color="primary" (click)="showForm()">Make a Task<span class="material-icons">arrow_drop_up</span></button>
     <div class="row w-80" *ngIf="showCreateTask">
         <div class="col-12 w-60">
             <div class="card text-center">
@@ -39,7 +39,7 @@
                 <div class="example-element-detail"
                     [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
                     <div class="row w-100">
-                        <div class="col-9">
+                        <div class="col-8">
                             <div class="example-element-diagram">
                                 <div class="example-element-position"><b>Task:</b> {{element.description}} </div>
                                 <div class="example-element-position"><b>Failed:</b> {{element.if_failed}} </div>
@@ -51,7 +51,7 @@
                                   </div>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-4">
                             <div class="my-2">
                                 <button (click)="deleteRowData(element)">Delete</button>
                             </div>

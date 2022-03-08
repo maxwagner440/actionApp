@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { AppApiServiceService } from '../service/app-api-service.service';
@@ -26,8 +26,6 @@ export class TaskComponent implements OnInit {
   expandedElement: Task | null
   tasks = [];
   randomTask: Task
-  // votes = [];
-  // tasksWithVotes = [] 
   dataSource = new MatTableDataSource<Task>();
   username=this.cookieService.get('username')
 
@@ -60,8 +58,11 @@ export class TaskComponent implements OnInit {
   }
 
   getRandomTask(){
-    this.randomTask =  this.tasks[Math.floor(Math.random() * this.tasks.length)]
-    console.log(this.randomTask)
+    var localTasks = this.tasks.filter((task) => {
+      return task.completed == "False"
+    })
+
+    this.randomTask = localTasks[Math.floor(Math.random() * localTasks.length)]
   }
 
   completeTask(task){
