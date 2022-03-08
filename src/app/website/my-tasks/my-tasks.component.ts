@@ -24,6 +24,7 @@ export class MyTasksComponent implements OnInit {
 
   tasks = [];
   username;
+  name;
   displayedColumns: string[] = ['description'];
   expandedElement: Task | null
   showCreateTask = false;
@@ -36,18 +37,19 @@ export class MyTasksComponent implements OnInit {
   ngOnInit() {
     this.defineForm()
     this.username = this.cookieService.get("username")
-    this.getTasksByUser(this.username)
+    this.name = this.cookieService.get("name")
+    this.getTasksByUser()
   }
 
   showForm(){
     this.showCreateTask = !this.showCreateTask
   }
 
-  getTasksByUser(username) {
+  getTasksByUser() {
     var newTasks = []
       this.apiService.getTasks().subscribe(data => {
         data.map((task) => {
-          if(task.created_by == username){
+          if(task.created_by == this.name){
             newTasks.push(task)
           }
         })
@@ -57,8 +59,8 @@ export class MyTasksComponent implements OnInit {
   }
 
   deleteTask(task_id) {
-    this.apiService.deleteTask(task_id, this.username).subscribe(data => {
-      this.getTasksByUser(this.username)
+    this.apiService.deleteTask(task_id, this.name).subscribe(data => {
+      this.getTasksByUser()
     })
   }
 
@@ -70,10 +72,10 @@ export class MyTasksComponent implements OnInit {
     if(this.taskForm.controls.description.value && this.taskForm.controls.ifFailed.value) {
       this.apiService.putTask(
         this.taskForm.controls.description.value,
-        this.username,
+        this.name,
         this.taskForm.controls.ifFailed.value).subscribe(data => {
           this.taskForm.reset()
-          this.getTasksByUser(this.username)
+          this.getTasksByUser()
         })
     } else {
       alert('Please fill out form completely')
@@ -85,7 +87,7 @@ export class MyTasksComponent implements OnInit {
   completeTask(task){
     console.log(task)
     this.apiService.completeTask(task._id.$oid).subscribe(data => {
-      this.getTasksByUser(this.username)
+      this.getTasksByUser()
     })
   }
 
