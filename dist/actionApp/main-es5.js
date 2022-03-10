@@ -71,7 +71,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-nav></app-nav>\n\n<button (click)=\"getAllUsers()\">Get All Users</button>\n\n\n\n<div >\n    <!-- TABLE -->\n    <div class=\"row text-center my-3\">\n        <div class=\"col\">\n            <h2>All Users</h2>\n        </div>\n    </div>\n    <table mat-table [dataSource]=\"dataSource\" multiTemplateDataRows class=\"mat-elevation-z8\">\n        <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumns\">\n            <th mat-header-cell *matHeaderCellDef> {{column}} </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\n        </ng-container>\n        <ng-container matColumnDef=\"expandedDetail\">\n            <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\n                <div class=\"example-element-detail\"\n                    [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\n                    <div class=\"row w-100\">\n                        <div class=\"col-8\">\n                            <div class=\"example-element-diagram\">\n                                <div class=\"example-element-position\"><b>active:</b> {{element.is_active}} </div>\n                            </div>\n                        </div>\n                        <div class=\"col-4\">\n                            <!-- <mat-slide-toggle\n                                class=\"example-margin\"\n                                (click)=\"toggleButton(element)\"\n                                [color]=\"color\"\n                                [checked]=\"element.is_active\"\n                               >\n                                Slide me!\n                            </mat-slide-toggle> -->\n                            <div class=\"my-2\">\n                                <button (click)=\"deactivate(element)\">Deactivate</button>\n                            </div>\n                            <div class=\"my-2\">\n                                <button (click)=\"activate(element)\">Activate</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </td>\n        </ng-container>\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let element; columns: displayedColumns;\" class=\"example-element-row\"\n            [class.example-expanded-row]=\"expandedElement === element\"\n            (click)=\"expandedElement = expandedElement === element ? null : element\">\n        </tr>\n        <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\n    </table>\n</div>";
+    __webpack_exports__["default"] = "<app-nav></app-nav>\n<div >\n    <!-- TABLE -->\n    <div class=\"row text-center my-3\">\n        <div class=\"col\">\n            <h2>All Users</h2>\n        </div>\n    </div>\n    <table mat-table [dataSource]=\"dataSource\" multiTemplateDataRows class=\"mat-elevation-z8\">\n        <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumns\">\n            <th mat-header-cell *matHeaderCellDef> {{column}} </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\n        </ng-container>\n        <ng-container matColumnDef=\"expandedDetail\">\n            <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\n                <div class=\"example-element-detail\"\n                    [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\n                    <div class=\"row w-100\">\n                        <div class=\"col-8\">\n                            <div class=\"example-element-diagram\">\n                                <div class=\"example-element-position\"><b>active:</b> {{element.is_active}} </div>\n                            </div>\n                        </div>\n                        <div class=\"col-4\">\n                            <!-- <mat-slide-toggle\n                                class=\"example-margin\"\n                                (click)=\"toggleButton(element)\"\n                                [color]=\"color\"\n                                [checked]=\"element.is_active\"\n                               >\n                                Slide me!\n                            </mat-slide-toggle> -->\n                            <div class=\"my-2\">\n                                <button (click)=\"deactivate(element)\">Deactivate</button>\n                            </div>\n                            <div class=\"my-2\">\n                                <button (click)=\"activate(element)\">Activate</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </td>\n        </ng-container>\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let element; columns: displayedColumns;\" class=\"example-element-row\"\n            [class.example-expanded-row]=\"expandedElement === element\"\n            (click)=\"expandedElement = expandedElement === element ? null : element\">\n        </tr>\n        <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\n    </table>\n</div>";
     /***/
   },
 
@@ -1775,25 +1775,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (this.signUpForm.controls.email.value && this.signUpForm.controls.password.value && this.signUpForm.controls.name.value) {
             this.apiService.putUser(this.signUpForm.controls.name.value, this.signUpForm.controls.email.value, this.signUpForm.controls.password.value).subscribe(function (data) {
+              console.log(data);
+
               if (data.email && data.name) {
-                alert("you have signed up with email '" + data.email + "' and are logged in");
+                _this6.incomingSnackMessage = "you have signed up with email '" + data.email + "'. Text Max at (440) 220-0295 to get your user access!";
 
-                _this6.cookieService.set('username', data.email);
+                _this6.signUpForm.reset();
 
-                _this6.cookieService.set('cookie', _this6.makeCooke());
-
-                _this6.router.navigate(['/home']);
+                _this6.showLogin = true;
               } else {
                 alert("Something went wrong");
               }
             });
           } else {
-            alert("enter username, password and name");
+            this.incomingSnackMessage = "enter username, password and name";
           }
-        } // emitLoginEvent(){
-        //   this.loginEvent.emit("test from event emitter homue")
-        // }
-
+        }
       }, {
         key: "defineForm",
         value: function defineForm() {
