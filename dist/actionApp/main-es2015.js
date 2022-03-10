@@ -1233,21 +1233,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service/app-api-service.service */ "./src/app/website/service/app-api-service.service.ts");
+/* harmony import */ var _service_auth_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../service/auth-service.service */ "./src/app/website/service/auth-service.service.ts");
+
 
 
 
 
 
 let PhotoUploadComponent = class PhotoUploadComponent {
-    constructor(apiService, router) {
+    constructor(apiService, router, srvLogin) {
         this.apiService = apiService;
         this.router = router;
+        this.srvLogin = srvLogin;
         this.fileData = null;
         this.previewUrl = null;
         this.photoIsLoading = false;
         this.photoError = null;
         this.photoSuccess = null;
         this.uploadedFilePath = null;
+        if (!srvLogin.checkLogValues()) {
+            router.navigate(['/login', { navMessage: "Please login" }]);
+        }
     }
     ngOnInit() {
         this.defineForm();
@@ -1305,7 +1311,8 @@ let PhotoUploadComponent = class PhotoUploadComponent {
 };
 PhotoUploadComponent.ctorParameters = () => [
     { type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_4__["AppApiServiceService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _service_auth_service_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"] }
 ];
 PhotoUploadComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1344,14 +1351,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PhotoViewComponent", function() { return PhotoViewComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/app-api-service.service */ "./src/app/website/service/app-api-service.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/app-api-service.service */ "./src/app/website/service/app-api-service.service.ts");
+/* harmony import */ var _service_auth_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service/auth-service.service */ "./src/app/website/service/auth-service.service.ts");
+
+
 
 
 
 let PhotoViewComponent = class PhotoViewComponent {
-    constructor(apiService) {
+    constructor(apiService, srvLogin, router) {
         this.apiService = apiService;
+        this.srvLogin = srvLogin;
+        this.router = router;
         this.photo_links = [];
+        if (!srvLogin.checkLogValues()) {
+            router.navigate(['/login', { navMessage: "Please login" }]);
+        }
     }
     ngOnInit() {
         this.getAllPhotos();
@@ -1363,7 +1379,9 @@ let PhotoViewComponent = class PhotoViewComponent {
     }
 };
 PhotoViewComponent.ctorParameters = () => [
-    { type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_2__["AppApiServiceService"] }
+    { type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_3__["AppApiServiceService"] },
+    { type: _service_auth_service_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
 ];
 PhotoViewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
