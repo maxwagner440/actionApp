@@ -9,30 +9,36 @@
     <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
         <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns">
             <th mat-header-cell *matHeaderCellDef> {{column}} </th>
-            <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+            <td mat-cell *matCellDef="let element">
+                <span *ngIf="column !== 'is_active'">{{element[column]}}</span>
+                <span *ngIf="column === 'is_active'">
+                    <div *ngIf="element[column] == true">
+                        <mat-icon style="color:green;">check</mat-icon>
+                    </div>
+                    <div *ngIf="element[column] == false">
+                        <mat-icon style="color:red;">cancel</mat-icon>
+                    </div>
+                </span> 
+            </td>
         </ng-container>
         <ng-container matColumnDef="expandedDetail">
             <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
                 <div class="example-element-detail"
                     [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
                     <div class="row w-100">
-                        <div class="col-8">
-                            <div class="example-element-diagram">
-                                <div class="example-element-position"><b>active:</b> {{element.is_active}} </div>
+                        <div class="col-6 text-center">
+                            <div class="my-2">
+                                <button (click)="deactivate(element)">Deactivate</button>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-6 text-center">
                             <!-- <mat-slide-toggle
                                 class="example-margin"
                                 (click)="toggleButton(element)"
                                 [color]="color"
                                 [checked]="element.is_active"
                                >
-                                Slide me!
                             </mat-slide-toggle> -->
-                            <div class="my-2">
-                                <button (click)="deactivate(element)">Deactivate</button>
-                            </div>
                             <div class="my-2">
                                 <button (click)="activate(element)">Activate</button>
                             </div>

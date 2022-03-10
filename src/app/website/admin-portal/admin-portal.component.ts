@@ -23,7 +23,7 @@ export class AdminPortalComponent implements OnInit {
 
   username;
   allUsers:User[] = [];
-  displayedColumns: string[] = ['email', "name"];
+  displayedColumns: string[] = ['email', "name", "is_active"];
   expandedElement: User | null;
   dataSource = new MatTableDataSource<User>();
   isToggled= false
