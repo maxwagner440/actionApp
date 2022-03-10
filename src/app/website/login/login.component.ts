@@ -91,11 +91,11 @@ export class LoginComponent implements OnInit {
       this.apiService.putUser(
         this.signUpForm.controls.name.value,this.signUpForm.controls.email.value, this.signUpForm.controls.password.value
       ).subscribe((data: any) => {
+        console.log(data)
         if(data.email && data.name) {
-          alert("you have signed up with email '"+data.email+"' and are logged in")
-          this.cookieService.set('username', data.email);
-          this.cookieService.set('cookie', this.makeCooke())
-          this.router.navigate(['/home']);
+          this.incomingSnackMessage = "you have signed up with email '"+data.email+"'. Text Max at (440) 220-0295 to get your user access!"
+          this.signUpForm.reset()
+          this.showLogin = true
         }
         else {
           alert("Something went wrong")
@@ -103,13 +103,11 @@ export class LoginComponent implements OnInit {
       })
     }
     else {
-      alert("enter username, password and name")
+      this.incomingSnackMessage = "enter username, password and name"
     }
   }
 
-  // emitLoginEvent(){
-  //   this.loginEvent.emit("test from event emitter homue")
-  // }
+ 
   defineForm(){
     this.signUpForm = new FormGroup({
       name: new FormControl('', Validators.required),
