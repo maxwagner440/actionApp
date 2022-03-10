@@ -37,3 +37,8 @@ FIREBASE DEPLOYMENT
 OR
 
 From Github.com
+
+
+NG GENERATE
+
+ ng g c {component here} --module app

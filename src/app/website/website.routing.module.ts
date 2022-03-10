@@ -7,6 +7,7 @@ import { MyTasksComponent } from "./my-tasks/my-tasks.component";
 import { PhotoUploadComponent } from "./photo-upload/photo-upload.component";
 import { PhotoViewComponent } from "./photo-view/photo-view.component";
 import { AllTaskComponent } from "./all-tasks/all-tasks.component";
+import { AdminPortalComponent } from "./admin-portal/admin-portal.component";
 
 export const websiteRoutes: Routes = [
     {
@@ -26,6 +27,9 @@ export const websiteRoutes: Routes = [
     },
     {
       path: 'view-photos', component: PhotoViewComponent
+    },
+    {
+      path: 'admin-portal', component: AdminPortalComponent
     },
     {
         path: '**', component: HomeComponent

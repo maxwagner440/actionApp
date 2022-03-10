@@ -56,6 +56,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/website/admin-portal/admin-portal.component.html":
+  /*!********************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/website/admin-portal/admin-portal.component.html ***!
+    \********************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppWebsiteAdminPortalAdminPortalComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<app-nav></app-nav>\n\n<button (click)=\"getAllUsers()\">Get All Users</button>\n\n\n\n<div >\n    <!-- TABLE -->\n    <div class=\"row text-center my-3\">\n        <div class=\"col\">\n            <h2>All Users</h2>\n        </div>\n    </div>\n    <table mat-table [dataSource]=\"dataSource\" multiTemplateDataRows class=\"mat-elevation-z8\">\n        <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of displayedColumns\">\n            <th mat-header-cell *matHeaderCellDef> {{column}} </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element[column]}} </td>\n        </ng-container>\n        <ng-container matColumnDef=\"expandedDetail\">\n            <td mat-cell *matCellDef=\"let element\" [attr.colspan]=\"displayedColumns.length\">\n                <div class=\"example-element-detail\"\n                    [@detailExpand]=\"element == expandedElement ? 'expanded' : 'collapsed'\">\n                    <div class=\"row w-100\">\n                        <div class=\"col-8\">\n                            <div class=\"example-element-diagram\">\n                                <div class=\"example-element-position\"><b>active:</b> {{element.is_active}} </div>\n                            </div>\n                        </div>\n                        <div class=\"col-4\">\n                            <!-- <mat-slide-toggle\n                                class=\"example-margin\"\n                                (click)=\"toggleButton(element)\"\n                                [color]=\"color\"\n                                [checked]=\"element.is_active\"\n                               >\n                                Slide me!\n                            </mat-slide-toggle> -->\n                            <div class=\"my-2\">\n                                <button (click)=\"deactivate(element)\">Deactivate</button>\n                            </div>\n                            <div class=\"my-2\">\n                                <button (click)=\"activate(element)\">Activate</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </td>\n        </ng-container>\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let element; columns: displayedColumns;\" class=\"example-element-row\"\n            [class.example-expanded-row]=\"expandedElement === element\"\n            (click)=\"expandedElement = expandedElement === element ? null : element\">\n        </tr>\n        <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\n    </table>\n</div>";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/website/all-tasks/all-tasks.component.html":
   /*!**************************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/website/all-tasks/all-tasks.component.html ***!
@@ -1092,6 +1112,198 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/website/admin-portal/admin-portal.component.css":
+  /*!*****************************************************************!*\
+    !*** ./src/app/website/admin-portal/admin-portal.component.css ***!
+    \*****************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppWebsiteAdminPortalAdminPortalComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = ".pointer {\r\n    cursor: pointer;\r\n}\r\ntable {\r\n  width: 100%;\r\n}\r\ntr.example-detail-row {\r\n  height: 0;\r\n}\r\ntr.example-element-row:not(.example-expanded-row):hover {\r\n  background: whitesmoke;\r\n}\r\ntr.example-element-row:not(.example-expanded-row):active {\r\n  background: #efefef;\r\n}\r\n.example-element-row td {\r\n  border-bottom-width: 0;\r\n}\r\n.example-element-detail {\r\n  overflow: hidden;\r\n  display: flex;\r\n}\r\n.example-element-diagram {\r\n  min-width: 80px;\r\n  border: 2px solid black;\r\n  padding: 8px;\r\n  font-weight: lighter;\r\n  margin: 8px 0;\r\n  /* height: 104px; */\r\n}\r\n.example-element-symbol {\r\n  font-weight: bold;\r\n  font-size: 40px;\r\n  line-height: normal;\r\n}\r\n.example-element-description {\r\n  padding: 16px;\r\n}\r\n.example-element-description-attribution {\r\n  opacity: 0.5;\r\n}\r\n.mat-header-cell {\r\n  font-size: 18px;\r\n  font-weight: 500;\r\n  color:black\r\n}\r\n.input-width{\r\n  width: 80%;\r\n}\r\n.choosing-buttons{\r\n  height:80px;\r\n  width:120px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2Vic2l0ZS9hZG1pbi1wb3J0YWwvYWRtaW4tcG9ydGFsLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxlQUFlO0FBQ25CO0FBQ0E7RUFDRSxXQUFXO0FBQ2I7QUFFQTtFQUNFLFNBQVM7QUFDWDtBQUVBO0VBQ0Usc0JBQXNCO0FBQ3hCO0FBRUE7RUFDRSxtQkFBbUI7QUFDckI7QUFFQTtFQUNFLHNCQUFzQjtBQUN4QjtBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGFBQWE7QUFDZjtBQUVBO0VBQ0UsZUFBZTtFQUNmLHVCQUF1QjtFQUN2QixZQUFZO0VBQ1osb0JBQW9CO0VBQ3BCLGFBQWE7RUFDYixtQkFBbUI7QUFDckI7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2YsbUJBQW1CO0FBQ3JCO0FBRUE7RUFDRSxhQUFhO0FBQ2Y7QUFFQTtFQUNFLFlBQVk7QUFDZDtBQUVBO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQjtBQUNGO0FBRUE7RUFDRSxVQUFVO0FBQ1o7QUFFQTtFQUNFLFdBQVc7RUFDWCxXQUFXO0FBQ2IiLCJmaWxlIjoic3JjL2FwcC93ZWJzaXRlL2FkbWluLXBvcnRhbC9hZG1pbi1wb3J0YWwuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wb2ludGVyIHtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG50YWJsZSB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbnRyLmV4YW1wbGUtZGV0YWlsLXJvdyB7XHJcbiAgaGVpZ2h0OiAwO1xyXG59XHJcblxyXG50ci5leGFtcGxlLWVsZW1lbnQtcm93Om5vdCguZXhhbXBsZS1leHBhbmRlZC1yb3cpOmhvdmVyIHtcclxuICBiYWNrZ3JvdW5kOiB3aGl0ZXNtb2tlO1xyXG59XHJcblxyXG50ci5leGFtcGxlLWVsZW1lbnQtcm93Om5vdCguZXhhbXBsZS1leHBhbmRlZC1yb3cpOmFjdGl2ZSB7XHJcbiAgYmFja2dyb3VuZDogI2VmZWZlZjtcclxufVxyXG5cclxuLmV4YW1wbGUtZWxlbWVudC1yb3cgdGQge1xyXG4gIGJvcmRlci1ib3R0b20td2lkdGg6IDA7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtZGV0YWlsIHtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtZGlhZ3JhbSB7XHJcbiAgbWluLXdpZHRoOiA4MHB4O1xyXG4gIGJvcmRlcjogMnB4IHNvbGlkIGJsYWNrO1xyXG4gIHBhZGRpbmc6IDhweDtcclxuICBmb250LXdlaWdodDogbGlnaHRlcjtcclxuICBtYXJnaW46IDhweCAwO1xyXG4gIC8qIGhlaWdodDogMTA0cHg7ICovXHJcbn1cclxuXHJcbi5leGFtcGxlLWVsZW1lbnQtc3ltYm9sIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBmb250LXNpemU6IDQwcHg7XHJcbiAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcclxufVxyXG5cclxuLmV4YW1wbGUtZWxlbWVudC1kZXNjcmlwdGlvbiB7XHJcbiAgcGFkZGluZzogMTZweDtcclxufVxyXG5cclxuLmV4YW1wbGUtZWxlbWVudC1kZXNjcmlwdGlvbi1hdHRyaWJ1dGlvbiB7XHJcbiAgb3BhY2l0eTogMC41O1xyXG59XHJcbiAgXHJcbi5tYXQtaGVhZGVyLWNlbGwge1xyXG4gIGZvbnQtc2l6ZTogMThweDtcclxuICBmb250LXdlaWdodDogNTAwO1xyXG4gIGNvbG9yOmJsYWNrXHJcbn1cclxuXHJcbi5pbnB1dC13aWR0aHtcclxuICB3aWR0aDogODAlO1xyXG59XHJcblxyXG4uY2hvb3NpbmctYnV0dG9uc3tcclxuICBoZWlnaHQ6ODBweDtcclxuICB3aWR0aDoxMjBweDtcclxufSJdfQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/website/admin-portal/admin-portal.component.ts":
+  /*!****************************************************************!*\
+    !*** ./src/app/website/admin-portal/admin-portal.component.ts ***!
+    \****************************************************************/
+
+  /*! exports provided: AdminPortalComponent */
+
+  /***/
+  function srcAppWebsiteAdminPortalAdminPortalComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AdminPortalComponent", function () {
+      return AdminPortalComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/animations */
+    "./node_modules/@angular/animations/fesm2015/animations.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/material */
+    "./node_modules/@angular/material/esm2015/material.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ngx-cookie-service */
+    "./node_modules/ngx-cookie-service/index.js");
+    /* harmony import */
+
+
+    var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ../service/app-api-service.service */
+    "./src/app/website/service/app-api-service.service.ts");
+    /* harmony import */
+
+
+    var _service_auth_service_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../service/auth-service.service */
+    "./src/app/website/service/auth-service.service.ts");
+
+    var AdminPortalComponent = /*#__PURE__*/function () {
+      function AdminPortalComponent(srvLogin, router, cookieService, apiService) {
+        _classCallCheck(this, AdminPortalComponent);
+
+        this.srvLogin = srvLogin;
+        this.router = router;
+        this.cookieService = cookieService;
+        this.apiService = apiService;
+        this.allUsers = [];
+        this.displayedColumns = ['email', "name"];
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"]();
+        this.isToggled = false;
+
+        if (!srvLogin.checkLogValues()) {
+          router.navigate(['/login', {
+            navMessage: "Please login"
+          }]);
+        }
+      }
+
+      _createClass(AdminPortalComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.username = this.cookieService.get("username");
+
+          if (this.username !== "maxwagner440@gmail.com") {
+            this.router.navigate(['/home']);
+          }
+
+          this.getAllUsers();
+        }
+      }, {
+        key: "getAllUsers",
+        value: function getAllUsers() {
+          var _this = this;
+
+          this.apiService.getAllUsers().subscribe(function (data) {
+            _this.dataSource.data = data;
+          });
+        } // toggleButton(user){
+        //   if(!this.isToggled){
+        //     this.activate(user);
+        //   }else{
+        //     this.deactivate(user);
+        //   }
+        //   this.isToggled = !this.isToggled;
+        // }
+
+      }, {
+        key: "activate",
+        value: function activate(user) {
+          this.toggleApiCall(user, true);
+        }
+      }, {
+        key: "deactivate",
+        value: function deactivate(user) {
+          this.toggleApiCall(user, false);
+        }
+      }, {
+        key: "toggleApiCall",
+        value: function toggleApiCall(user, active_bool) {
+          var _this2 = this;
+
+          this.apiService.activateUserTogglePost(this.username, user.email, active_bool).subscribe(function (data) {
+            console.log(data);
+
+            _this2.getAllUsers();
+          });
+        }
+      }]);
+
+      return AdminPortalComponent;
+    }();
+
+    AdminPortalComponent.ctorParameters = function () {
+      return [{
+        type: _service_auth_service_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+      }, {
+        type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"]
+      }, {
+        type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_6__["AppApiServiceService"]
+      }];
+    };
+
+    AdminPortalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+      selector: 'app-admin-portal',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./admin-portal.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/website/admin-portal/admin-portal.component.html"))["default"],
+      animations: [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('detailExpand', [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('collapsed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
+        height: '0px',
+        minHeight: '0'
+      })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('expanded', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
+        height: '*'
+      })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('expanded <=> collapsed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('225ms cubic-bezier(0.4, 0.0, 0.2, 1)'))])],
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./admin-portal.component.css */
+      "./src/app/website/admin-portal/admin-portal.component.css"))["default"]]
+    })], AdminPortalComponent);
+    /***/
+  },
+
+  /***/
   "./src/app/website/all-tasks/all-tasks.component.css":
   /*!***********************************************************!*\
     !*** ./src/app/website/all-tasks/all-tasks.component.css ***!
@@ -1232,10 +1444,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getTasks",
         value: function getTasks() {
-          var _this = this;
+          var _this3 = this;
 
           return new Promise(function (resolve, reject) {
-            _this.apiService.getTasks().subscribe(function (data) {
+            _this3.apiService.getTasks().subscribe(function (data) {
               resolve(data);
             });
           });
@@ -1490,48 +1702,58 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LoginComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this2 = this;
+          var _this4 = this;
 
           this.activatedRoute.params.subscribe(function (params) {
             console.log(params.navMessage);
-            _this2.incomingSnackMessage = params.navMessage;
+            _this4.incomingSnackMessage = params.navMessage;
           });
           this.defineForm();
         }
       }, {
         key: "loginUser",
         value: function loginUser() {
-          var _this3 = this;
+          var _this5 = this;
 
           this.incomingSnackMessage = null;
 
           if (this.signInForm.controls.email.value && this.signInForm.controls.password.value) {
             this.showSpinner = true;
             this.apiService.postUser(this.signInForm.controls.email.value, this.signInForm.controls.password.value).subscribe(function (data) {
-              if (data.name && data.email) {
-                _this3.showSpinner = false;
+              var response = data.response;
 
-                _this3.cookieService.set('username', data.email);
+              if (response.name && response.email) {
+                _this5.showSpinner = false;
 
-                _this3.cookieService.set('name', data.name);
+                _this5.cookieService.set('username', response.email);
 
-                _this3.cookieService.set('cookie', _this3.makeCooke()); //this.emitLoginEvent()
+                _this5.cookieService.set('name', response.name);
 
+                _this5.cookieService.set('cookie', _this5.makeCooke());
 
-                _this3.router.navigate(['/home']);
+                _this5.handleRoute(response);
               } else {
-                _this3.showSpinner = false;
+                _this5.showSpinner = false;
 
-                if (data.Warning) {
-                  _this3.incomingSnackMessage = data.Warning;
+                if (response) {
+                  _this5.incomingSnackMessage = response;
                 } else {
-                  _this3.incomingSnackMessage = "Incorrent username/password";
+                  _this5.incomingSnackMessage = "Incorrent username/password";
                 }
               }
             });
           } else {
             this.showSpinner = false;
             this.incomingSnackMessage = "enter username and password";
+          }
+        }
+      }, {
+        key: "handleRoute",
+        value: function handleRoute(response) {
+          if (response.true_to_the_game) {
+            return this.router.navigate(['/admin-portal']);
+          } else {
+            this.router.navigate(['/home']);
           }
         }
       }, {
@@ -1549,18 +1771,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "create_user",
         value: function create_user() {
-          var _this4 = this;
+          var _this6 = this;
 
           if (this.signUpForm.controls.email.value && this.signUpForm.controls.password.value && this.signUpForm.controls.name.value) {
             this.apiService.putUser(this.signUpForm.controls.name.value, this.signUpForm.controls.email.value, this.signUpForm.controls.password.value).subscribe(function (data) {
               if (data.email && data.name) {
                 alert("you have signed up with email '" + data.email + "' and are logged in");
 
-                _this4.cookieService.set('username', data.email);
+                _this6.cookieService.set('username', data.email);
 
-                _this4.cookieService.set('cookie', _this4.makeCooke());
+                _this6.cookieService.set('cookie', _this6.makeCooke());
 
-                _this4.router.navigate(['/home']);
+                _this6.router.navigate(['/home']);
               } else {
                 alert("Something went wrong");
               }
@@ -1739,12 +1961,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getTasksByUser",
         value: function getTasksByUser() {
-          var _this5 = this;
+          var _this7 = this;
 
           var newTasks = [];
           this.apiService.getTasks().subscribe(function (data) {
             data.map(function (task) {
-              if (task.created_by == _this5.name) {
+              if (task.created_by == _this7.name) {
                 newTasks.push(task);
               }
             });
@@ -1754,10 +1976,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteTask",
         value: function deleteTask(task_id) {
-          var _this6 = this;
+          var _this8 = this;
 
           this.apiService.deleteTask(task_id, this.name).subscribe(function (data) {
-            _this6.getTasksByUser();
+            _this8.getTasksByUser();
           });
         }
       }, {
@@ -1768,13 +1990,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createTask",
         value: function createTask() {
-          var _this7 = this;
+          var _this9 = this;
 
           if (this.taskForm.controls.description.value && this.taskForm.controls.ifFailed.value) {
             this.apiService.putTask(this.taskForm.controls.description.value, this.name, this.taskForm.controls.ifFailed.value).subscribe(function (data) {
-              _this7.taskForm.reset();
+              _this9.taskForm.reset();
 
-              _this7.getTasksByUser();
+              _this9.getTasksByUser();
             });
           } else {
             alert('Please fill out form completely');
@@ -1783,11 +2005,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "completeTask",
         value: function completeTask(task) {
-          var _this8 = this;
+          var _this10 = this;
 
           console.log(task);
           this.apiService.completeTask(task._id.$oid).subscribe(function (data) {
-            _this8.getTasksByUser();
+            _this10.getTasksByUser();
           });
         }
       }, {
@@ -2072,7 +2294,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "preview",
         value: function preview() {
-          var _this9 = this;
+          var _this11 = this;
 
           // Show preview 
           var mimeType = this.fileData.type;
@@ -2085,13 +2307,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           reader.readAsDataURL(this.fileData);
 
           reader.onload = function (_event) {
-            _this9.previewUrl = reader.result;
+            _this11.previewUrl = reader.result;
           };
         }
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this10 = this;
+          var _this12 = this;
 
           this.photoError = null;
           var formData = new FormData();
@@ -2099,15 +2321,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.photoIsLoading = true;
           this.apiService.postPhoto(formData).subscribe(function (data) {
             if (data.response === "Successful upload") {
-              _this10.previewUrl = "";
+              _this12.previewUrl = "";
 
-              _this10.photoUploadForm.reset();
+              _this12.photoUploadForm.reset();
 
-              _this10.photoIsLoading = false;
-              _this10.photoSuccess = "File uploaded Successfully";
+              _this12.photoIsLoading = false;
+              _this12.photoSuccess = "File uploaded Successfully";
             } else {
-              _this10.photoIsLoading = false;
-              _this10.photoError = "Something went wrong. Try again please and thank you";
+              _this12.photoIsLoading = false;
+              _this12.photoError = "Something went wrong. Try again please and thank you";
             }
           }); // this.http.post('url/to/your/api', formData)
           //   .subscribe(res => {
@@ -2227,10 +2449,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllPhotos",
         value: function getAllPhotos() {
-          var _this11 = this;
+          var _this13 = this;
 
           this.apiService.getPhotos().subscribe(function (data) {
-            _this11.photo_links = data;
+            _this13.photo_links = data;
           });
         }
       }]);
@@ -2309,9 +2531,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
       _createClass(AppApiServiceService, [{
-        key: "getUser",
-        value: function getUser() {
-          return this.http.get(this.baseUrl + this.userUrl + "/6217eb6d5eacf615cf83ebd8");
+        key: "getAllUsers",
+        value: function getAllUsers() {
+          return this.http.get(this.baseUrl + this.userUrl + "s");
+        }
+      }, {
+        key: "activateUserTogglePost",
+        value: function activateUserTogglePost(authorized_user, user_email, active_toggle) {
+          console.log(authorized_user);
+          return this.http.post(this.baseUrl + '/user-status', {
+            "authorized_email": authorized_user,
+            "user_email": user_email,
+            active: active_toggle ? 1 : 0
+          });
         }
       }, {
         key: "putUser",
@@ -2645,10 +2877,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getTasks",
         value: function getTasks() {
-          var _this12 = this;
+          var _this14 = this;
 
           return new Promise(function (resolve, reject) {
-            _this12.apiService.getTasks().subscribe(function (data) {
+            _this14.apiService.getTasks().subscribe(function (data) {
               resolve(data);
             });
           });
@@ -2821,14 +3053,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _all_tasks_all_tasks_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
     /*! ./all-tasks/all-tasks.component */
     "./src/app/website/all-tasks/all-tasks.component.ts");
+    /* harmony import */
+
+
+    var _admin_portal_admin_portal_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    /*! ./admin-portal/admin-portal.component */
+    "./src/app/website/admin-portal/admin-portal.component.ts");
 
     var WebsiteModule = /*#__PURE__*/_createClass(function WebsiteModule() {
       _classCallCheck(this, WebsiteModule);
     });
 
     WebsiteModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _website_routing_module__WEBPACK_IMPORTED_MODULE_4__["WebsiteRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSidenavModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatGridListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatMenuModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTabsModule"]],
-      declarations: [_all_tasks_all_tasks_component__WEBPACK_IMPORTED_MODULE_15__["AllTaskComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"], _nav_nav_component__WEBPACK_IMPORTED_MODULE_10__["NavComponent"], _task_task_component__WEBPACK_IMPORTED_MODULE_11__["TaskComponent"], _my_tasks_my_tasks_component__WEBPACK_IMPORTED_MODULE_12__["MyTasksComponent"], _photo_upload_photo_upload_component__WEBPACK_IMPORTED_MODULE_13__["PhotoUploadComponent"], _photo_view_photo_view_component__WEBPACK_IMPORTED_MODULE_14__["PhotoViewComponent"]],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _website_routing_module__WEBPACK_IMPORTED_MODULE_4__["WebsiteRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSidenavModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatGridListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatMenuModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTabsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSlideToggleModule"]],
+      declarations: [_all_tasks_all_tasks_component__WEBPACK_IMPORTED_MODULE_15__["AllTaskComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"], _nav_nav_component__WEBPACK_IMPORTED_MODULE_10__["NavComponent"], _task_task_component__WEBPACK_IMPORTED_MODULE_11__["TaskComponent"], _my_tasks_my_tasks_component__WEBPACK_IMPORTED_MODULE_12__["MyTasksComponent"], _photo_upload_photo_upload_component__WEBPACK_IMPORTED_MODULE_13__["PhotoUploadComponent"], _photo_view_photo_view_component__WEBPACK_IMPORTED_MODULE_14__["PhotoViewComponent"], _admin_portal_admin_portal_component__WEBPACK_IMPORTED_MODULE_16__["AdminPortalComponent"]],
       providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_7__["CookieService"]]
     })], WebsiteModule);
     /***/
@@ -2919,6 +3157,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _all_tasks_all_tasks_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ./all-tasks/all-tasks.component */
     "./src/app/website/all-tasks/all-tasks.component.ts");
+    /* harmony import */
+
+
+    var _admin_portal_admin_portal_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! ./admin-portal/admin-portal.component */
+    "./src/app/website/admin-portal/admin-portal.component.ts");
 
     var websiteRoutes = [{
       path: 'login',
@@ -2938,6 +3182,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'view-photos',
       component: _photo_view_photo_view_component__WEBPACK_IMPORTED_MODULE_8__["PhotoViewComponent"]
+    }, {
+      path: 'admin-portal',
+      component: _admin_portal_admin_portal_component__WEBPACK_IMPORTED_MODULE_10__["AdminPortalComponent"]
     }, {
       path: '**',
       component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"]

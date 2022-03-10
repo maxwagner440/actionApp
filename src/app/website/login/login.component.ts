@@ -43,18 +43,20 @@ export class LoginComponent implements OnInit {
       this.apiService.postUser(
         this.signInForm.controls.email.value,this.signInForm.controls.password.value
       ).subscribe((data: any) => {
-        if(data.name && data.email) {
+        var response = data.response
+
+        if(response.name && response.email) {
           this.showSpinner = false;
-          this.cookieService.set('username', data.email);
-          this.cookieService.set('name', data.name)
+          this.cookieService.set('username', response.email);
+          this.cookieService.set('name', response.name)
           this.cookieService.set('cookie', this.makeCooke())
-          //this.emitLoginEvent()
-          this.router.navigate(['/home']);
+
+          this.handleRoute(response)
         }
         else {
           this.showSpinner = false;
-          if(data.Warning) {
-            this.incomingSnackMessage = data.Warning;
+          if(response) {
+            this.incomingSnackMessage = response;
           }else {
             this.incomingSnackMessage = "Incorrent username/password";
           }
@@ -67,6 +69,14 @@ export class LoginComponent implements OnInit {
       this.incomingSnackMessage = "enter username and password";
     }
 
+  }
+
+  handleRoute(response){
+    if (response.true_to_the_game) {
+      return this.router.navigate(['/admin-portal']);
+    } else {
+      this.router.navigate(['/home']);
+    }
   }
 
   makeCooke(){
