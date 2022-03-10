@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
 import { User } from '../models/user.model';
-import { Task } from '../models/task.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +15,16 @@ export class AppApiServiceService {
   voteUrl = "/vote";
   photoUrl = "/photos";
   //USER
-  getUser() {
-    return this.http.get<User>(this.baseUrl+this.userUrl+"/6217eb6d5eacf615cf83ebd8");
+  getAllUsers() {
+    return this.http.get<User[]>(this.baseUrl+this.userUrl+"s");
+  }
+
+  activateUserTogglePost(authorized_user, user_email, active_toggle){
+    console.log(authorized_user)
+    return this.http.post<any>(this.baseUrl+'/user-status', {"authorized_email":authorized_user, "user_email":user_email,active:active_toggle ? 1 : 0});
   }
 
   putUser(name,email,password) {
-
     return this.http.put<any>(this.baseUrl+this.userUrl, 
       {"name":name,"email":email, "password":password});
   }
