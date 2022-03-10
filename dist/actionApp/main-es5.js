@@ -2260,19 +2260,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../service/app-api-service.service */
     "./src/app/website/service/app-api-service.service.ts");
+    /* harmony import */
+
+
+    var _service_auth_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ../service/auth-service.service */
+    "./src/app/website/service/auth-service.service.ts");
 
     var PhotoUploadComponent = /*#__PURE__*/function () {
-      function PhotoUploadComponent(apiService, router) {
+      function PhotoUploadComponent(apiService, router, srvLogin) {
         _classCallCheck(this, PhotoUploadComponent);
 
         this.apiService = apiService;
         this.router = router;
+        this.srvLogin = srvLogin;
         this.fileData = null;
         this.previewUrl = null;
         this.photoIsLoading = false;
         this.photoError = null;
         this.photoSuccess = null;
         this.uploadedFilePath = null;
+
+        if (!srvLogin.checkLogValues()) {
+          router.navigate(['/login', {
+            navMessage: "Please login"
+          }]);
+        }
       }
 
       _createClass(PhotoUploadComponent, [{
@@ -2357,6 +2370,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_4__["AppApiServiceService"]
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+      }, {
+        type: _service_auth_service_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]
       }];
     };
 
@@ -2426,16 +2441,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../service/app-api-service.service */
     "./src/app/website/service/app-api-service.service.ts");
+    /* harmony import */
+
+
+    var _service_auth_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../service/auth-service.service */
+    "./src/app/website/service/auth-service.service.ts");
 
     var PhotoViewComponent = /*#__PURE__*/function () {
-      function PhotoViewComponent(apiService) {
+      function PhotoViewComponent(apiService, srvLogin, router) {
         _classCallCheck(this, PhotoViewComponent);
 
         this.apiService = apiService;
+        this.srvLogin = srvLogin;
+        this.router = router;
         this.photo_links = [];
+
+        if (!srvLogin.checkLogValues()) {
+          router.navigate(['/login', {
+            navMessage: "Please login"
+          }]);
+        }
       }
 
       _createClass(PhotoViewComponent, [{
@@ -2459,7 +2494,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     PhotoViewComponent.ctorParameters = function () {
       return [{
-        type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_2__["AppApiServiceService"]
+        type: _service_app_api_service_service__WEBPACK_IMPORTED_MODULE_3__["AppApiServiceService"]
+      }, {
+        type: _service_auth_service_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
       }];
     };
 

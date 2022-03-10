@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppApiServiceService } from '../service/app-api-service.service';
+import { AuthService } from '../service/auth-service.service';
 
 @Component({
   selector: 'app-photo-upload',
@@ -18,7 +19,11 @@ export class PhotoUploadComponent implements OnInit {
   photoError: string = null;
   photoSuccess: string = null
   uploadedFilePath: string = null;
-  constructor(  private apiService: AppApiServiceService, private router: Router) { }
+  constructor(  private apiService: AppApiServiceService, private router: Router, private srvLogin: AuthService) { 
+    if (!srvLogin.checkLogValues()) {  
+      router.navigate(['/login', { navMessage: "Please login" }]);  
+    }
+  }
    
   ngOnInit() {
     this.defineForm()
