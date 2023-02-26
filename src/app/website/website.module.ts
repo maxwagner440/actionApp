@@ -14,6 +14,7 @@ import { PhotoUploadComponent } from "./photo-upload/photo-upload.component";
 import { PhotoViewComponent } from "./photo-view/photo-view.component";
 import { AllTaskComponent } from "./all-tasks/all-tasks.component";
 import { AdminPortalComponent } from "./admin-portal/admin-portal.component";
+import { AuthenticationGuard } from "../utilities/authGuard";
 
 
 @NgModule({
@@ -48,7 +49,10 @@ import { AdminPortalComponent } from "./admin-portal/admin-portal.component";
       PhotoViewComponent,
       AdminPortalComponent,
     ],
-    providers: [ CookieService ]
+    providers: [ 
+      CookieService,       
+      AuthenticationGuard,
+    ]
   })
 
   export class WebsiteModule { }

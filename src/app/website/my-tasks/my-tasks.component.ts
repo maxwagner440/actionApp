@@ -28,10 +28,7 @@ export class MyTasksComponent implements OnInit {
   displayedColumns: string[] = ['description'];
   expandedElement: Task | null
   showCreateTask = false;
-  constructor(private srvLogin: AuthService, private router: Router, private cookieService: CookieService,  private apiService: AppApiServiceService) { 
-    if (!srvLogin.checkLogValues()) {  
-      router.navigate(['/login',{ navMessage: "Please login" }]);  
-    }
+  constructor(private cookieService: CookieService,  private apiService: AppApiServiceService) { 
   }
 
   ngOnInit() {

@@ -12,9 +12,9 @@ export class PhotoViewComponent implements OnInit {
 
   photo_links=[]
   constructor(private apiService: AppApiServiceService, private srvLogin: AuthService, private router: Router,) {
-    if (!srvLogin.checkLogValues()) {  
-      router.navigate(['/login', { navMessage: "Please login" }]);  
-    }
+    // if (!srvLogin.checkLogValues()) {  
+    //   router.navigate(['/login', { navMessage: "Please login" }]);  
+    // }
    }
 
   ngOnInit() {

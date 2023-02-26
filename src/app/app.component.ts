@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(){
-    var cookieUser=this.cookieService.get("username")
+    const cookieUser = this.cookieService.get("username")
     console.log(cookieUser)
     if (cookieUser){
       this.username = cookieUser

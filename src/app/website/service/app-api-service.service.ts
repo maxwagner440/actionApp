@@ -8,8 +8,8 @@ import { User } from '../models/user.model';
 export class AppApiServiceService {
 
   constructor(private http: HttpClient) { }
-  baseUrl = 'https://eric-action-app.herokuapp.com'
-  //baseUrl = ' http://127.0.0.1:5000'
+  //baseUrl = 'https://eric-action-app.herokuapp.com'
+  baseUrl = ' http://127.0.0.1:5000'
   userUrl = '/user';
   taskUrl = "/task";
   voteUrl = "/vote";

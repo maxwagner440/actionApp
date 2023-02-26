@@ -27,11 +27,8 @@ export class AdminPortalComponent implements OnInit {
   expandedElement: User | null;
   dataSource = new MatTableDataSource<User>();
   isToggled= false
-  constructor(private srvLogin: AuthService, private router: Router,
+  constructor(private router: Router,
     private cookieService: CookieService, private apiService: AppApiServiceService,) { 
-    if (!srvLogin.checkLogValues()) {  
-      router.navigate(['/login',{ navMessage: "Please login" }]);  
-    }
   }
 
   ngOnInit() {

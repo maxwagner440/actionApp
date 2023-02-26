@@ -8,11 +8,13 @@ import { PhotoUploadComponent } from "./photo-upload/photo-upload.component";
 import { PhotoViewComponent } from "./photo-view/photo-view.component";
 import { AllTaskComponent } from "./all-tasks/all-tasks.component";
 import { AdminPortalComponent } from "./admin-portal/admin-portal.component";
+import { AuthenticationGuard } from "../utilities/authGuard";
 
 export const websiteRoutes: Routes = [
-    {
-      path: 'login', component: LoginComponent
-    },
+  {
+    path: 'login', component: LoginComponent
+  },
+  {path:'',  canActivate:[AuthenticationGuard], children: [
     {
       path: 'all-tasks', component: AllTaskComponent
     },
@@ -34,6 +36,7 @@ export const websiteRoutes: Routes = [
     {
         path: '**', component: HomeComponent
     },
+  ]}
   ];
 
   @NgModule({

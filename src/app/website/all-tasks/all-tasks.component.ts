@@ -29,11 +29,8 @@ export class AllTaskComponent implements OnInit {
   username=this.cookieService.get('username')
 
   constructor(
-    private srvLogin: AuthService, private router: Router, 
-    private cookieService: CookieService, private apiService: AppApiServiceService, private changeDetectorRefs: ChangeDetectorRef) {
-    if (!srvLogin.checkLogValues()) {  
-      router.navigate(['/login', { navMessage: "Please login" }]);  
-    }
+    private cookieService: CookieService, private apiService: AppApiServiceService) {
+
   }
 
 

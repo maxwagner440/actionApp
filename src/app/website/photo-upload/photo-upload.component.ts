@@ -20,9 +20,9 @@ export class PhotoUploadComponent implements OnInit {
   photoSuccess: string = null
   uploadedFilePath: string = null;
   constructor(  private apiService: AppApiServiceService, private router: Router, private srvLogin: AuthService) { 
-    if (!srvLogin.checkLogValues()) {  
-      router.navigate(['/login', { navMessage: "Please login" }]);  
-    }
+    // if (!srvLogin.checkLogValues()) {  
+    //   router.navigate(['/login', { navMessage: "Please login" }]);  
+    // }
   }
    
   ngOnInit() {

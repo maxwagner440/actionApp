@@ -1,41 +1,46 @@
 <app-nav></app-nav>
 <div class="container" class="mt-5">
     <!-- LOGIN -->
-    <div class="row" *ngIf="showLogin">
-      <div class="col"></div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
+    <div *ngIf="showLogin" class="d-flex flex-column align-items-center">
+      <!-- <div class="col"></div> -->
+      <div  style="min-width:340px; max-width: 40%;">
+        <div class="card">
           <div class="card-body">
             <form [formGroup]="signInForm" >
-              <input class="mx-4 my-2" id="email" placeholder="Username" type="email" formControlName="email">
-              <input class="mx-4 my-2" id="password" placeholder="Password" type="password" formControlName="password">
+              <div class="form-group">
+                <input class="form-control my-4" id="email" placeholder="Username" type="email" formControlName="email">
+              </div>
+              <div class="form-group">
+                <input class="form-control my-4" id="password" placeholder="Password" type="password" formControlName="password">
+              </div>
             </form>
-            <button class="m-4"type="button" (click)="loginUser()">Sign In</button>
-  
+            <div class="align-self-center">
+              <button class="mt-4" type="button" style="width:70%;" (click)="loginUser()">Sign In</button>
+            </div>
             <div *ngIf="showSignInInvalid">Please enter your name!</div>
           </div>
         </div>
       </div>
-      <div class="col"></div>
+      <!-- <div class="col"></div> -->
     </div>
     <!-- SIGN UP -->
-    <div class="row" *ngIf="!showLogin">
-      <div class="col"></div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
+    <div *ngIf="!showLogin" class="d-flex flex-column align-items-center">
+      <div  style="min-width:340px; max-width: 40%;">
+        <div class="card">
           <div class="card-body">
             <form [formGroup]="signUpForm" >
-              <input class="mx-4 my-2" id="name" placeholder="Name" type="text" formControlName="name">
-              <input class="mx-4 my-2" id="email" placeholder="Email" type="email" formControlName="email">
-              <input class="mx-4 my-2" id="password" placeholder="Password" type="password" formControlName="password">
+              <div class="form-group">
+                <input class="form-control my-2" id="name" placeholder="Name" type="text" formControlName="name">
+                <input class="form-control my-2" id="email" placeholder="Email" type="email" formControlName="email">
+                <input class="form-control my-2" id="password" placeholder="Password" type="password" formControlName="password">
+              </div>
             </form>
-            <button class="m-4"type="button" (click)="create_user()">Sign Up</button>
+            <button class="align-self-center" type="button" style="width:70%;" (click)="create_user()">Sign Up</button>
   
             <div *ngIf="showSignUpInvalid">Please enter your info!</div>
           </div>
         </div>
       </div>
-      <div class="col"></div>
     </div>
     <div *ngIf="showSpinner" class="row m-3 text-center">
       <div class="col-4"></div>
@@ -45,7 +50,7 @@
       <div class="col-4"></div>
     </div>
     <div *ngIf="incomingSnackMessage" class="row m-3">
-      <div class="col-12">
+      <div class="col-6 offset-3">
         <mat-card style="background-color:red; color:white;">{{incomingSnackMessage}}</mat-card>
       </div>
     </div>

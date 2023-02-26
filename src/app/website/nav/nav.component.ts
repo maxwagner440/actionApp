@@ -12,10 +12,7 @@ export class NavComponent implements OnInit {
   @Input() username:string = null;
   showNav = false;
 
-  constructor(private srvLogin: AuthService, private router: Router, private cookieService: CookieService,) { 
-    // if (!srvLogin.checkLogValues()) {  
-    //   router.navigate(['/login']);  
-    // }
+  constructor(private router: Router, private cookieService: CookieService,) { 
   }
 
   ngOnInit() {

@@ -9,10 +9,7 @@ import { AuthService } from '../service/auth-service.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private srvLogin: AuthService, private router: Router) { 
-    if (!srvLogin.checkLogValues()) {  
-      router.navigate(['/login',{ navMessage: "Please login" }]);  
-    }
+  constructor() { 
   }
 
   ngOnInit() {

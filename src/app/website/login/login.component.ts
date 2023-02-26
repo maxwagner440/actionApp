@@ -1,7 +1,8 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { Subscription } from 'rxjs';
 import { AppApiServiceService } from '../service/app-api-service.service';
 import { AuthService, User } from '../service/auth-service.service';
 
@@ -10,9 +11,9 @@ import { AuthService, User } from '../service/auth-service.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   incomingSnackMessage: string = 'Please Sign In!';
- // loginEvent = new EventEmitter();
+
   Obj: User;
   signUpForm: FormGroup
   signInForm: FormGroup
@@ -20,20 +21,30 @@ export class LoginComponent implements OnInit {
   showSignInInvalid = false
   showLogin = true
   showSpinner = false;
-  constructor(private srvLogin: AuthService, 
+  user: User;
+
+  subscription: Subscription = new Subscription();
+
+  constructor(
     private router: Router, public activatedRoute: ActivatedRoute,
     private cookieService: CookieService, private apiService: AppApiServiceService,) {
       this.Obj = new User();
   }
 
 
-  user: User;
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
-     console.log(params.navMessage)
-     this.incomingSnackMessage = params.navMessage
-    });
+    this.subscription.add(
+      this.activatedRoute.params
+        .subscribe(params => {
+          console.log(params.navMessage)
+          this.incomingSnackMessage = params.navMessage
+        })
+    );
     this.defineForm()
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   loginUser() {
